@@ -1,8 +1,8 @@
-name: Update commit card
+name: Update profile cards
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0,30 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -16,41 +16,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Get commit count (last 7 days)
-        id: commits
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate SVG cards
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          FROM=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
-
-          RESULT=$(gh api graphql -f query='
-            query($from: DateTime!) {
-              viewer {
-                contributionsCollection(from: $from) {
-                  totalCommitContributions
-                  restrictedContributionsCount
-                }
-              }
-            }
-          ' -f from="$FROM")
-
-          PUBLIC=$(echo "$RESULT" | jq '.data.viewer.contributionsCollection.totalCommitContributions')
-          PRIVATE=$(echo "$RESULT" | jq '.data.viewer.contributionsCollection.restrictedContributionsCount')
-          TOTAL=$((PUBLIC + PRIVATE))
-
-          echo "count=$TOTAL" >> "$GITHUB_OUTPUT"
-
-      - name: Update SVG
-        run: |
-          COUNT=${{ steps.commits.outputs.count }}
-          sed -i "s/>[0-9]\+ commits in the last 7 days</>$COUNT commits in the last 7 days</" card.svg
+        run: python scripts/generate_cards.py
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet card.svg || {
-            git add card.svg
-            git commit -m "Update commit count to ${{ steps.commits.outputs.count }}"
+          git diff --quiet || {
+            git add hero.svg stats.svg activity.svg
+            git commit -m "Update profile cards"
             git push
           }
