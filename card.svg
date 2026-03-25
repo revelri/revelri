@@ -13,5 +13,5 @@
   <rect width="640" height="160" rx="12" ry="12" fill="url(#scanlines)"/>
 
   <!-- Commit count text -->
-  <text x="320" y="85" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="20" fill="#6bf1b6" id="commit-text">118 commits in the last 7 days</text>
+  <text x="320" y="85" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="20" fill="#6bf1b6" id="commit-text">123 commits in the last 7 days</text>
 </svg>
