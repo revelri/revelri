@@ -25,15 +25,15 @@
   <rect x="20" y="20" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="40" y="48" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">STREAK</text>
   <text x="40" y="86" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">3 days</text>
-  <text x="40" y="112" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">longest: 6 · avg/day: 17.9</text>
+  <text x="40" y="112" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">longest: 6 · avg/day: 23.9</text>
 
   <!-- Panel 2: LANGUAGES (top-right) -->
   <rect x="430" y="20" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="450" y="48" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">LANGUAGES</text>
-    <rect x="450" y="60" width="108" height="12" rx="2" fill="#6bf1b6" opacity="0.72"/>
-  <text x="660" y="70" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">JavaScript 54%</text>
-  <rect x="450" y="82" width="62" height="12" rx="2" fill="#6bf1b6" opacity="0.59"/>
-  <text x="660" y="92" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">Python 31%</text>
+    <rect x="450" y="60" width="110" height="12" rx="2" fill="#6bf1b6" opacity="0.73"/>
+  <text x="660" y="70" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">JavaScript 55%</text>
+  <rect x="450" y="82" width="60" height="12" rx="2" fill="#6bf1b6" opacity="0.58"/>
+  <text x="660" y="92" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">Python 30%</text>
   <rect x="450" y="104" width="18" height="12" rx="2" fill="#6bf1b6" opacity="0.45"/>
   <text x="660" y="114" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">Rust 9%</text>
   <rect x="450" y="126" width="12" height="12" rx="2" fill="#6bf1b6" opacity="0.44"/>
@@ -42,7 +42,7 @@
   <!-- Panel 3: THIS WEEK (full-width bottom) -->
   <rect x="20" y="160" width="800" height="100" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="40" y="188" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">THIS WEEK</text>
-  <text x="40" y="228" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">125 commits</text>
-  <text x="340" y="228" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">+722 / -329</text>
+  <text x="40" y="228" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">167 commits</text>
+  <text x="340" y="228" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">+15,799 / -2,193</text>
   <text x="600" y="228" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">0 PRs · 0 issues</text>
 </svg>
