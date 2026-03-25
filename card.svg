@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160">
+  <defs>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="640" height="4">
+      <rect width="640" height="4" fill="transparent"/>
+      <rect width="640" height="1" y="3" fill="rgba(106,107,246,0.06)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="640" height="160" rx="12" ry="12" fill="#000" stroke="#6a6bf6" stroke-width="2"/>
+
+  <!-- Scanlines overlay -->
+  <rect width="640" height="160" rx="12" ry="12" fill="url(#scanlines)"/>
+
+  <!-- Commit count text -->
+  <text x="320" y="85" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="20" fill="#6bf1b6" id="commit-text">0 commits in the last 7 days</text>
+</svg>
