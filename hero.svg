@@ -31,9 +31,9 @@
   <text x="40" y="120" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a"></text>
 
   <!-- Commit count (hero number) -->
-  <text x="800" y="85" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="32" fill="#f5e642" filter="url(#glow)">168</text>
+  <text x="800" y="85" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="32" fill="#f5e642" filter="url(#glow)">115</text>
   <text x="800" y="108" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a">commits / 7d</text>
 
   <!-- Time since last commit -->
-  <text x="800" y="130" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a">01h 56m ago</text>
+  <text x="800" y="130" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a">00m ago</text>
 </svg>
