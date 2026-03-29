@@ -99,7 +99,7 @@
   <rect x="194" y="76" width="11" height="11" rx="2" fill="#1a4a2e"/>
   <rect x="194" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="194" y="104" width="11" height="11" rx="2" fill="#2d7a4a"/>
-  <rect x="208" y="20" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="208" y="20" width="11" height="11" rx="2" fill="#1a4a2e"/>
   <rect x="208" y="34" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="48" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="62" width="11" height="11" rx="2" fill="#333333"/>
@@ -380,5 +380,5 @@
   <rect x="754" y="90" width="11" height="11" rx="2" fill="#333333"/>
 
   <!-- Total contributions label -->
-  <text x="420" y="150" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a">425 contributions so far in 2026</text>
+  <text x="420" y="150" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a">439 contributions so far in 2026</text>
 </svg>
