@@ -2,6 +2,7 @@
 """Generate GitHub profile SVG cards from API data."""
 
 import json
+import math
 import os
 import subprocess
 import sys
@@ -272,7 +273,9 @@ def render_language_bars(languages):
     """Generate SVG elements for language bar chart."""
     lines = []
     max_bar_width = 200
-    y_start = 68
+    bar_x = 434
+    text_x = 644
+    y_start = 113
     line_height = 22
 
     for i, (name, pct) in enumerate(languages):
@@ -280,10 +283,10 @@ def render_language_bars(languages):
         bar_width = max(2, int(max_bar_width * pct / 100))
         opacity = round(0.4 + 0.6 * pct / 100, 2)
         lines.append(
-            f'  <rect x="450" y="{y - 8}" width="{bar_width}" height="12" rx="2" fill="#6bf1b6" opacity="{opacity}"/>'
+            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="12" rx="2" fill="#6bf1b6" opacity="{opacity}"/>'
         )
         lines.append(
-            f'  <text x="{450 + max_bar_width + 10}" y="{y + 2}" font-family="\'Courier New\', Courier, monospace" font-size="12" fill="#4a9e7a">{name} {pct}%</text>'
+            f'  <text x="{text_x}" y="{y + 2}" font-family="\'Courier New\', Courier, monospace" font-size="12" fill="#4a9e7a">{name} {pct}%</text>'
         )
 
     return "\n".join(lines)
@@ -335,6 +338,90 @@ def render_heatmap(calendar_data):
             )
 
     return "\n".join(cells)
+
+
+# Emotion-hero heart ASCII art
+HEART_ASCII = [
+    "      ******       ******",
+    "   **********   **********",
+    "  ************ ************",
+    " ***************************",
+    "  *************************",
+    "   ***********************",
+    "     *******************",
+    "       ***************",
+    "         ***********",
+    "           *******",
+    "             ***",
+    "              *",
+]
+
+# Emotion-hero color palette (adapted for CRT aesthetic)
+EMOTION_COLORS = [
+    "#87a99e",  # Serene - muted teal-green
+    "#ad9387",  # Vibrant - soft terracotta
+    "#919baf",  # Melancholy - muted slate blue
+    "#a5a091",  # Curious - soft warm gray
+    "#9ba591",  # Content - muted olive green
+]
+
+
+def render_ascii_hero():
+    """Generate SVG elements for the ASCII heart hero with animated colors."""
+    lines = []
+    char_width = 9.6  # Courier New approximate character width at 16px
+    font_size = 16
+    line_height = 18
+    # Center the heart horizontally in the 840px card
+    max_line_len = max(len(row) for row in HEART_ASCII)
+    total_width = max_line_len * char_width
+    x_offset = (840 - total_width) / 2
+    y_start = 260  # Below the info panes
+
+    num_colors = len(EMOTION_COLORS)
+    num_bands = 8  # Number of diagonal color bands across the heart
+
+    for row_idx, row in enumerate(HEART_ASCII):
+        y = y_start + row_idx * line_height
+
+        # Group consecutive '*' characters by their diagonal band color
+        i = 0
+        while i < len(row):
+            if row[i] == '*':
+                # Find the run of '*' characters
+                start = i
+                while i < len(row) and row[i] == '*':
+                    i += 1
+                run_text = row[start:i]
+                x = x_offset + start * char_width
+
+                # Calculate diagonal band index for color assignment
+                mid_col = (start + i) / 2
+                band = int((mid_col + row_idx * 2) / max_line_len * num_bands) % num_colors
+                base_color = EMOTION_COLORS[band]
+                next_color = EMOTION_COLORS[(band + 1) % num_colors]
+                third_color = EMOTION_COLORS[(band + 2) % num_colors]
+
+                # Stagger animation timing based on position for wave effect
+                delay = round((mid_col + row_idx * 3) / (max_line_len + len(HEART_ASCII) * 3) * 12, 1)
+
+                lines.append(
+                    f'  <text x="{x:.1f}" y="{y}" '
+                    f'font-family="\'Courier New\', Courier, monospace" font-size="{font_size}" '
+                    f'fill="{base_color}" opacity="0.85">'
+                    f'{run_text}'
+                    f'<animate attributeName="fill" '
+                    f'values="{base_color};{next_color};{third_color};{base_color}" '
+                    f'dur="12s" begin="{delay}s" repeatCount="indefinite"/>'
+                    f'<animate attributeName="opacity" '
+                    f'values="0.7;1;0.8;1;0.7" '
+                    f'dur="8s" begin="{delay * 0.7:.1f}s" repeatCount="indefinite"/>'
+                    f'</text>'
+                )
+            else:
+                i += 1
+
+    return "\n".join(lines)
 
 
 def render_template(template_name, **kwargs):
@@ -405,45 +492,20 @@ def main():
         lines_added = "+--"
         lines_deleted = "---"
 
-    # Render hero
-    print("Rendering hero.svg...")
-    hero = render_template(
-        "hero.svg.template",
+    # Render unified card
+    print("Rendering card.svg...")
+    card = render_template(
+        "card.svg.template",
         name=config["name"],
-        tagline=config["tagline"],
-        commit_count=str(weekly_commits),
-        last_commit_ago=last_commit_ago,
-    )
-    (ROOT / "hero.svg").write_text(hero)
-
-    # Render stats
-    print("Rendering stats.svg...")
-    stats = render_template(
-        "stats.svg.template",
-        streak_days=str(current_streak),
-        streak_label="day" if current_streak == 1 else "days",
-        longest_streak=str(longest_streak),
-        avg_per_day=str(avg_per_day),
-        language_bars=render_language_bars(languages),
+        heatmap_cells=render_heatmap(calendar),
         weekly_commits=str(weekly_commits),
         lines_added=lines_added,
         lines_deleted=lines_deleted,
-        weekly_prs=str(weekly_prs),
-        weekly_issues=str(weekly_issues),
+        language_bars=render_language_bars(languages),
     )
-    (ROOT / "stats.svg").write_text(stats)
+    (ROOT / "card.svg").write_text(card)
 
-    # Render activity heatmap
-    print("Rendering activity.svg...")
-    activity = render_template(
-        "activity.svg.template",
-        heatmap_cells=render_heatmap(calendar),
-        total_contributions=str(total_contributions),
-        current_year=str(datetime.now(timezone.utc).year),
-    )
-    (ROOT / "activity.svg").write_text(activity)
-
-    print("Done! Generated hero.svg, stats.svg, activity.svg")
+    print("Done! Generated card.svg")
 
 
 if __name__ == "__main__":
