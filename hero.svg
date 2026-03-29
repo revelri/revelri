@@ -35,5 +35,5 @@
   <text x="800" y="108" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a">commits / 7d</text>
 
   <!-- Time since last commit -->
-  <text x="800" y="130" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a">36m ago</text>
+  <text x="800" y="130" text-anchor="end" font-family="'Courier New', Courier, monospace" font-size="13" fill="#4a9e7a">49m ago</text>
 </svg>
