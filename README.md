@@ -1,5 +1,3 @@
-![Hero](hero.svg)
+![Profile](card.svg)
 
-![Stats](stats.svg)
-
-![Activity](activity.svg)
+![Emotion Hero](hero.gif)
