@@ -1,0 +1,24 @@
+{
+  "name": "revelri",
+  "version": "1.0.0",
+  "description": "![Profile](card.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revelri/revelri.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/revelri/revelri/issues"
+  },
+  "homepage": "https://github.com/revelri/revelri#readme",
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}
