@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  update:
+  update-card:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,17 +20,45 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Generate SVG cards
+      - name: Generate SVG card
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: python scripts/generate_cards.py
 
-      - name: Commit if changed
+      - name: Commit card if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet || {
-            git add hero.svg stats.svg activity.svg
-            git commit -m "Update profile cards"
+          git diff --quiet card.svg || {
+            git add card.svg
+            git commit -m "Update profile card"
             git push
           }
+
+  update-hero:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Capture hero GIF
+        env:
+          EMOTION_HERO_DIR: ${{ vars.EMOTION_HERO_DIR || '/home/revelri/Dev/ascii/emotion-hero' }}
+        run: bash scripts/capture_hero.sh
+
+      - name: Commit GIF if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git diff --quiet hero.gif || {
+            git add hero.gif
+            git commit -m "Update hero GIF"
+            git push
+          }
+
+      - name: Re-trigger in 30s
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          sleep 30
+          gh workflow run update-card.yml
