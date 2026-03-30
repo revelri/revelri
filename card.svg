@@ -7,6 +7,13 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="hero_glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <!-- Background -->
@@ -23,7 +30,7 @@
       <rect x="40" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="34" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="48" width="11" height="11" rx="2" fill="#1a4a2e"/>
-  <rect x="40" y="62" width="11" height="11" rx="2" fill="#1a4a2e"/>
+  <rect x="40" y="62" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="104" width="11" height="11" rx="2" fill="#333333"/>
@@ -90,7 +97,7 @@
   <rect x="166" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="166" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="166" y="104" width="11" height="11" rx="2" fill="#1a4a2e"/>
-  <rect x="180" y="20" width="11" height="11" rx="2" fill="#1a4a2e"/>
+  <rect x="180" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="180" y="34" width="11" height="11" rx="2" fill="#1a4a2e"/>
   <rect x="180" y="48" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="180" y="62" width="11" height="11" rx="2" fill="#333333"/>
@@ -387,19 +394,41 @@
 
   <!-- THIS WEEK panel (left) -->
   <rect x="16" y="88" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
-  <text x="50" y="158" font-family="'Courier New', Courier, monospace" font-size="18.5" fill="#4a9e7a" letter-spacing="2" style="stroke-width:1.68">THIS WEEK</text>
-  <text x="207" y="136" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">153 commits</text>
-  <text x="195" y="179" font-family="'Courier New', Courier, monospace" font-size="30" fill="#4a9e7a">+15,176 / -1,160</text>
+  <text x="50" y="158" font-family="'Courier New', Courier, monospace" font-size="18.5" fill="#4a9e7a" letter-spacing="2">THIS WEEK</text>
+  <text x="207" y="136" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">155 commits</text>
+  <text x="195" y="186" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">+15,176 / -1,160</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="86" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
-  <text x="434" y="101" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">LANGUAGES</text>
-    <rect x="434" y="105" width="106" height="12" rx="2" fill="#6bf1b6" opacity="0.72"/>
-  <text x="644" y="115" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">JavaScript 53%</text>
-  <rect x="434" y="127" width="62" height="12" rx="2" fill="#6bf1b6" opacity="0.59"/>
-  <text x="644" y="137" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">Python 31%</text>
-  <rect x="434" y="149" width="22" height="12" rx="2" fill="#6bf1b6" opacity="0.47"/>
-  <text x="644" y="159" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">Rust 11%</text>
-  <rect x="434" y="171" width="10" height="12" rx="2" fill="#6bf1b6" opacity="0.43"/>
-  <text x="644" y="181" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4a9e7a">Other 5%</text>
+  <text x="434" y="98" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">LANGUAGES</text>
+    <rect x="434" y="100" width="106" height="12" rx="2" fill="#f1e05a" opacity="0.85"/>
+  <text x="644" y="110" font-family="'Courier New', Courier, monospace" font-size="12" fill="#f1e05a">JavaScript 53%</text>
+  <rect x="434" y="122" width="62" height="12" rx="2" fill="#3572A5" opacity="0.85"/>
+  <text x="644" y="132" font-family="'Courier New', Courier, monospace" font-size="12" fill="#3572A5">Python 31%</text>
+  <rect x="434" y="144" width="22" height="12" rx="2" fill="#dea584" opacity="0.85"/>
+  <text x="644" y="154" font-family="'Courier New', Courier, monospace" font-size="12" fill="#dea584">Rust 11%</text>
+  <rect x="434" y="166" width="10" height="12" rx="2" fill="#dea584" opacity="0.85"/>
+  <text x="644" y="176" font-family="'Courier New', Courier, monospace" font-size="12" fill="#dea584">Other 5%</text>
+
+  <!-- ASCII Hero -->
+  <g filter="url(#hero_glow)">
+      <text x="343.2" y="280" font-family="'Courier New', Courier, monospace" font-size="16" fill="#919baf" opacity="0.85">******<animate attributeName="fill" values="#919baf;#a5a091;#9ba591;#919baf" dur="12s" begin="1.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="1.2s" repeatCount="indefinite"/></text>
+  <text x="468.0" y="280" font-family="'Courier New', Courier, monospace" font-size="16" fill="#ad9387" opacity="0.85">******<animate attributeName="fill" values="#ad9387;#919baf;#a5a091;#ad9387" dur="12s" begin="4.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="2.9s" repeatCount="indefinite"/></text>
+  <text x="314.4" y="298" font-family="'Courier New', Courier, monospace" font-size="16" fill="#919baf" opacity="0.85">**********<animate attributeName="fill" values="#919baf;#a5a091;#9ba591;#919baf" dur="12s" begin="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="1.5s" repeatCount="indefinite"/></text>
+  <text x="439.2" y="298" font-family="'Courier New', Courier, monospace" font-size="16" fill="#ad9387" opacity="0.85">**********<animate attributeName="fill" values="#ad9387;#919baf;#a5a091;#ad9387" dur="12s" begin="4.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="3.1s" repeatCount="indefinite"/></text>
+  <text x="304.8" y="316" font-family="'Courier New', Courier, monospace" font-size="16" fill="#a5a091" opacity="0.85">************<animate attributeName="fill" values="#a5a091;#9ba591;#87a99e;#a5a091" dur="12s" begin="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="1.8s" repeatCount="indefinite"/></text>
+  <text x="429.6" y="316" font-family="'Courier New', Courier, monospace" font-size="16" fill="#919baf" opacity="0.85">************<animate attributeName="fill" values="#919baf;#a5a091;#9ba591;#919baf" dur="12s" begin="5.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="3.6s" repeatCount="indefinite"/></text>
+  <text x="295.2" y="334" font-family="'Courier New', Courier, monospace" font-size="16" fill="#87a99e" opacity="0.85">***************************<animate attributeName="fill" values="#87a99e;#ad9387;#919baf;#87a99e" dur="12s" begin="4.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="3.1s" repeatCount="indefinite"/></text>
+  <text x="304.8" y="352" font-family="'Courier New', Courier, monospace" font-size="16" fill="#ad9387" opacity="0.85">*************************<animate attributeName="fill" values="#ad9387;#919baf;#a5a091;#ad9387" dur="12s" begin="5.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="3.5s" repeatCount="indefinite"/></text>
+  <text x="314.4" y="370" font-family="'Courier New', Courier, monospace" font-size="16" fill="#919baf" opacity="0.85">***********************<animate attributeName="fill" values="#919baf;#a5a091;#9ba591;#919baf" dur="12s" begin="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="3.8s" repeatCount="indefinite"/></text>
+  <text x="333.6" y="388" font-family="'Courier New', Courier, monospace" font-size="16" fill="#919baf" opacity="0.85">*******************<animate attributeName="fill" values="#919baf;#a5a091;#9ba591;#919baf" dur="12s" begin="6.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="4.3s" repeatCount="indefinite"/></text>
+  <text x="352.8" y="406" font-family="'Courier New', Courier, monospace" font-size="16" fill="#a5a091" opacity="0.85">***************<animate attributeName="fill" values="#a5a091;#9ba591;#87a99e;#a5a091" dur="12s" begin="6.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="4.7s" repeatCount="indefinite"/></text>
+  <text x="372.0" y="424" font-family="'Courier New', Courier, monospace" font-size="16" fill="#a5a091" opacity="0.85">***********<animate attributeName="fill" values="#a5a091;#9ba591;#87a99e;#a5a091" dur="12s" begin="7.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="5.0s" repeatCount="indefinite"/></text>
+  <text x="391.2" y="442" font-family="'Courier New', Courier, monospace" font-size="16" fill="#9ba591" opacity="0.85">*******<animate attributeName="fill" values="#9ba591;#87a99e;#ad9387;#9ba591" dur="12s" begin="7.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="5.5s" repeatCount="indefinite"/></text>
+  <text x="410.4" y="460" font-family="'Courier New', Courier, monospace" font-size="16" fill="#9ba591" opacity="0.85">***<animate attributeName="fill" values="#9ba591;#87a99e;#ad9387;#9ba591" dur="12s" begin="8.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="5.8s" repeatCount="indefinite"/></text>
+  <text x="420.0" y="478" font-family="'Courier New', Courier, monospace" font-size="16" fill="#87a99e" opacity="0.85">*<animate attributeName="fill" values="#87a99e;#ad9387;#919baf;#87a99e" dur="12s" begin="8.9s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;1;0.8;1;0.7" dur="8s" begin="6.2s" repeatCount="indefinite"/></text>
+  </g>
+
+  <!-- Contribution count -->
+  <text x="420" y="655" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a">463 contributions so far in 2026</text>
 </svg>
