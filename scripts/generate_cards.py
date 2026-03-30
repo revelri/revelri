@@ -269,24 +269,57 @@ def aggregate_languages(repos_data):
 
 
 
+LANG_COLORS = {
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Python": "#3572A5",
+    "Rust": "#dea584",
+    "Go": "#00ADD8",
+    "Java": "#b07219",
+    "C": "#555555",
+    "C++": "#f34b7d",
+    "C#": "#178600",
+    "Ruby": "#701516",
+    "PHP": "#4F5D95",
+    "Shell": "#89e051",
+    "HTML": "#e34c26",
+    "CSS": "#563d7c",
+    "Lua": "#000080",
+    "Zig": "#ec915c",
+    "Kotlin": "#A97BFF",
+    "Swift": "#F05138",
+    "Dart": "#00B4AB",
+    "Svelte": "#ff3e00",
+    "Vue": "#41b883",
+    "Nix": "#7e7eff",
+    "SCSS": "#c6538c",
+}
+LANG_COLOR_FALLBACKS = ["#6bf1b6", "#f1e05a", "#3178c6", "#dea584", "#00ADD8"]
+
+
+def lang_color(name, index):
+    """Get a vibrant color for a language."""
+    return LANG_COLORS.get(name, LANG_COLOR_FALLBACKS[index % len(LANG_COLOR_FALLBACKS)])
+
+
 def render_language_bars(languages):
     """Generate SVG elements for language bar chart."""
     lines = []
     max_bar_width = 200
     bar_x = 434
     text_x = 644
-    y_start = 113
+    y_start = 108
     line_height = 22
 
     for i, (name, pct) in enumerate(languages):
         y = y_start + i * line_height
         bar_width = max(2, int(max_bar_width * pct / 100))
-        opacity = round(0.4 + 0.6 * pct / 100, 2)
+        color = lang_color(name, i)
         lines.append(
-            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="12" rx="2" fill="#6bf1b6" opacity="{opacity}"/>'
+            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="12" rx="2" fill="{color}" opacity="0.85"/>'
         )
         lines.append(
-            f'  <text x="{text_x}" y="{y + 2}" font-family="\'Courier New\', Courier, monospace" font-size="12" fill="#4a9e7a">{name} {pct}%</text>'
+            f'  <text x="{text_x}" y="{y + 2}" font-family="\'Courier New\', Courier, monospace" font-size="12" fill="{color}">{name} {pct}%</text>'
         )
 
     return "\n".join(lines)
@@ -376,7 +409,7 @@ def render_ascii_hero():
     max_line_len = max(len(row) for row in HEART_ASCII)
     total_width = max_line_len * char_width
     x_offset = (840 - total_width) / 2
-    y_start = 260  # Below the info panes
+    y_start = 280  # Below the info panes, within card bounds
 
     num_colors = len(EMOTION_COLORS)
     num_bands = 8  # Number of diagonal color bands across the heart
@@ -502,6 +535,9 @@ def main():
         lines_added=lines_added,
         lines_deleted=lines_deleted,
         language_bars=render_language_bars(languages),
+        ascii_hero=render_ascii_hero(),
+        total_contributions=str(total_contributions),
+        current_year=str(datetime.now(timezone.utc).year),
     )
     (ROOT / "card.svg").write_text(card)
 

@@ -7,6 +7,13 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="hero_glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
   <!-- Background -->
@@ -25,12 +32,20 @@
 
   <!-- THIS WEEK panel (left) -->
   <rect x="16" y="88" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
-  <text x="50" y="158" font-family="'Courier New', Courier, monospace" font-size="18.5" fill="#4a9e7a" letter-spacing="2" style="stroke-width:1.68">THIS WEEK</text>
+  <text x="50" y="158" font-family="'Courier New', Courier, monospace" font-size="18.5" fill="#4a9e7a" letter-spacing="2">THIS WEEK</text>
   <text x="207" y="136" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">{weekly_commits} commits</text>
-  <text x="195" y="179" font-family="'Courier New', Courier, monospace" font-size="30" fill="#4a9e7a">{lines_added} / {lines_deleted}</text>
+  <text x="195" y="186" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">{lines_added} / {lines_deleted}</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="86" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
-  <text x="434" y="101" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">LANGUAGES</text>
+  <text x="434" y="98" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">LANGUAGES</text>
   {language_bars}
+
+  <!-- ASCII Hero -->
+  <g filter="url(#hero_glow)">
+    {ascii_hero}
+  </g>
+
+  <!-- Contribution count -->
+  <text x="420" y="655" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a">{total_contributions} contributions so far in {current_year}</text>
 </svg>
