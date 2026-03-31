@@ -396,7 +396,7 @@
   <rect x="16" y="88" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="50" y="158" font-family="'Courier New', Courier, monospace" font-size="18.5" fill="#4a9e7a" letter-spacing="2">THIS WEEK</text>
   <text x="207" y="136" font-family="'Courier New', Courier, monospace" font-size="28" fill="#6bf1b6" filter="url(#glow)">132 commits</text>
-  <text x="195" y="186" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">+14,285 / -819</text>
+  <text x="195" y="186" font-family="'Courier New', Courier, monospace" font-size="16" fill="#4a9e7a">+4,842 / -724</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="86" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
