@@ -56,9 +56,3 @@ jobs:
             git push
           }
 
-      - name: Re-trigger in 30s
-        env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          sleep 30
-          gh workflow run update-card.yml

@@ -194,5 +194,11 @@ ffmpeg -y -framerate "$FPS" \
   -lavfi "fps=$FPS,scale=${WIDTH}:-1:flags=lanczos [x]; [x][1:v] paletteuse=dither=bayer:bayer_scale=3" \
   "$OUTPUT_GIF" 2>/dev/null
 
+# 7. Optimize with gifsicle if available
+if command -v gifsicle &>/dev/null; then
+  echo "[capture] Optimizing with gifsicle..."
+  gifsicle -O3 --lossy=80 "$OUTPUT_GIF" -o "$OUTPUT_GIF"
+fi
+
 SIZE=$(du -h "$OUTPUT_GIF" | cut -f1)
 echo "[capture] Done! $OUTPUT_GIF ($SIZE)"
