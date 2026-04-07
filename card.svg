@@ -120,7 +120,7 @@
   <rect x="208" y="104" width="11" height="11" rx="2" fill="#1a4a2e"/>
   <rect x="222" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="34" width="11" height="11" rx="2" fill="#1a4a2e"/>
-  <rect x="222" y="48" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="48" width="11" height="11" rx="2" fill="#1a4a2e"/>
   <rect x="222" y="62" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="90" width="11" height="11" rx="2" fill="#333333"/>
@@ -401,14 +401,14 @@
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="86" width="390" height="120" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="434" y="98" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a" letter-spacing="2">LANGUAGES</text>
-    <rect x="434" y="100" width="118" height="12" rx="2" fill="#f1e05a" opacity="0.85"/>
-  <text x="644" y="110" font-family="'Courier New', Courier, monospace" font-size="12" fill="#f1e05a">JavaScript 59%</text>
-  <rect x="434" y="122" width="50" height="12" rx="2" fill="#3572A5" opacity="0.85"/>
-  <text x="644" y="132" font-family="'Courier New', Courier, monospace" font-size="12" fill="#3572A5">Python 25%</text>
-  <rect x="434" y="144" width="24" height="12" rx="2" fill="#dea584" opacity="0.85"/>
-  <text x="644" y="154" font-family="'Courier New', Courier, monospace" font-size="12" fill="#dea584">Rust 12%</text>
-  <rect x="434" y="166" width="8" height="12" rx="2" fill="#dea584" opacity="0.85"/>
-  <text x="644" y="176" font-family="'Courier New', Courier, monospace" font-size="12" fill="#dea584">Other 4%</text>
+    <rect x="434" y="100" width="90" height="12" rx="2" fill="#3178c6" opacity="0.85"/>
+  <text x="644" y="110" font-family="'Courier New', Courier, monospace" font-size="12" fill="#3178c6">TypeScript 45%</text>
+  <rect x="434" y="122" width="64" height="12" rx="2" fill="#f1e05a" opacity="0.85"/>
+  <text x="644" y="132" font-family="'Courier New', Courier, monospace" font-size="12" fill="#f1e05a">JavaScript 32%</text>
+  <rect x="434" y="144" width="28" height="12" rx="2" fill="#3572A5" opacity="0.85"/>
+  <text x="644" y="154" font-family="'Courier New', Courier, monospace" font-size="12" fill="#3572A5">Python 14%</text>
+  <rect x="434" y="166" width="18" height="12" rx="2" fill="#dea584" opacity="0.85"/>
+  <text x="644" y="176" font-family="'Courier New', Courier, monospace" font-size="12" fill="#dea584">Other 9%</text>
 
   <!-- ASCII Hero -->
   <g filter="url(#hero_glow)">
@@ -430,5 +430,5 @@
   </g>
 
   <!-- Contribution count -->
-  <text x="420" y="655" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a">490 contributions so far in 2026</text>
+  <text x="420" y="655" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4a9e7a">492 contributions so far in 2026</text>
 </svg>
