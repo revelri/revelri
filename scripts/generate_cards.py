@@ -1,20 +1,41 @@
 #!/usr/bin/env python3
 """Generate GitHub profile SVG cards from API data."""
 
+import argparse
 import json
 import math
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATES = ROOT / "templates"
 CONFIG_PATH = ROOT / "config.yml"
+MOCK_DATA_PATH = ROOT / "scripts" / "mock_data.json"
 
 # CRT color palette
-HEATMAP_COLORS = ["#333333", "#1a4a2e", "#2d7a4a", "#4a9e7a", "#6bf1b6"]
+HEATMAP_COLORS = ["#333333", "#2d1b4e", "#4c2882", "#7c3aed", "#c084fc"]
+
+
+def _run_gh(cmd, label="gh"):
+    """Run a gh CLI command with retry on rate-limit (403/429)."""
+    for attempt in range(3):
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode == 0:
+            return json.loads(result.stdout)
+        stderr = result.stderr.lower()
+        if "rate limit" in stderr or "403" in stderr or "429" in stderr:
+            wait = 2 ** attempt * 5
+            print(f"Rate limited on {label}, retrying in {wait}s...", file=sys.stderr)
+            time.sleep(wait)
+            continue
+        print(f"Error calling {label}: {result.stderr}", file=sys.stderr)
+        return None
+    print(f"Failed after 3 attempts: {label}", file=sys.stderr)
+    return None
 
 
 def gh_api(endpoint, method="GET"):
@@ -22,11 +43,7 @@ def gh_api(endpoint, method="GET"):
     cmd = ["gh", "api", endpoint]
     if method != "GET":
         cmd.extend(["--method", method])
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Error calling {endpoint}: {result.stderr}", file=sys.stderr)
-        return None
-    return json.loads(result.stdout)
+    return _run_gh(cmd, label=endpoint)
 
 
 def gh_graphql(query, **variables):
@@ -34,11 +51,7 @@ def gh_graphql(query, **variables):
     cmd = ["gh", "api", "graphql", "-f", f"query={query}"]
     for key, val in variables.items():
         cmd.extend(["-f", f"{key}={val}"])
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"GraphQL error: {result.stderr}", file=sys.stderr)
-        return None
-    return json.loads(result.stdout)
+    return _run_gh(cmd, label="graphql")
 
 
 def load_config():
@@ -119,14 +132,13 @@ def fetch_repos():
 
 
 def fetch_lines_changed(repos_data, username):
-    """Fetch lines changed this week from active repos."""
+    """Fetch lines changed this week using GraphQL bulk queries."""
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
     week_ago = datetime.now(timezone.utc) - timedelta(days=7)
     week_ago_str = week_ago.strftime("%Y-%m-%dT%H:%M:%SZ")
     additions = 0
     deletions = 0
 
-    # Only check repos pushed in the last week
     for repo in nodes:
         pushed = repo.get("pushedAt")
         if not pushed:
@@ -135,21 +147,37 @@ def fetch_lines_changed(repos_data, username):
         if dt < week_ago:
             break  # Sorted by pushedAt desc
 
-        repo_name = f"revelri/{repo['name']}"
-        # Get recent commits by the user
-        commits = gh_api(
-            f"/repos/{repo_name}/commits?author={username}&since={week_ago_str}&per_page=100"
-        )
-        if not commits or not isinstance(commits, list):
+        query = """
+        query($owner: String!, $name: String!, $since: GitTimestamp!) {
+          repository(owner: $owner, name: $name) {
+            defaultBranchRef {
+              target {
+                ... on Commit {
+                  history(since: $since, first: 100) {
+                    nodes {
+                      additions
+                      deletions
+                      author { user { login } }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        """
+        result = gh_graphql(query, owner=username, name=repo["name"], since=week_ago_str)
+        if not result:
             continue
 
-        for commit in commits[:20]:  # Cap at 20 per repo to limit API calls
-            sha = commit.get("sha")
-            if sha:
-                detail = gh_api(f"/repos/{repo_name}/commits/{sha}")
-                if detail and "stats" in detail:
-                    additions += detail["stats"].get("additions", 0)
-                    deletions += detail["stats"].get("deletions", 0)
+        history = (result.get("data", {}).get("repository") or {})
+        branch = (history.get("defaultBranchRef") or {}).get("target", {})
+        commits = (branch.get("history") or {}).get("nodes", [])
+        for c in commits:
+            author = (c.get("author") or {}).get("user") or {}
+            if author.get("login", "").lower() == username.lower():
+                additions += c.get("additions", 0)
+                deletions += c.get("deletions", 0)
 
     return additions, deletions
 
@@ -165,17 +193,18 @@ def calc_streak(calendar_data):
     all_days.sort(key=lambda d: d["date"])
 
     # Current streak: walk backwards from today
+    # Treat today and yesterday as "in progress" to handle API lag
     current_streak = 0
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    yesterday = (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d")
     for day in reversed(all_days):
         if day["date"] > today:
             continue
         if day["contributionCount"] > 0:
             current_streak += 1
+        elif day["date"] in (today, yesterday):
+            continue
         else:
-            # Allow today to be zero (day isn't over yet)
-            if day["date"] == today:
-                continue
             break
 
     # Longest streak
@@ -293,8 +322,40 @@ LANG_COLORS = {
     "Vue": "#41b883",
     "Nix": "#7e7eff",
     "SCSS": "#c6538c",
+    "Haskell": "#5e5086",
+    "Elixir": "#6e4a7e",
+    "Clojure": "#db5855",
+    "Scala": "#c22d40",
+    "Perl": "#0298c3",
+    "R": "#198ce7",
+    "Julia": "#a270ba",
+    "Erlang": "#B83998",
+    "OCaml": "#3be133",
+    "F#": "#b845fc",
+    "Dockerfile": "#384d54",
+    "Makefile": "#427819",
+    "GLSL": "#5686a5",
+    "HLSL": "#aace60",
+    "Vim Script": "#199f4b",
+    "Emacs Lisp": "#c065db",
+    "PowerShell": "#012456",
+    "Objective-C": "#438eff",
+    "Assembly": "#6E4C13",
+    "Groovy": "#4298b8",
+    "Terraform": "#5c4ee5",
+    "HCL": "#844FBA",
+    "YAML": "#cb171e",
+    "TOML": "#9c4221",
+    "Jsonnet": "#0064ce",
+    "Solidity": "#AA6746",
+    "Other": "#8b949e",
+    "Move": "#4a137a",
+    "V": "#4f87c4",
+    "Nim": "#ffc200",
+    "Crystal": "#000100",
+    "D": "#ba595e",
 }
-LANG_COLOR_FALLBACKS = ["#6bf1b6", "#f1e05a", "#3178c6", "#dea584", "#00ADD8"]
+LANG_COLOR_FALLBACKS = ["#c084fc", "#f1e05a", "#3178c6", "#dea584", "#00ADD8"]
 
 
 def lang_color(name, index):
@@ -308,7 +369,7 @@ def render_language_bars(languages):
     max_bar_width = 200
     bar_x = 434
     text_x = 644
-    y_start = 108
+    y_start = 140
     line_height = 22
 
     for i, (name, pct) in enumerate(languages):
@@ -319,7 +380,7 @@ def render_language_bars(languages):
             f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="12" rx="2" fill="{color}" opacity="0.85"/>'
         )
         lines.append(
-            f'  <text x="{text_x}" y="{y + 2}" font-family="\'Courier New\', Courier, monospace" font-size="12" fill="{color}">{name} {pct}%</text>'
+            f'  <text x="{text_x}" y="{y + 2}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="12" fill="{color}" font-weight="bold">{name} {pct}%</text>'
         )
 
     return "\n".join(lines)
@@ -402,14 +463,14 @@ EMOTION_COLORS = [
 def render_ascii_hero():
     """Generate SVG elements for the ASCII heart hero with animated colors."""
     lines = []
-    char_width = 9.6  # Courier New approximate character width at 16px
-    font_size = 16
-    line_height = 18
+    char_width = 16  # TX-02 approximate character width at 26px
+    font_size = 26
+    line_height = 30
     # Center the heart horizontally in the 840px card
     max_line_len = max(len(row) for row in HEART_ASCII)
     total_width = max_line_len * char_width
     x_offset = (840 - total_width) / 2
-    y_start = 280  # Below the info panes, within card bounds
+    y_start = 385  # Below the info panes + projects/stats panels
 
     num_colors = len(EMOTION_COLORS)
     num_bands = 8  # Number of diagonal color bands across the heart
@@ -440,7 +501,7 @@ def render_ascii_hero():
 
                 lines.append(
                     f'  <text x="{x:.1f}" y="{y}" '
-                    f'font-family="\'Courier New\', Courier, monospace" font-size="{font_size}" '
+                    f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="{font_size}" '
                     f'fill="{base_color}" opacity="0.85">'
                     f'{run_text}'
                     f'<animate attributeName="fill" '
@@ -478,23 +539,122 @@ def get_username():
     return result.stdout.strip()
 
 
+def fetch_top_repos(repos_data, limit=3):
+    """Get top recently-pushed repos with descriptions."""
+    nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
+    result = []
+    for repo in nodes:
+        if repo.get("isPrivate"):
+            continue
+        name = repo.get("name", "")
+        if name.lower() == "revelri":
+            continue
+        result.append(name)
+        if len(result) >= limit:
+            break
+    return result
+
+
+def render_projects_panel(repos, config):
+    """Generate SVG for the PROJECTS panel."""
+    featured = config.get("featured_repos", [])
+    if featured:
+        items = [(r["name"], r.get("description", "")) for r in featured[:3]]
+    else:
+        items = [(name, "") for name in repos[:3]]
+
+    lines = []
+    y_start = 270
+    for i, (name, desc) in enumerate(items):
+        y = y_start + i * 20
+        label = f"› {name}" if not desc else f"› {name} — {desc}"
+        label = label[:48]
+        lines.append(
+            f'  <text x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+            f'font-size="12" fill="#c084fc" font-weight="bold">{label}</text>'
+        )
+    return "\n".join(lines)
+
+
+def render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_ago):
+    """Generate SVG for the STATS panel."""
+    stats = [
+        ("streak: ", f"{current_streak}d (best {longest_streak}d)"),
+        ("avg: ", f"{avg_per_day}/day"),
+        ("last: ", f"{last_commit_ago}"),
+    ]
+    lines = []
+    y_start = 270
+    for i, (label, value) in enumerate(stats):
+        y = y_start + i * 20
+        lines.append(
+            f'  <text x="815" y="{y}" text-anchor="end" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+            f'font-size="12" font-weight="bold">'
+            f'<tspan fill="#7c3aed">{label}</tspan>'
+            f'<tspan fill="#c084fc">{value}</tspan>'
+            f'</text>'
+        )
+    return "\n".join(lines)
+
+
 def main():
+    parser = argparse.ArgumentParser(description="Generate GitHub profile SVG cards")
+    parser.add_argument("--mock", action="store_true", help="Use cached mock data instead of API")
+    parser.add_argument("--dump-data", action="store_true", help="Save API responses to mock_data.json")
+    args = parser.parse_args()
+
     config = load_config()
-    username = get_username()
-    print(f"Generating cards for {username}...")
 
-    # Fetch all data
-    print("Fetching contributions...")
-    contrib_data = fetch_contributions()
-    if not contrib_data:
-        print("Failed to fetch contributions", file=sys.stderr)
-        sys.exit(1)
+    if args.mock:
+        if not MOCK_DATA_PATH.exists():
+            print("No mock data found. Run with --dump-data first.", file=sys.stderr)
+            sys.exit(1)
+        print("Using mock data...")
+        mock = json.loads(MOCK_DATA_PATH.read_text())
+        contrib_data = mock["contributions"]
+        repos_data = mock["repos"]
+        username = mock["username"]
+        additions = mock.get("additions", 0)
+        deletions = mock.get("deletions", 0)
+    else:
+        # Validate environment
+        auth_check = subprocess.run(["gh", "auth", "status"], capture_output=True, text=True)
+        if auth_check.returncode != 0:
+            print("gh is not authenticated. Run 'gh auth login' or set GH_TOKEN.", file=sys.stderr)
+            sys.exit(1)
 
-    print("Fetching repos...")
-    repos_data = fetch_repos()
-    if not repos_data:
-        print("Failed to fetch repos", file=sys.stderr)
-        sys.exit(1)
+        username = get_username()
+        print(f"Generating cards for {username}...")
+
+        print("Fetching contributions...")
+        contrib_data = fetch_contributions()
+        if not contrib_data:
+            print("Failed to fetch contributions", file=sys.stderr)
+            sys.exit(1)
+
+        print("Fetching repos...")
+        repos_data = fetch_repos()
+        if not repos_data:
+            print("Failed to fetch repos", file=sys.stderr)
+            sys.exit(1)
+
+        print("Fetching lines changed...")
+        try:
+            additions, deletions = fetch_lines_changed(repos_data, username)
+        except Exception as e:
+            print(f"Warning: couldn't fetch lines changed: {e}", file=sys.stderr)
+            additions, deletions = 0, 0
+
+        if args.dump_data:
+            mock = {
+                "contributions": contrib_data,
+                "repos": repos_data,
+                "username": username,
+                "additions": additions,
+                "deletions": deletions,
+            }
+            MOCK_DATA_PATH.write_text(json.dumps(mock, indent=2))
+            print(f"Mock data saved to {MOCK_DATA_PATH}")
 
     # Extract contribution stats
     viewer = contrib_data["data"]["viewer"]
@@ -503,27 +663,19 @@ def main():
     calendar = yearly["contributionCalendar"]
 
     weekly_commits = weekly["totalCommitContributions"] + weekly["restrictedContributionsCount"]
-    weekly_prs = weekly["totalPullRequestContributions"]
-    weekly_issues = weekly["totalIssueContributions"]
     total_contributions = calendar["totalContributions"]
 
-    # Calculate derived stats
     current_streak, longest_streak = calc_streak(calendar)
     avg_per_day = round(weekly_commits / 7, 1)
     last_commit_ago = calc_last_commit_ago(repos_data)
     languages = aggregate_languages(repos_data)
+    top_repos = fetch_top_repos(repos_data)
 
+    lines_added = f"+{additions:,}" if additions else "+--"
+    lines_deleted = f"-{deletions:,}" if deletions else "---"
 
-    # Fetch lines changed (slower due to per-commit API calls)
-    print("Fetching lines changed...")
-    try:
-        additions, deletions = fetch_lines_changed(repos_data, username)
-        lines_added = f"+{additions:,}"
-        lines_deleted = f"-{deletions:,}"
-    except Exception as e:
-        print(f"Warning: couldn't fetch lines changed: {e}", file=sys.stderr)
-        lines_added = "+--"
-        lines_deleted = "---"
+    # Build language summary for accessibility
+    lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
     # Render unified card
     print("Rendering card.svg...")
@@ -535,9 +687,12 @@ def main():
         lines_added=lines_added,
         lines_deleted=lines_deleted,
         language_bars=render_language_bars(languages),
+        projects_panel=render_projects_panel(top_repos, config),
+        stats_panel=render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_ago),
         ascii_hero=render_ascii_hero(),
         total_contributions=str(total_contributions),
         current_year=str(datetime.now(timezone.utc).year),
+        language_summary=lang_summary,
     )
     (ROOT / "card.svg").write_text(card)
 
