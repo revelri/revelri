@@ -428,7 +428,7 @@
   <text x="815" y="252" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
     <text x="815" y="270" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">2d (best 6d)</tspan></text>
   <text x="815" y="290" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">2.3/day</tspan></text>
-  <text x="815" y="310" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">01h 47m ago</tspan></text>
+  <text x="815" y="310" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">01h 14m ago</tspan></text>
 
   <!-- Divider -->
   <line x1="30" y1="335" x2="810" y2="335" stroke="#6a6bf6" stroke-width="0.5" opacity="0.3"/>
