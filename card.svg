@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="1713" viewBox="0 0 840 1713" role="img">
   <title>GitHub profile card for sl revoy // revelri</title>
-  <desc>39 commits this week. Top languages: TypeScript 30%, Rust 29%, JavaScript 21%. 530 contributions in 2026.</desc>
+  <desc>3 commits this week. Top languages: JavaScript 58%, Python 26%, Rust 12%. 467 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -24,56 +24,28 @@
       font-weight: normal;
       font-style: normal;
     }
-    @keyframes blob0 {
-  0%, 100% { fill: #87a99e; }
-  40% { fill: #ad9387; }
-  70% { fill: #9ba591; }
-}
-@keyframes bpulse0 {
-  0%, 100% { opacity: 0.7; }
+    @keyframes hpulse {
+  0%, 100% { opacity: 0.75; }
   50% { opacity: 1; }
 }
-.b0 { fill: #87a99e; animation: blob0 14s ease-in-out infinite 0s, bpulse0 8s ease-in-out infinite -0.0s; }
-@keyframes blob1 {
-  0%, 100% { fill: #ad9387; }
-  40% { fill: #919baf; }
-  70% { fill: #87a99e; }
-}
-@keyframes bpulse1 {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-.b1 { fill: #ad9387; animation: blob1 16s ease-in-out infinite -3s, bpulse1 8s ease-in-out infinite -1.6s; }
-@keyframes blob2 {
-  0%, 100% { fill: #919baf; }
-  40% { fill: #a5a091; }
-  70% { fill: #ad9387; }
-}
-@keyframes bpulse2 {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-.b2 { fill: #919baf; animation: blob2 18s ease-in-out infinite -6s, bpulse2 8s ease-in-out infinite -3.2s; }
-@keyframes blob3 {
-  0%, 100% { fill: #a5a091; }
-  40% { fill: #9ba591; }
-  70% { fill: #919baf; }
-}
-@keyframes bpulse3 {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-.b3 { fill: #a5a091; animation: blob3 20s ease-in-out infinite -9s, bpulse3 8s ease-in-out infinite -4.8s; }
-@keyframes blob4 {
-  0%, 100% { fill: #9ba591; }
-  40% { fill: #87a99e; }
-  70% { fill: #a5a091; }
-}
-@keyframes bpulse4 {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-.b4 { fill: #9ba591; animation: blob4 22s ease-in-out infinite -12s, bpulse4 8s ease-in-out infinite -6.4s; }
+.c87a59b { fill: #87a59b; animation: hpulse 8s ease-in-out infinite; }
+.c87a5a5 { fill: #87a5a5; animation: hpulse 8s ease-in-out infinite; }
+.c919b9b { fill: #919b9b; animation: hpulse 8s ease-in-out infinite; }
+.c919ba5 { fill: #919ba5; animation: hpulse 8s ease-in-out infinite; }
+.c919baf { fill: #919baf; animation: hpulse 8s ease-in-out infinite; }
+.c91a59b { fill: #91a59b; animation: hpulse 8s ease-in-out infinite; }
+.c91a5a5 { fill: #91a5a5; animation: hpulse 8s ease-in-out infinite; }
+.c9b9b91 { fill: #9b9b91; animation: hpulse 8s ease-in-out infinite; }
+.c9b9b9b { fill: #9b9b9b; animation: hpulse 8s ease-in-out infinite; }
+.c9b9ba5 { fill: #9b9ba5; animation: hpulse 8s ease-in-out infinite; }
+.c9ba591 { fill: #9ba591; animation: hpulse 8s ease-in-out infinite; }
+.c9ba59b { fill: #9ba59b; animation: hpulse 8s ease-in-out infinite; }
+.ca59187 { fill: #a59187; animation: hpulse 8s ease-in-out infinite; }
+.ca59191 { fill: #a59191; animation: hpulse 8s ease-in-out infinite; }
+.ca59b91 { fill: #a59b91; animation: hpulse 8s ease-in-out infinite; }
+.ca59b9b { fill: #a59b9b; animation: hpulse 8s ease-in-out infinite; }
+.ca5a591 { fill: #a5a591; animation: hpulse 8s ease-in-out infinite; }
+.caf9187 { fill: #af9187; animation: hpulse 8s ease-in-out infinite; }
   </style>
 
   <!-- Background -->
@@ -89,7 +61,7 @@
       <rect x="40" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="34" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="48" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="40" y="62" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="40" y="62" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="104" width="11" height="11" rx="2" fill="#333333"/>
@@ -156,7 +128,7 @@
   <rect x="166" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="166" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="166" y="104" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="180" y="20" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="180" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="180" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="180" y="48" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="180" y="62" width="11" height="11" rx="2" fill="#333333"/>
@@ -166,7 +138,7 @@
   <rect x="194" y="20" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="48" width="11" height="11" rx="2" fill="#4c2882"/>
-  <rect x="194" y="62" width="11" height="11" rx="2" fill="#4c2882"/>
+  <rect x="194" y="62" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="76" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="194" y="104" width="11" height="11" rx="2" fill="#4c2882"/>
@@ -174,14 +146,14 @@
   <rect x="208" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="208" y="48" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="62" width="11" height="11" rx="2" fill="#333333"/>
-  <rect x="208" y="76" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="208" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="104" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="222" y="20" width="11" height="11" rx="2" fill="#333333"/>
-  <rect x="222" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="222" y="48" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="222" y="62" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="222" y="76" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="222" y="34" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="48" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="62" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="104" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="236" y="20" width="11" height="11" rx="2" fill="#333333"/>
@@ -454,330 +426,865 @@
   <!-- THIS WEEK panel (left) -->
   <rect x="16" y="88" width="390" height="145" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="211" y="110" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">THIS WEEK</text>
-  <text x="211" y="150" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold" filter="url(#glow)">39 commits</text>
-  <text x="211" y="183" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold">+261,552 / -12,730</text>
+  <text x="211" y="150" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold" filter="url(#glow)">3 commits</text>
+  <text x="211" y="183" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold">+30 / -36</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="88" width="390" height="145" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="620" y="114" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">LANGUAGES</text>
-    <rect x="434" y="132" width="60" height="12" rx="2" fill="#3178c6" opacity="0.85"/>
-  <text x="644" y="142" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#3178c6" font-weight="bold">TypeScript 30%</text>
-  <rect x="434" y="154" width="58" height="12" rx="2" fill="#dea584" opacity="0.85"/>
-  <text x="644" y="164" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#dea584" font-weight="bold">Rust 29%</text>
-  <rect x="434" y="176" width="42" height="12" rx="2" fill="#f1e05a" opacity="0.85"/>
-  <text x="644" y="186" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#f1e05a" font-weight="bold">JavaScript 21%</text>
-  <rect x="434" y="198" width="40" height="12" rx="2" fill="#8b949e" opacity="0.85"/>
-  <text x="644" y="208" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#8b949e" font-weight="bold">Other 20%</text>
+    <rect x="434" y="132" width="116" height="12" rx="2" fill="#f1e05a" opacity="0.85"/>
+  <text x="644" y="142" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#f1e05a" font-weight="bold">JavaScript 58%</text>
+  <rect x="434" y="154" width="52" height="12" rx="2" fill="#3572A5" opacity="0.85"/>
+  <text x="644" y="164" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#3572A5" font-weight="bold">Python 26%</text>
+  <rect x="434" y="176" width="24" height="12" rx="2" fill="#dea584" opacity="0.85"/>
+  <text x="644" y="186" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#dea584" font-weight="bold">Rust 12%</text>
+  <rect x="434" y="198" width="8" height="12" rx="2" fill="#8b949e" opacity="0.85"/>
+  <text x="644" y="208" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#8b949e" font-weight="bold">Other 4%</text>
 
   <!-- PROJECTS panel (left) -->
   <text x="16" y="252" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">PROJECTS</text>
-    <text x="16" y="270" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#c084fc" font-weight="bold">› emotion-hero</text>
-  <text x="16" y="290" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#c084fc" font-weight="bold">› tf2-rs</text>
-  <text x="16" y="310" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#c084fc" font-weight="bold">› oh-my-openagent</text>
+    <text x="16" y="270" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" fill="#c084fc" font-weight="bold">› StriVo</text>
 
   <!-- STATS panel (right) -->
   <text x="815" y="252" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
-    <text x="815" y="270" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">4d (best 6d)</tspan></text>
-  <text x="815" y="290" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">5.6/day</tspan></text>
-  <text x="815" y="310" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">00m ago</tspan></text>
+    <text x="815" y="270" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">0d (best 6d)</tspan></text>
+  <text x="815" y="290" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">0.4/day</tspan></text>
+  <text x="815" y="310" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">3d 03h 38m ago</tspan></text>
 
   <!-- Divider -->
   <line x1="30" y1="335" x2="810" y2="335" stroke="#6a6bf6" stroke-width="0.5" opacity="0.3"/>
 
   <!-- ASCII Hero -->
   <g filter="url(#hero_glow)">
-      <text x="273.0" y="355.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%</text>
-  <text x="411.0" y="355.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</text>
-  <text x="279.0" y="366.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#********************</text>
-  <text x="411.0" y="366.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*********##*****************************#%%</text>
-  <text x="285.0" y="378.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#************@@@@***</text>
-  <text x="411.0" y="378.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*******#@@@@**********@@@@#************#%</text>
-  <text x="291.0" y="389.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@%********@@@@%#*</text>
-  <text x="411.0" y="389.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******#%@@@@%#******#@@@@@#********@@@@%</text>
-  <text x="297.0" y="401.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@#***#@@@@@@@@</text>
-  <text x="411.0" y="401.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****@@@@@@@@@*****@@@@%@@@%****@@@@@@%</text>
-  <text x="303.0" y="412.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#@@@@#**@@@@@@@@@</text>
-  <text x="411.0" y="412.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#@@@@@@@@**#**#@@@%@@@@***@@@@#@%</text>
-  <text x="309.0" y="424.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@%**##*#%@%#@@@</text>
-  <text x="411.0" y="424.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@###%@@@@@@@@@#**@@#*%#**#@@%%</text>
-  <text x="315.0" y="435.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@@#@@@@##</text>
-  <text x="417.0" y="435.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%##@@@@@@#######@@@@##@@@@@@@#%</text>
-  <text x="321.0" y="447.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@%%%%%%@@@@@@@@</text>
-  <text x="417.0" y="447.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@###@@%</text>
-  <text x="327.0" y="458.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@%%#*****</text>
-  <text x="417.0" y="458.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***********************##%@@@@@%                    %%</text>
-  <text x="333.0" y="470.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#********####</text>
-  <text x="417.0" y="470.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">####################*********#%                  %%*#*%%</text>
-  <text x="339.0" y="481.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%###%%%%%    </text>
-  <text x="417.0" y="481.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">              %%%% %%%%%%###%%                 %%+--#+-=%%</text>
-  <text x="339.0" y="493.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%  %%%%%    </text>
-  <text x="417.0" y="493.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">        %%    %% % %%%%%% % %                 %=---=#-#+-+%</text>
-  <text x="339.0" y="504.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%  </text>
-  <text x="417.0" y="504.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%%%%%%%%%%% % %%%%%%%%@%%                %----=%=--##%</text>
-  <text x="339.0" y="516.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%% %% </text>
-  <text x="417.0" y="516.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%%%%%%% %%%%% %%%%%%%%%%                %----+==#=-+%</text>
-  <text x="315.0" y="527.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%% </text>
-  <text x="417.0" y="527.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%%%%%%%%%%%%%% %%%%%%%% %%               %----*#--=#*%</text>
-  <text x="315.0" y="539.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%  %%%%%%%%%%%%%  </text>
-  <text x="423.0" y="539.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%%%%%%%%%%% %%%%%%%% %%               %----+=+#--+%</text>
-  <text x="315.0" y="550.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%% %%%%%%%%  </text>
-  <text x="423.0" y="550.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%%%%%%   %%%% %%%%%% % %%               %----=%--+*+%</text>
-  <text x="345.0" y="562.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%    %%%%   </text>
-  <text x="423.0" y="562.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%       %% %%%%%%%% %%%%               %----=#=%--*%</text>
-  <text x="339.0" y="573.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%      %%   </text>
-  <text x="423.0" y="573.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%         %% %%%%%%%% %%%%               %-----%=-+#+%</text>
-  <text x="303.0" y="585.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%      %% %%</text>
-  <text x="423.0" y="585.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%   %%        %% %%%%%%%% %%%%               %-----#=#=-+%</text>
-  <text x="303.0" y="596.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%  %%% %%  %%% %%%%%</text>
-  <text x="423.0" y="596.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%  %%%%    % %%%%%%%% %%%%               %-----#+-=#*%</text>
-  <text x="303.0" y="608.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%    %%%%</text>
-  <text x="423.0" y="608.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%     %%   %%%%%% % %%%%%%               %-----#-#=-+%</text>
-  <text x="351.0" y="619.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%% </text>
-  <text x="423.0" y="619.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%%%%  % %%%% % %%%% % %%  %%%         %----=%=--#*%</text>
-  <text x="333.0" y="631.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%     %%%%%</text>
-  <text x="423.0" y="631.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%      % %%%% % %%%% % %%%%%%%% %%       %----+==%=-+%</text>
-  <text x="303.0" y="642.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%     %%% %</text>
-  <text x="429.0" y="642.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%      %% %%%%% %% %%%%%%%%%%%%%%% %%      %----##=-=#+%</text>
-  <text x="291.0" y="654.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%    %%%%%%%%%@       </text>
-  <text x="429.0" y="654.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %% %%%%%%%%% %%%%%%%%%%%%%%%% %%%%      %----#-=#=-+%</text>
-  <text x="291.0" y="665.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%  %%% %%%% % %%%%%%</text>
-  <text x="429.0" y="665.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%% %% %%% %%%% %%%%%%%%      %----##=-=#+%</text>
-  <text x="273.0" y="677.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@% %%%% %%%%% %%%%%%%</text>
-  <text x="417.0" y="677.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#%%</text>
-  <text x="441.0" y="677.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%% %%%%% %%  %% %%%%%%%%%##%%     %----#-=#=-+%</text>
-  <text x="249.0" y="688.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@%%%%%%% %% %%%%%%%</text>
-  <text x="411.0" y="688.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@#*#%</text>
-  <text x="447.0" y="688.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%% %%%%%%%%%%  %@%%%@#******#%%% %----=%+-=#+%</text>
-  <text x="231.0" y="700.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@@@@@@%%  %%%%%%%%%@@</text>
-  <text x="405.0" y="700.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@#% </text>
-  <text x="459.0" y="700.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%  %%% %#*#%%  %%%%%%@%**********#%%-----#-#+-+%</text>
-  <text x="207.0" y="711.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
-  <text x="393.0" y="711.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%@@@@@@@@%%</text>
-  <text x="465.0" y="711.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%       %%#%@@@@@@@@@#*@%***+---******#-----##--##%</text>
-  <text x="189.0" y="723.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% % @@@@@@@@@@@@@@%@@@@@@@@@@@</text>
-  <text x="387.0" y="723.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#@#@@@@@@@@@#</text>
-  <text x="477.0" y="723.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#%%%##%@@@@@@@@@@@*#@%*=--=---+****@@-----#=+*-+%</text>
-  <text x="171.0" y="734.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%    %%    @@@@@@@@@@@**@@@@@@@@@</text>
-  <text x="381.0" y="734.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@***@@@@@@@@@</text>
-  <text x="483.0" y="734.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*%@@@@@@@@@%**@@*@%*=------+****@%%-----##--+#%</text>
-  <text x="153.0" y="746.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%      %%%%      @@@@@@@@@@%%@@@@%</text>
-  <text x="369.0" y="746.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">##@@@@@#**#@#@@@@@@@@</text>
-  <text x="495.0" y="746.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@%@***@@@@***+=-----=*#@#*%-----#-=#-+%</text>
-  <text x="135.0" y="757.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%         %%%%%    %% @@@@@@@@@@%*%@</text>
-  <text x="363.0" y="757.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@##@@@@@#@***@@@@@@@@</text>
-  <text x="507.0" y="757.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@***%@#%@@@@****+--*--=*#@#*@@----=##=-=%%</text>
-  <text x="117.0" y="769.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@%  %%       %      %%   @@@@@@@@*@</text>
-  <text x="351.0" y="769.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@*@@@#@@#**@%*@@@@@*</text>
-  <text x="513.0" y="769.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@**#@@@**%@************%@**@@@----=*--#=+%</text>
-  <text x="105.0" y="780.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%@@@%  %%%             %%%    @@@@@@*</text>
-  <text x="345.0" y="780.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@*@@@@@#@@@**#@@@%**#@***#@</text>
-  <text x="525.0" y="780.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@#***#@************#@#*@@@@----=#*+--%%</text>
-  <text x="87.0" y="792.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#*% %@@@% %%%%       @@@@ %%%%      @@@@</text>
-  <text x="339.0" y="792.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@****#@@@@@#@@@@***#%@%*#@**#@@#</text>
-  <text x="531.0" y="792.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***#@@@%***********#@#*@@@@@-----#--*++%</text>
-  <text x="75.0" y="803.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#***% %@@@% %%%%%     @@**%@ %%         </text>
-  <text x="327.0" y="803.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@#@@@@@@#***#@@@@@%***#@</text>
-  <text x="543.0" y="803.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%*%@**==++-=****@%*@@@@@@-----+%*--#%</text>
-  <text x="57.0" y="815.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#******% %@@@%   %  @@@@@%#@@#%@@@@@     %</text>
-  <text x="321.0" y="815.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  @@@@@@@%#@@@#%@@@@*%@@#***#***#@@%***</text>
-  <text x="555.0" y="815.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@#+=+=--=*-**@%*%@@@@@@-----=+-*++%</text>
-  <text x="45.0" y="826.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#********# %@@@%     @@#*%@@@@@@@@%*#@@   %</text>
-  <text x="315.0" y="826.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%    @@@@%*@@@@#@@@@@#***@@%**#%@@****#@@</text>
-  <text x="561.0" y="826.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*=*=----+==#@*#@@@@@@@-----+%+--#%</text>
-  <text x="39.0" y="838.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#**+--=****% %@@@%       @@*@@@@@@@@#@@    </text>
-  <text x="303.0" y="838.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%   @@@@@****#*@@@@@@@%***#@@@#***#@@%#@**</text>
-  <text x="573.0" y="838.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=++---=*-*@#*@@@@@@@@-----#=-#=+%</text>
-  <text x="39.0" y="849.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****--+****% %@@@%  %%    @@#@@@@@@#@@    </text>
-  <text x="297.0" y="849.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%%  @#@@@@@@@@*@@@@@@##@@*******%@%***%@***</text>
-  <text x="579.0" y="849.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*-=*+-=*@@*%@@@@@@@@-----##+--#%</text>
-  <text x="39.0" y="861.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***------+**# %@@@%  %%%  @@@@@@@@@@@@@@  </text>
-  <text x="291.0" y="861.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%   @#*@@%**@@*@@@@@@@**#%@%*#@@#***#@@#*****</text>
-  <text x="591.0" y="861.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******@*#@@@@@@@@@----==--#++%</text>
-  <text x="39.0" y="872.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***+==-=+***# %@@@% %%%%@@@@%@@@%@@%@@@@</text>
-  <text x="279.0" y="872.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@         @#**@@@@@##*%#@@@@@#***#@%***#@@%@@********</text>
-  <text x="603.0" y="872.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***%@*@@@@%***#######****####%%</text>
-  <text x="39.0" y="884.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****+=*****# %@@@% %%@@@@@@@@@@@@@%@@@</text>
-  <text x="273.0" y="884.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@       @#**#@@@@#@@@@@@@@#%@@#****%@@***@#****++***</text>
-  <text x="609.0" y="884.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@#*@@@@%#****#####%%%##****%#*</text>
-  <text x="39.0" y="895.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">************% %@@@%  @@@@@@@@@@@@@@%@@</text>
-  <text x="267.0" y="895.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@      @#***%@@@%@@@@@@@@%***%@@@@#***%@@****----+**%</text>
-  <text x="621.0" y="895.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*#@@@@@@@@@@@@@@@@@@@@#***##*</text>
-  <text x="39.0" y="907.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">************% %@@@% @@@@@%##@@@@%@@%</text>
-  <text x="255.0" y="907.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@%%%#@@@@     @#***#@@%#@@@@@@@@@@#*******#@@#%@**++=--=***@%</text>
-  <text x="627.0" y="907.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@@@@@@@@@@+-----*+=#%%%%%#**</text>
-  <text x="39.0" y="918.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****+--=****# %@@@% @@@@#*###%@@@@@</text>
-  <text x="249.0" y="918.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@##*#@@@%    @#****@@@*@@%*#@@@@*#@@***@@#***@%*=--------*@##@</text>
-  <text x="639.0" y="918.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@=----=#++%+--##****</text>
-  <text x="39.0" y="930.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****+--+****% %@@@%@@@@@@@@##@@@#</text>
-  <text x="237.0" y="930.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@%#@@@@@@@@%    @#****%@@##@#**#@@@****#@@#***#@@#**-------=*@#%@@</text>
-  <text x="645.0" y="930.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@--=###%%#---#%*****</text>
-  <text x="39.0" y="941.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
-  <text x="51.0" y="941.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*------+**% %@@@%@@@@%@@@@@@@@</text>
-  <text x="231.0" y="941.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@#@@@@%%   @#****#@@@%***#@@@@@@*#%%###%@%%@*****=-+***#@*@@@@@</text>
-  <text x="657.0" y="941.5" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@---*##*-+%#=-=#****</text>
-  <text x="39.0" y="953.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***++=-++#%#%%</text>
-  <text x="123.0" y="953.0" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@% @@@@@@%%@@@</text>
-  <text x="225.0" y="953.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@%%@@@@@@@%%   @#*****@@@@@@@@@@@@*#@=----##**@@***********@@*@@@@@@@</text>
-  <text x="669.0" y="953.0" class="b1" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@---###--*</text>
-  <text x="741.0" y="953.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---=#*****</text>
-  <text x="39.0" y="964.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****+=*%**#%#@@@@% @@@@@@@</text>
-  <text x="201.0" y="964.5" class="b0" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
-  <text x="213.0" y="964.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@@@@%% %=--+#****@@@@%***@@@@###+=##-##%@@#***********@@*@@@@@@@@</text>
-  <text x="675.0" y="964.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@=--#*#%###+=-##****</text>
-  <text x="39.0" y="976.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">********%***#%@@@@%  @@@@@@@**</text>
-  <text x="219.0" y="976.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#**@@**@%#@@@@ %%*-=+-+#**#@@@@@**#@@@#---#%##%#=-=@****##@@@@@@@@@@@@@@@</text>
-  <text x="663.0" y="976.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@%--+###=+%==+%*****</text>
-  <text x="39.0" y="987.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*********#%%%%#%@@%   @@@*#@#*@</text>
-  <text x="225.0" y="987.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*#@#*@@**@@#@=--=%%%%#=--*@@@@@@@@@@@--+%%#**#%%=-*#*#@@*#@##@*@#%@*@@@</text>
-  <text x="657.0" y="987.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@%--###=-#=-+#*****</text>
-  <text x="39.0" y="999.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#+-=#-=#*#--#@@@@@@@@@*@%#@</text>
-  <text x="231.0" y="999.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@%#@#*@@#*#*-=%%#**#%%+--@@@@@@@@@@@#--=#%%%%=---@#@@#*@@*#@#*%@*#@#*</text>
-  <text x="651.0" y="999.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@%#%%%%%##*******</text>
-  <text x="39.0" y="1010.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#+==%+=###+--%@@@@@@@@@@@@@@</text>
-  <text x="237.0" y="1010.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@%#***#@=-=#%##%#---#@@@#**@@@@@***#+-+=-#%% @@@@#%@**@@**#@#*@@</text>
-  <text x="645.0" y="1010.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@  %@@@@%#***%********</text>
-  <text x="39.0" y="1022.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****##-=+###%###--=@@@@@@@@@@*@@**</text>
-  <text x="243.0" y="1022.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*********#@@@*#-##=+###@@@@#**%@@@@****#+--+%%%%@@@@@@@@@@@@@@@@@@</text>
-  <text x="639.0" y="1022.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@ %@@@@#%#**%*=+*****</text>
-  <text x="39.0" y="1033.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#=---*-=###---@@@@@@@@@@*@@***</text>
-  <text x="249.0" y="1033.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">********@@**##----=@#*@@@@@@@@@@@@*****#@   %%@@@@@@@%%@@@@@@@@@</text>
-  <text x="633.0" y="1033.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@ %@@@%%%#%#++-=++***</text>
-  <text x="39.0" y="1045.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#=-=#%=-*###---@@@@@@@@@@*@#***+</text>
-  <text x="255.0" y="1045.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-=*****@%#@%#%%%%#*@@@@@@#***%@@@#****#@   %%@@@@#@@@@@@@@@@@@</text>
-  <text x="627.0" y="1045.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@#@@@@%@@@% %**+------***</text>
-  <text x="39.0" y="1056.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****##---#%%#%#=--@@@@@@@@@%#@*=---</text>
-  <text x="255.0" y="1056.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">----**#@@#****@@#****@@@#**#@*#@@%****#@    %@@@@@@@@##@@%*@</text>
-  <text x="615.0" y="1056.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@##@@@@@@@@%@@@% %****+--+****</text>
-  <text x="39.0" y="1068.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****##--+%++#=----=@@@@@@@@@*#@*=----</text>
-  <text x="261.0" y="1068.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---=*%@***#@@#*#@@%*@@@@#*%@@*@@@****#@    %@@@####%@@@@@@</text>
-  <text x="609.0" y="1068.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@%#####@@@@ %@@@% %****=--+****</text>
-  <text x="39.0" y="1079.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#%%%%%#=+*-----+@@@@@@@@@@*%@***=--=</text>
-  <text x="267.0" y="1079.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">++**@%#@@#*******#@@@@@@@@@@#%@@#***#@      @@@#%%%@@%@@</text>
-  <text x="603.0" y="1079.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@%#%@@@@@ %@@@% %************</text>
-  <text x="39.0" y="1091.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*##***#@@@@@@@@@@@@@@@@@@@@#*@%**+----*</text>
-  <text x="273.0" y="1091.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***@@%***#@@@@@***%@@@@@@@@%%@@@***#@      @@@@@@@@@%@</text>
-  <text x="597.0" y="1091.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@  %@@@% %************</text>
-  <text x="39.0" y="1102.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#%****##%%%#####****#%@@@@##@*****++***</text>
-  <text x="279.0" y="1102.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@#**@@%****#@@%#@@@@@@@@#@@@@#**#@       @@@@@@@@%</text>
-  <text x="591.0" y="1102.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@%% %@@@% %*****++*****</text>
-  <text x="51.0" y="1114.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%###***########***%@@@@*@%***********</text>
-  <text x="285.0" y="1114.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#@@#***#@#***#@@@@@#%*##@@@@@**#@         @@@@@@</text>
-  <text x="585.0" y="1114.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@%@@@%@@@@%%%% %@@@% %***+=-==+***</text>
-  <text x="69.0" y="1125.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%++#--=+----@@@@@@@@@**@***********#@</text>
-  <text x="291.0" y="1125.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***#@@#*%@%#**@@@@@@@*@@**%@@*#@   %%%     @@@</text>
-  <text x="579.0" y="1125.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@  %%%  %@@@% %***------***</text>
-  <text x="69.0" y="1137.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--+#%-----@@@@@@@@%*@@*=-++=-****%@*</text>
-  <text x="297.0" y="1137.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**%@%******#@@##@@@@@@*@@@@@@@@#@  %%%%%     </text>
-  <text x="567.0" y="1137.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@*@@@@@@#@@    %%  %@@@% %****+--+****</text>
-  <text x="69.0" y="1148.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+=#-=#-----@@@@@@@@*#@*-*=---++=*#@#%@</text>
-  <text x="303.0" y="1148.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***#@@@#***%@@@@@@@*#****@@@@@   %%%%    </text>
-  <text x="561.0" y="1148.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#@@@@@@@@*@@       %@@@% %****+--+**#%</text>
-  <text x="69.0" y="1160.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--+%+-----@@@@@@@#*@#==+----=*=*@@@#**</text>
-  <text x="309.0" y="1160.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@@#**%@@***#@@@@@#@@@@*%@@@@    %%   @</text>
-  <text x="555.0" y="1160.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#*%@@@@@@@@%*#@@     %@@@% %********#%%</text>
-  <text x="69.0" y="1171.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%++*-+=-----@@@@@@%*@@**-++--=*==#@****%@</text>
-  <text x="315.0" y="1171.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***#***#@@%*@@@@@#@@@#%@@@@@@@  %    </text>
-  <text x="549.0" y="1171.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> @@@@@%#@@#%@@@@   %   %@@@% %******#%</text>
-  <text x="69.0" y="1183.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--*%+-----@@@@@@*#@****=-++==**@%*%@@#**</text>
-  <text x="321.0" y="1183.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@@@@@#***#@@@@@@#@@@@@@@@@@@@@     </text>
-  <text x="543.0" y="1183.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %% @%**@@     %%%%% %@@@% %***#%%</text>
-  <text x="69.0" y="1194.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%++#--#-----@@@@@*#@#***********%@@@#***#@@</text>
-  <text x="327.0" y="1194.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#**@#*#@%#***@@@@#@@@@@#***#@@@@@  </text>
-  <text x="537.0" y="1194.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %%%% @@@@       %%%% %@@@% %*#%%</text>
-  <text x="69.0" y="1206.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%--+*#=----@@@@*#@#************@#****@@#@#*</text>
-  <text x="333.0" y="1206.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@#**%@@@#**@@@*@@@@@*@@@%*@@@@@</text>
-  <text x="531.0" y="1206.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@    %%%             %%%  %@@@% %%</text>
-  <text x="69.0" y="1217.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+=#--#=----@@@**@%************@%**@@@#**@#*@</text>
-  <text x="339.0" y="1217.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@*%@**#@@#@@@#@@@@@@@@@*@@@@</text>
-  <text x="525.0" y="1217.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@   %%      %%      %%  %@@@%%</text>
-  <text x="69.0" y="1229.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#=-=##=----@@*#@#*=-=*--+****@@@@@#@%***@@@@@</text>
-  <text x="345.0" y="1229.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@***@%@@@@@##@@@@@%*%@@</text>
-  <text x="513.0" y="1229.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@ %%    %%%%%         %%%</text>
-  <text x="69.0" y="1240.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-#=-%-----%*#@#*=-----=+***@@@@***@%@@@@@@@@@</text>
-  <text x="351.0" y="1240.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@#@#**#@@@@@%#%@@@@#</text>
-  <text x="507.0" y="1240.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@@@@@      %%%%      %%%</text>
-  <text x="69.0" y="1252.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#+--##-----%%@****+------=*%@*@@**%@@@@@@@@@%*@</text>
-  <text x="357.0" y="1252.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@***@@@@@@@@@@@@</text>
-  <text x="501.0" y="1252.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#*@@@@@@@@@@@    %%    %%%</text>
-  <text x="69.0" y="1263.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-*+=#-----@@****+---=--=*%@#*@@@@@@@@@@@%##%%%</text>
-  <text x="357.0" y="1263.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">##@@@@@@@@@#@#@@@@@@@@@</text>
-  <text x="495.0" y="1263.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@%@@@@@@@@@@@@@@ %%%%%%</text>
-  <text x="69.0" y="1275.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%##--##-----#******---+***#@*#@@@@@@@@@%#%%      </text>
-  <text x="363.0" y="1275.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%@@@@@@@@%*@@@@@@@</text>
-  <text x="489.0" y="1275.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@%%%</text>
-  <text x="69.0" y="1286.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-+#-%-----%%#**********%@%@%%%%%%%%#*#% %%% %%%%</text>
-  <text x="369.0" y="1286.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%  %#@@@@@@@@%%%%%%</text>
-  <text x="483.0" y="1286.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%% %%@@@@@@@@@@@@%%%</text>
-  <text x="69.0" y="1298.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#=-+%=----% %%%#******#@%%%%%  %%%%%%%%%% %%%%%%%</text>
-  <text x="375.0" y="1298.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%#*%@%%%%%%%% </text>
-  <text x="477.0" y="1298.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%%%%%%@@@@@@@%%</text>
-  <text x="69.0" y="1309.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*-=#=-*----%     %%##%%%%%%%%% %%  %% %%%%% %%%%%%%</text>
-  <text x="381.0" y="1309.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%#%%%%%%%%</text>
-  <text x="465.0" y="1309.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%% %%%% %@@%%</text>
-  <text x="69.0" y="1321.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#=-=##----%      %%%%%%%% %%%% %%% %% %%%%%%%%%%%%%</text>
-  <text x="387.0" y="1321.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%% %</text>
-  <text x="459.0" y="1321.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%% %%% %%%%%</text>
-  <text x="69.0" y="1332.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#=-#----%      %%%% %%%%%%%%%%%%%%%% %%%%%%%%% %% </text>
-  <text x="393.0" y="1332.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">          </text>
-  <text x="453.0" y="1332.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%%%%%    %%</text>
-  <text x="69.0" y="1344.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#=-=%#----%      %% %% % %%%%%%%%%% %% %%%%% %%      </text>
-  <text x="399.0" y="1344.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%  </text>
-  <text x="447.0" y="1344.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%%%%%%%%%</text>
-  <text x="69.0" y="1355.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#=-+----%       %% %%%%%%%% % %%%% % %%%% %%     %%%</text>
-  <text x="405.0" y="1355.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%</text>
-  <text x="441.0" y="1355.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%     %%%%%%%</text>
-  <text x="69.0" y="1367.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*#=-=%=----%         %%%  %% %%%%%% % %%%% %% %%%%%%%%%%</text>
-  <text x="411.0" y="1367.0" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%</text>
-  <text x="435.0" y="1367.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
-  <text x="69.0" y="1378.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#-%-----%               %%%%%%%% %%%%%%   %%     %%%% </text>
-  <text x="417.0" y="1378.5" class="b2" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
-  <text x="429.0" y="1378.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%    %%%%%%%%%%%%</text>
-  <text x="69.0" y="1390.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#=-+%-----%               %%%% %%%%%%%% %    %%%%  %%%%%%</text>
-  <text x="423.0" y="1390.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %%%  %% %%%  %</text>
-  <text x="69.0" y="1401.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*-=#=%-----%               %%%% %%%%%%%% %%        %%   %%</text>
-  <text x="423.0" y="1401.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%      %%%%%%%%%</text>
-  <text x="69.0" y="1413.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#+-=%-----%               %%%% %%%%%%%% %%         %%%   </text>
-  <text x="423.0" y="1413.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%      %%%</text>
-  <text x="69.0" y="1424.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--#=#=----%               %%%% %%%%%%%% %%       %%     </text>
-  <text x="417.0" y="1424.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%%    %%</text>
-  <text x="69.0" y="1436.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+*+-=%=----%               %% % %%%%%% %%%%  %%%%%%%%%   </text>
-  <text x="417.0" y="1436.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%%% %%%%%%%</text>
-  <text x="69.0" y="1447.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+--#+-+----%               %% %%%%%%%% %%%%%%%%%%%%%%%%  </text>
-  <text x="417.0" y="1447.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%%%%%%%%  %</text>
-  <text x="69.0" y="1459.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*#=--#+----%               %% %%%%%%%% %% %%%%%%%%%%%%%  </text>
-  <text x="417.0" y="1459.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%%%%%%%%%%%</text>
-  <text x="69.0" y="1470.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#=-+----%                %%%%%%%%%% %% %% %%%%%%%%    </text>
-  <text x="417.0" y="1470.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %% %%%%%% %%</text>
-  <text x="69.0" y="1482.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%##--=%=----%                %%%% %%%%%% % %%%%%%%%%%%%%  </text>
-  <text x="417.0" y="1482.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%%%%%%%%%</text>
-  <text x="69.0" y="1493.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-+#-#=---+%                 % % %%%%%% % %%   %%%       </text>
-  <text x="417.0" y="1493.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%%%%  %%</text>
-  <text x="75.0" y="1505.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%+-+%--+%%                 %%###%%%%%% %%%%             </text>
-  <text x="417.0" y="1505.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%%%####%</text>
-  <text x="87.0" y="1516.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%*#*%%                  %#*********###################</text>
-  <text x="417.0" y="1516.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">####*********#%</text>
-  <text x="99.0" y="1528.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%                    %@@@@@@%#**********************</text>
-  <text x="417.0" y="1528.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******#%@@@@@@@%</text>
-  <text x="225.0" y="1539.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@#*#@@@@@@@@@@@@@@@@@@@@@@@@@</text>
-  <text x="411.0" y="1539.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@%#%%%%@%</text>
-  <text x="219.0" y="1551.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#@@@@@@@##@@@@#######@@@@@@##%@</text>
-  <text x="411.0" y="1551.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@##@@@@#@@@@@@@@%%</text>
-  <text x="207.0" y="1562.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@#**#%**@@**#@@@@@@@@@%###@@@@@</text>
-  <text x="411.0" y="1562.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@#%@@#*#***%@@%</text>
-  <text x="201.0" y="1574.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@#@@@@***@@@@%@@@#**#**@@@@@@@@#**</text>
-  <text x="411.0" y="1574.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***@@@@@@@@@**#@@@@#%</text>
-  <text x="195.0" y="1585.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@****%@@@%@@@@*****@@@@@@@@@**</text>
-  <text x="411.0" y="1585.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***@@@@@@@@#***#@@@@@%</text>
-  <text x="189.0" y="1597.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@********#@@@@@#******#%@@@@%#***</text>
-  <text x="411.0" y="1597.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#%@@@@********%@@@%</text>
-  <text x="183.0" y="1608.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#************#@@@@**********@@@@#****</text>
-  <text x="411.0" y="1608.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******@@@@************#%</text>
-  <text x="171.0" y="1620.0" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#*****************************##******</text>
-  <text x="411.0" y="1620.0" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***********************#%</text>
-  <text x="171.0" y="1631.5" class="b3" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</text>
-  <text x="411.0" y="1631.5" class="b4" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%%%%</text>
+      <text x="273.0" y="355.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%</text>
+  <text x="411.0" y="355.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="429.0" y="355.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%</text>
+  <text x="495.0" y="355.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%</text>
+  <text x="537.0" y="355.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%</text>
+  <text x="279.0" y="366.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#********************</text>
+  <text x="411.0" y="366.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***</text>
+  <text x="429.0" y="366.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******##***</text>
+  <text x="495.0" y="366.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******</text>
+  <text x="531.0" y="366.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">********************#%%</text>
+  <text x="285.0" y="378.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#************@@@@***</text>
+  <text x="411.0" y="378.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***</text>
+  <text x="429.0" y="378.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#@@@@**</text>
+  <text x="495.0" y="378.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****</text>
+  <text x="525.0" y="378.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***@@@@#************#%</text>
+  <text x="291.0" y="389.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@%********@@@@%#*</text>
+  <text x="411.0" y="389.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***</text>
+  <text x="429.0" y="389.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***#%@@@@%</text>
+  <text x="489.0" y="389.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*****</text>
+  <text x="525.0" y="389.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@@@@@#********@@@@%</text>
+  <text x="297.0" y="401.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@#***#@@@@@@@@*</text>
+  <text x="417.0" y="401.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
+  <text x="429.0" y="401.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@@@@@@@</text>
+  <text x="489.0" y="401.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@****</text>
+  <text x="519.0" y="401.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@@@@%@@@%****@@</text>
+  <text x="615.0" y="401.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="633.0" y="401.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%</text>
+  <text x="303.0" y="412.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#@@@@#**@@@@@@@@@*</text>
+  <text x="417.0" y="412.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
+  <text x="429.0" y="412.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@@@@@@</text>
+  <text x="489.0" y="412.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@**#*</text>
+  <text x="519.0" y="412.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@@@%@@@@**</text>
+  <text x="591.0" y="412.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@@@@#@%</text>
+  <text x="309.0" y="424.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@%**##*#%@%#@@@@</text>
+  <text x="417.0" y="424.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="429.0" y="424.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@###%@</text>
+  <text x="489.0" y="424.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="513.0" y="424.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@#**@@#*</text>
+  <text x="579.0" y="424.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#*</text>
+  <text x="597.0" y="424.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@@%%</text>
+  <text x="315.0" y="435.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@@#@@@@##</text>
+  <text x="417.0" y="435.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="429.0" y="435.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%##@@@@@@</text>
+  <text x="489.0" y="435.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">####</text>
+  <text x="513.0" y="435.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">###@@@@##@</text>
+  <text x="573.0" y="435.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="585.0" y="435.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@#%</text>
+  <text x="321.0" y="447.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@%%%%%%@@@@@@@@</text>
+  <text x="417.0" y="447.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="435.0" y="447.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@</text>
+  <text x="483.0" y="447.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="507.0" y="447.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@</text>
+  <text x="567.0" y="447.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="579.0" y="447.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">###@@%</text>
+  <text x="327.0" y="458.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@%%#*****</text>
+  <text x="417.0" y="458.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***</text>
+  <text x="435.0" y="458.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">********</text>
+  <text x="483.0" y="458.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****</text>
+  <text x="507.0" y="458.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">********#</text>
+  <text x="561.0" y="458.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#%</text>
+  <text x="573.0" y="458.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@</text>
+  <text x="603.0" y="458.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%    </text>
+  <text x="633.0" y="458.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">       </text>
+  <text x="675.0" y="458.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="693.0" y="458.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">      %%</text>
+  <text x="333.0" y="470.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#********####</text>
+  <text x="417.0" y="470.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">###</text>
+  <text x="435.0" y="470.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">########</text>
+  <text x="483.0" y="470.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">####</text>
+  <text x="507.0" y="470.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#####***</text>
+  <text x="555.0" y="470.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
+  <text x="567.0" y="470.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****</text>
+  <text x="591.0" y="470.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#%       </text>
+  <text x="645.0" y="470.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">      </text>
+  <text x="681.0" y="470.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="693.0" y="470.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%*#*%%</text>
+  <text x="339.0" y="481.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%###%%%%%    </text>
+  <text x="417.0" y="481.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="435.0" y="481.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">        </text>
+  <text x="483.0" y="481.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %</text>
+  <text x="507.0" y="481.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%%%</text>
+  <text x="555.0" y="481.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="561.0" y="481.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%###</text>
+  <text x="585.0" y="481.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%          </text>
+  <text x="657.0" y="481.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     </text>
+  <text x="687.0" y="481.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="699.0" y="481.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%+--#+-=%%</text>
+  <text x="339.0" y="493.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%  %%%%%    </text>
+  <text x="417.0" y="493.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="435.0" y="493.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%  </text>
+  <text x="489.0" y="493.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %</text>
+  <text x="507.0" y="493.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% % %%%</text>
+  <text x="549.0" y="493.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="561.0" y="493.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %</text>
+  <text x="579.0" y="493.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %            </text>
+  <text x="663.0" y="493.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="687.0" y="493.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %</text>
+  <text x="699.0" y="493.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=---=#-#+-+%</text>
+  <text x="339.0" y="504.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%  </text>
+  <text x="417.0" y="504.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="435.0" y="504.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
+  <text x="489.0" y="504.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="507.0" y="504.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% % %%%</text>
+  <text x="549.0" y="504.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="555.0" y="504.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="573.0" y="504.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@%%           </text>
+  <text x="663.0" y="504.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="687.0" y="504.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %-</text>
+  <text x="705.0" y="504.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---=%=--##%</text>
+  <text x="339.0" y="516.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%% %% </text>
+  <text x="417.0" y="516.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="435.0" y="516.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%%</text>
+  <text x="489.0" y="516.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %</text>
+  <text x="507.0" y="516.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %%</text>
+  <text x="549.0" y="516.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="555.0" y="516.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="567.0" y="516.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%            </text>
+  <text x="669.0" y="516.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="693.0" y="516.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-</text>
+  <text x="705.0" y="516.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---+==#=-+%</text>
+  <text x="315.0" y="527.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="333.0" y="527.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%% </text>
+  <text x="417.0" y="527.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="435.0" y="527.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
+  <text x="489.0" y="527.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="507.0" y="527.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %</text>
+  <text x="543.0" y="527.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="555.0" y="527.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="567.0" y="527.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%           </text>
+  <text x="669.0" y="527.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="693.0" y="527.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-</text>
+  <text x="705.0" y="527.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---*#--=#*%</text>
+  <text x="315.0" y="539.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%  </text>
+  <text x="333.0" y="539.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%% </text>
+  <text x="417.0" y="539.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="435.0" y="539.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
+  <text x="489.0" y="539.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="507.0" y="539.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %</text>
+  <text x="543.0" y="539.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="555.0" y="539.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="567.0" y="539.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%           </text>
+  <text x="669.0" y="539.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="693.0" y="539.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-</text>
+  <text x="705.0" y="539.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---+=+#--+%</text>
+  <text x="315.0" y="550.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%</text>
+  <text x="339.0" y="550.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%%%%%%% </text>
+  <text x="417.0" y="550.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="441.0" y="550.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%% </text>
+  <text x="495.0" y="550.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="507.0" y="550.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %</text>
+  <text x="543.0" y="550.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="555.0" y="550.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="567.0" y="550.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% % %%           </text>
+  <text x="669.0" y="550.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="693.0" y="550.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-</text>
+  <text x="705.0" y="550.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---=%--+*+%</text>
+  <text x="345.0" y="562.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%    %%%%  </text>
+  <text x="417.0" y="562.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="441.0" y="562.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%     </text>
+  <text x="495.0" y="562.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="507.0" y="562.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%%%</text>
+  <text x="549.0" y="562.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="555.0" y="562.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="567.0" y="562.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%%           </text>
+  <text x="669.0" y="562.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="687.0" y="562.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %-</text>
+  <text x="705.0" y="562.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---=#=%--*%</text>
+  <text x="339.0" y="573.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%      %%  </text>
+  <text x="417.0" y="573.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %</text>
+  <text x="441.0" y="573.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%       </text>
+  <text x="495.0" y="573.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="507.0" y="573.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%%%</text>
+  <text x="549.0" y="573.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="555.0" y="573.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="573.0" y="573.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%           </text>
+  <text x="669.0" y="573.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="687.0" y="573.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %</text>
+  <text x="699.0" y="573.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-----%=-+#+%</text>
+  <text x="303.0" y="585.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%</text>
+  <text x="339.0" y="585.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%      %% %</text>
+  <text x="417.0" y="585.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%  </text>
+  <text x="441.0" y="585.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%       </text>
+  <text x="501.0" y="585.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %</text>
+  <text x="513.0" y="585.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%%</text>
+  <text x="549.0" y="585.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="561.0" y="585.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="573.0" y="585.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%          </text>
+  <text x="663.0" y="585.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="681.0" y="585.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %</text>
+  <text x="699.0" y="585.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-----#=#=-+%</text>
+  <text x="303.0" y="596.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%  %%%</text>
+  <text x="339.0" y="596.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%  %%% %%%%</text>
+  <text x="417.0" y="596.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%</text>
+  <text x="441.0" y="596.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%  %%%%   </text>
+  <text x="507.0" y="596.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> </text>
+  <text x="513.0" y="596.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%%%</text>
+  <text x="555.0" y="596.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="567.0" y="596.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% </text>
+  <text x="579.0" y="596.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%         </text>
+  <text x="657.0" y="596.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="681.0" y="596.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %</text>
+  <text x="699.0" y="596.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-----#+-=#*%</text>
+  <text x="303.0" y="608.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%</text>
+  <text x="339.0" y="608.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%    %%%</text>
+  <text x="417.0" y="608.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%</text>
+  <text x="447.0" y="608.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%     %%  </text>
+  <text x="507.0" y="608.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %</text>
+  <text x="519.0" y="608.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%% </text>
+  <text x="555.0" y="608.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% </text>
+  <text x="567.0" y="608.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="585.0" y="608.0" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%        </text>
+  <text x="651.0" y="608.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="675.0" y="608.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="693.0" y="608.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-----#-#=-+%</text>
+  <text x="351.0" y="619.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%</text>
+  <text x="411.0" y="619.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%   %%</text>
+  <text x="447.0" y="619.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%  % </text>
+  <text x="513.0" y="619.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="519.0" y="619.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% % %</text>
+  <text x="561.0" y="619.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="579.0" y="619.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> % </text>
+  <text x="597.0" y="619.5" class="caf9187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%  %%%</text>
+  <text x="639.0" y="619.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     </text>
+  <text x="669.0" y="619.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="687.0" y="619.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %----=%=--#*%</text>
+  <text x="333.0" y="631.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%     %%%</text>
+  <text x="411.0" y="631.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%</text>
+  <text x="447.0" y="631.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%      % %%%</text>
+  <text x="519.0" y="631.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="525.0" y="631.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> % %%%%</text>
+  <text x="567.0" y="631.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> % </text>
+  <text x="585.0" y="631.0" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%% %% </text>
+  <text x="657.0" y="631.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    </text>
+  <text x="681.0" y="631.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %----+==%=-+%</text>
+  <text x="303.0" y="642.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%</text>
+  <text x="333.0" y="642.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%</text>
+  <text x="357.0" y="642.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%     %%</text>
+  <text x="411.0" y="642.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%  </text>
+  <text x="453.0" y="642.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %% %%%%%</text>
+  <text x="525.0" y="642.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> </text>
+  <text x="531.0" y="642.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%%%</text>
+  <text x="573.0" y="642.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%</text>
+  <text x="603.0" y="642.5" class="ca59187" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%% </text>
+  <text x="645.0" y="642.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%   </text>
+  <text x="675.0" y="642.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %----##=-=#+%</text>
+  <text x="291.0" y="654.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%    %</text>
+  <text x="333.0" y="654.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="345.0" y="654.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%@   </text>
+  <text x="405.0" y="654.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   </text>
+  <text x="423.0" y="654.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     </text>
+  <text x="453.0" y="654.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%%%%%%%% </text>
+  <text x="531.0" y="654.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
+  <text x="585.0" y="654.0" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%% %%%% </text>
+  <text x="663.0" y="654.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %----#-=#=-+%</text>
+  <text x="291.0" y="665.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%  </text>
+  <text x="327.0" y="665.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="339.0" y="665.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%% % %%</text>
+  <text x="405.0" y="665.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%</text>
+  <text x="441.0" y="665.5" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="453.0" y="665.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%% </text>
+  <text x="537.0" y="665.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%% %%%%</text>
+  <text x="603.0" y="665.5" class="ca59191" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%%%</text>
+  <text x="645.0" y="665.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%      %----##=-=#+%</text>
+  <text x="273.0" y="677.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@% %%%</text>
+  <text x="327.0" y="677.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%%% %%%%%</text>
+  <text x="405.0" y="677.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%#%%%</text>
+  <text x="447.0" y="677.0" class="c919b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="459.0" y="677.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%% %%%%% </text>
+  <text x="543.0" y="677.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%  %% %%%%%%%%%##%%     %----#-=#=-+%</text>
+  <text x="249.0" y="688.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@%%%</text>
+  <text x="321.0" y="688.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %% %%%%%</text>
+  <text x="399.0" y="688.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%@#*#%%%</text>
+  <text x="459.0" y="688.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%% %%%%%%</text>
+  <text x="549.0" y="688.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="555.0" y="688.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%  %@%%%@#******#%%% %----=%+-=#</text>
+  <text x="759.0" y="688.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+%</text>
+  <text x="231.0" y="700.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@@@@@@</text>
+  <text x="315.0" y="700.0" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="321.0" y="700.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%  %%%%%%%%%</text>
+  <text x="393.0" y="700.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@#%  </text>
+  <text x="465.0" y="700.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="471.0" y="700.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%  %%% %#*#%%</text>
+  <text x="561.0" y="700.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%%%%@%**********#%%-----#-#+</text>
+  <text x="753.0" y="700.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-+%</text>
+  <text x="207.0" y="711.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%@@@@@@@@@@@@@@</text>
+  <text x="309.0" y="711.5" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="315.0" y="711.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@</text>
+  <text x="393.0" y="711.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%@@@@@@@@%%%</text>
+  <text x="471.0" y="711.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="483.0" y="711.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     %%#%@@@@@@</text>
+  <text x="573.0" y="711.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@#*@%***+---******#-----##</text>
+  <text x="741.0" y="711.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--##%</text>
+  <text x="189.0" y="723.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% % @@@@@@@@@@@</text>
+  <text x="297.0" y="723.0" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="309.0" y="723.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%@@@@@@@@@@@</text>
+  <text x="387.0" y="723.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#@#@@@@@@@@@#</text>
+  <text x="477.0" y="723.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#%</text>
+  <text x="489.0" y="723.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%##%@@@@@@@@@@@</text>
+  <text x="585.0" y="723.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@%*=--=---+****@@-----</text>
+  <text x="729.0" y="723.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#=+*-+</text>
+  <text x="765.0" y="723.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="171.0" y="734.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%    %%    @@@@@@@</text>
+  <text x="291.0" y="734.5" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="303.0" y="734.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@**@@@@@@@@@</text>
+  <text x="381.0" y="734.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@***@@@@@@@@</text>
+  <text x="477.0" y="734.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@*%</text>
+  <text x="501.0" y="734.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@%**@@*@</text>
+  <text x="597.0" y="734.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="603.0" y="734.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*=------+****@%%---</text>
+  <text x="717.0" y="734.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--##-</text>
+  <text x="747.0" y="734.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-+#%</text>
+  <text x="153.0" y="746.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%      %%%%      @@</text>
+  <text x="279.0" y="746.0" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="297.0" y="746.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@%%@@@@%#</text>
+  <text x="375.0" y="746.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@@@@#**#@#@@@@@@</text>
+  <text x="483.0" y="746.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="507.0" y="746.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@%@***@@@@***+</text>
+  <text x="621.0" y="746.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=-----=*#@#*</text>
+  <text x="693.0" y="746.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-----</text>
+  <text x="729.0" y="746.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#-=#-+%</text>
+  <text x="135.0" y="757.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="141.0" y="757.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%         %%%%%    %%</text>
+  <text x="273.0" y="757.5" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> @</text>
+  <text x="285.0" y="757.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@%*%@@</text>
+  <text x="369.0" y="757.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@##@@@@@#@***@@@@@</text>
+  <text x="489.0" y="757.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@</text>
+  <text x="519.0" y="757.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@***%@#%@@@@****+--*--=</text>
+  <text x="657.0" y="757.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@#*@</text>
+  <text x="693.0" y="757.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@----=##=-=%%</text>
+  <text x="117.0" y="769.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@%</text>
+  <text x="153.0" y="769.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%       %      </text>
+  <text x="261.0" y="769.0" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%</text>
+  <text x="273.0" y="769.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   @@@@@@@@*@@@</text>
+  <text x="363.0" y="769.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@*@@@#@@#**@%*@@@</text>
+  <text x="495.0" y="769.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@*#@*</text>
+  <text x="531.0" y="769.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@@@**%@************%@**@@@----=*--#=+%</text>
+  <text x="105.0" y="780.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%@@@%  %</text>
+  <text x="171.0" y="780.5" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%           </text>
+  <text x="249.0" y="780.5" class="c87a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="261.0" y="780.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%    @@@@@@*%</text>
+  <text x="351.0" y="780.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@*@@@@@#@@@**#@@@%**#@**</text>
+  <text x="507.0" y="780.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@#@</text>
+  <text x="537.0" y="780.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***#@************#@#*@@@@----=#*+--%%</text>
+  <text x="87.0" y="792.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#*% %@@@% %%%%   </text>
+  <text x="201.0" y="792.0" class="c87a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    @</text>
+  <text x="231.0" y="792.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="237.0" y="792.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@ %%%%      @@@@@</text>
+  <text x="345.0" y="792.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#@@@@@#@@@@***#%@%*#@**#</text>
+  <text x="513.0" y="792.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#***</text>
+  <text x="549.0" y="792.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@@%***********#@#*@@@@@-----#--*++%</text>
+  <text x="75.0" y="803.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#***% %@@@% %%%%%     @</text>
+  <text x="225.0" y="803.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@**%@ %%         @@</text>
+  <text x="339.0" y="803.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@#@@@@@@#***#@@@@@%*</text>
+  <text x="519.0" y="803.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@%</text>
+  <text x="555.0" y="803.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%@**==++-=****@%*@@@@@@-----+%*--#%</text>
+  <text x="57.0" y="815.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#******% %@@@%   %  @@@@@</text>
+  <text x="219.0" y="815.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#@@#%@@@@@     %  </text>
+  <text x="333.0" y="815.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@%#@@@#%@@@@*%@@#***#***#@</text>
+  <text x="525.0" y="815.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%****@</text>
+  <text x="567.0" y="815.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#+=+=--=*-**@%*%@@@@@@-----=+-*++%</text>
+  <text x="45.0" y="826.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#********# %@@@%     @@#*</text>
+  <text x="207.0" y="826.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@@@%*#@@   %% </text>
+  <text x="327.0" y="826.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   @@@@%*@@@@#@@@@@#***@@%**#%@@**</text>
+  <text x="531.0" y="826.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@@*</text>
+  <text x="573.0" y="826.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=*=----+==#@*#@@@@@@@-----+%+--#%</text>
+  <text x="39.0" y="838.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#**+--=****% %@@@%       @</text>
+  <text x="201.0" y="838.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*@@@@@@@@#@@    %%</text>
+  <text x="315.0" y="838.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%   @@@@@****#*@@@@@@@%***#@@@#***#@@</text>
+  <text x="543.0" y="838.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#@**=+</text>
+  <text x="585.0" y="838.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+---=*-*@#*@@@@@@@@-----#=-#=+%</text>
+  <text x="39.0" y="849.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****--+****% %@@@%  %%   </text>
+  <text x="195.0" y="849.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> @@#@@@@@@#@@     %</text>
+  <text x="309.0" y="849.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%  @#@@@@@@</text>
+  <text x="393.0" y="849.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@*@@@@@@#</text>
+  <text x="453.0" y="849.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@*******%@%***</text>
+  <text x="549.0" y="849.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@****-</text>
+  <text x="591.0" y="849.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=*+-=*@@*%@@@@@@@@-----##+--#%</text>
+  <text x="39.0" y="861.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***------+**# %@@@%  %%% </text>
+  <text x="189.0" y="861.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> @@@@@@@@@@@@@@    </text>
+  <text x="303.0" y="861.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%   @#*@@</text>
+  <text x="375.0" y="861.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%**@@*@@@@@@@**#</text>
+  <text x="471.0" y="861.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@%*#@@#***#@@</text>
+  <text x="555.0" y="861.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#******</text>
+  <text x="597.0" y="861.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****@*#@@@@@@@@@----==--#++%</text>
+  <text x="39.0" y="872.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***+==-=+***# %@@@% %%%%@</text>
+  <text x="189.0" y="872.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%@@@%@@%@@@@@@ </text>
+  <text x="297.0" y="872.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">        @#**</text>
+  <text x="369.0" y="872.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@##*%#@@@@@#***</text>
+  <text x="483.0" y="872.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@%***#@@%@@*</text>
+  <text x="561.0" y="872.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*******</text>
+  <text x="603.0" y="872.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***%@*@@@@%***#######****####%%</text>
+  <text x="39.0" y="884.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****+=*****# %@@@% %%@@@</text>
+  <text x="189.0" y="884.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@%@@@@@</text>
+  <text x="285.0" y="884.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@       @#</text>
+  <text x="357.0" y="884.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@@@#@@@@@@@@#%@@#*</text>
+  <text x="489.0" y="884.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***%@@***@#**</text>
+  <text x="567.0" y="884.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**++***</text>
+  <text x="609.0" y="884.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@#*@@@@%#****#####%%%##****%#*</text>
+  <text x="39.0" y="895.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">************% %@@@%  @@@@</text>
+  <text x="189.0" y="895.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@%@@@@</text>
+  <text x="279.0" y="895.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@      @</text>
+  <text x="351.0" y="895.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#***%@@@%@@@@@@@@%***%@@</text>
+  <text x="495.0" y="895.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#***%@@****</text>
+  <text x="573.0" y="895.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">----+**</text>
+  <text x="615.0" y="895.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@*#@@@@@@@@@@@@@@@@@@@@#***##*</text>
+  <text x="39.0" y="907.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">************% %@@@% @@@@@</text>
+  <text x="189.0" y="907.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%##@@@@%@@%@@%</text>
+  <text x="273.0" y="907.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#@@@@     </text>
+  <text x="345.0" y="907.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***#@@%#@@@@@@@@@@#*****</text>
+  <text x="501.0" y="907.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@#%@**++=</text>
+  <text x="579.0" y="907.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--=***@</text>
+  <text x="621.0" y="907.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*@@@@@@@@@@+-----*+=#%%%%%#**</text>
+  <text x="39.0" y="918.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****+--=****# %@@@% @@@@#</text>
+  <text x="189.0" y="918.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*###%@@@@@@@@</text>
+  <text x="267.0" y="918.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@##*#@@@%    </text>
+  <text x="345.0" y="918.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#****@@@*@@%*#@@@@*#@@***@</text>
+  <text x="507.0" y="918.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***@%*=----</text>
+  <text x="585.0" y="918.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">----*@#</text>
+  <text x="627.0" y="918.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@@@@@@@@=----=#++%+--##****</text>
+  <text x="39.0" y="930.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****+--+****% %@@@%@@@@@@</text>
+  <text x="189.0" y="930.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@##@@@#%@@%</text>
+  <text x="261.0" y="930.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@@@@@@@%   </text>
+  <text x="339.0" y="930.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> @#****%@@##@#**#@@@****#@@#*</text>
+  <text x="513.0" y="930.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@#**----</text>
+  <text x="585.0" y="930.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---=*@#%</text>
+  <text x="633.0" y="930.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@--=###%%#---#%*****</text>
+  <text x="39.0" y="941.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***------+**% %@@@%@@@@%@</text>
+  <text x="189.0" y="941.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@</text>
+  <text x="249.0" y="941.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@#@@@@%% </text>
+  <text x="333.0" y="941.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  @#****#@@@%***#@@@@@@*#%%###</text>
+  <text x="513.0" y="941.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@%%@*****=-+</text>
+  <text x="591.0" y="941.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***#@*@</text>
+  <text x="633.0" y="941.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@---*##*-+%#=-=#****</text>
+  <text x="39.0" y="953.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***++=-++#%#%%%@@@% @@@@@@</text>
+  <text x="195.0" y="953.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@</text>
+  <text x="243.0" y="953.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%%@@@@@@@%% </text>
+  <text x="333.0" y="953.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  @#*****@@@@@@@@@@@@*#@=----##</text>
+  <text x="519.0" y="953.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@*********</text>
+  <text x="597.0" y="953.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@*@@</text>
+  <text x="639.0" y="953.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@---###--*---=#*****</text>
+  <text x="39.0" y="964.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****+=*%**#%#@@@@% @@@@@@</text>
+  <text x="195.0" y="964.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@</text>
+  <text x="237.0" y="964.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@%% %</text>
+  <text x="333.0" y="964.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=--+#****@@@@%***@@@@###+=##-##</text>
+  <text x="519.0" y="964.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@#*********</text>
+  <text x="597.0" y="964.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@*@@</text>
+  <text x="639.0" y="964.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@=--#*#%###+=-##****</text>
+  <text x="39.0" y="976.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">********%***#%@@@@%  @@@@@@</text>
+  <text x="201.0" y="976.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@**@#</text>
+  <text x="231.0" y="976.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@**@%#@@@@ %%*</text>
+  <text x="333.0" y="976.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-=+-+#**#@@@@@**#@@@#---#%##%#=</text>
+  <text x="519.0" y="976.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-=@****##@@@@@</text>
+  <text x="603.0" y="976.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@</text>
+  <text x="639.0" y="976.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@%--+###=+%==+%*****</text>
+  <text x="39.0" y="987.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*********#%%%%#%@@%   @@@*#@</text>
+  <text x="207.0" y="987.5" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*@</text>
+  <text x="225.0" y="987.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*#@#*@@**@@#@=--</text>
+  <text x="327.0" y="987.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=%%%%#=--*@@@@@@@@@@@--+%%#**#%%</text>
+  <text x="519.0" y="987.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=-*#*#@@*#@##@</text>
+  <text x="603.0" y="987.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@#%@*</text>
+  <text x="639.0" y="987.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@%--###=-#=-+#*****</text>
+  <text x="39.0" y="999.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#+-=#-=#*#--#</text>
+  <text x="147.0" y="999.0" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@*@</text>
+  <text x="213.0" y="999.0" class="c91a5a5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="219.0" y="999.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@*@%#@#*@@#*#*-=%%</text>
+  <text x="333.0" y="999.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#**#%%+--@@@@@@@@@@@#--=#%%%%=-</text>
+  <text x="519.0" y="999.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--@#@@#*@@*#@#</text>
+  <text x="603.0" y="999.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%@*#@</text>
+  <text x="639.0" y="999.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*@@@@@@@@@%#%%%%%##*******</text>
+  <text x="39.0" y="1010.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#+==%+=###+--%@@@@@@</text>
+  <text x="189.0" y="1010.5" class="c91a59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="213.0" y="1010.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@%#***#@=-=#</text>
+  <text x="333.0" y="1010.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%##%#---#@@@#**@@@@@***#+-+=-#%</text>
+  <text x="519.0" y="1010.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% @@@@#%@**@@*</text>
+  <text x="603.0" y="1010.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@#*@</text>
+  <text x="639.0" y="1010.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@  %@@@@%#***%********</text>
+  <text x="39.0" y="1022.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****##-=+###%###--=@@@@@@@@@</text>
+  <text x="207.0" y="1022.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*</text>
+  <text x="219.0" y="1022.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@***********#@@@*#</text>
+  <text x="333.0" y="1022.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-##=+###@@@@#**%@@@@****#+--+%%</text>
+  <text x="519.0" y="1022.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@@@@@@@</text>
+  <text x="603.0" y="1022.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@</text>
+  <text x="639.0" y="1022.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@ %@@@@#%#**%*=+*****</text>
+  <text x="39.0" y="1033.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****#=---*-=###---@@@@@@@@</text>
+  <text x="201.0" y="1033.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@*@</text>
+  <text x="225.0" y="1033.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*</text>
+  <text x="237.0" y="1033.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**********@@**##</text>
+  <text x="333.0" y="1033.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">----=@#*@@@@@@@@@@@@*****#@   %</text>
+  <text x="519.0" y="1033.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@@%%@@@@</text>
+  <text x="603.0" y="1033.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@</text>
+  <text x="633.0" y="1033.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@@@@@ %@@@%%%#%#++-=++***</text>
+  <text x="39.0" y="1045.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#=-=#%=-*###---@@@@@@@</text>
+  <text x="195.0" y="1045.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@*@#</text>
+  <text x="231.0" y="1045.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***</text>
+  <text x="249.0" y="1045.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+-=*****@%#@%#</text>
+  <text x="333.0" y="1045.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%#*@@@@@@#***%@@@#****#@   %</text>
+  <text x="519.0" y="1045.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@#@@@@@@@@</text>
+  <text x="603.0" y="1045.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@</text>
+  <text x="633.0" y="1045.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@#@@@@%@@@% %**+------***</text>
+  <text x="39.0" y="1056.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*****##---#%%#%#=--@@@@@@</text>
+  <text x="189.0" y="1056.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%#@*=</text>
+  <text x="237.0" y="1056.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">----</text>
+  <text x="261.0" y="1056.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---**#@@#****</text>
+  <text x="339.0" y="1056.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#****@@@#**#@*#@@%****#@   </text>
+  <text x="513.0" y="1056.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %@@@@@@@@##@@%</text>
+  <text x="603.0" y="1056.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@@@</text>
+  <text x="627.0" y="1056.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">##@@@@@@@@%@@@% %****+--+****</text>
+  <text x="39.0" y="1068.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****##--+%++#=----=@@@@@</text>
+  <text x="183.0" y="1068.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@*#@*=-</text>
+  <text x="243.0" y="1068.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-----</text>
+  <text x="273.0" y="1068.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-=*%@***#@@</text>
+  <text x="339.0" y="1068.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*#@@%*@@@@#*%@@*@@@****#@   </text>
+  <text x="513.0" y="1068.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %@@@####%@@@@@</text>
+  <text x="603.0" y="1068.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%</text>
+  <text x="627.0" y="1068.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#####@@@@ %@@@% %****=--+****</text>
+  <text x="39.0" y="1079.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#%%%%%#=+*-----+@@@@@</text>
+  <text x="177.0" y="1079.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@*%@***=</text>
+  <text x="249.0" y="1079.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--=++</text>
+  <text x="279.0" y="1079.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@%#@@#***</text>
+  <text x="345.0" y="1079.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#@@@@@@@@@@#%@@#***#@  </text>
+  <text x="507.0" y="1079.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    @@@#%%%@@%@</text>
+  <text x="597.0" y="1079.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%@@</text>
+  <text x="621.0" y="1079.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@%#%@@@@@ %@@@% %************</text>
+  <text x="39.0" y="1091.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*##***#@@@@@@@@@@@@@@@</text>
+  <text x="171.0" y="1091.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@#*@%**+--</text>
+  <text x="255.0" y="1091.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--***</text>
+  <text x="285.0" y="1091.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@@%***#@@@</text>
+  <text x="351.0" y="1091.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@***%@@@@@@@@%%@@@***#@ </text>
+  <text x="501.0" y="1091.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">     @@@@@@@@@%@</text>
+  <text x="597.0" y="1091.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="615.0" y="1091.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@  %@@@% %************</text>
+  <text x="39.0" y="1102.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#%****##%%%#####****</text>
+  <text x="165.0" y="1102.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#%@@@@##@*****++</text>
+  <text x="261.0" y="1102.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#</text>
+  <text x="291.0" y="1102.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#**@@%****</text>
+  <text x="357.0" y="1102.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@%#@@@@@@@@#@@@@#**#@</text>
+  <text x="495.0" y="1102.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">       @@@@@@@@%</text>
+  <text x="591.0" y="1102.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="609.0" y="1102.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@%% %@@@% %*****++*****</text>
+  <text x="51.0" y="1114.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%###***########*</text>
+  <text x="159.0" y="1114.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**%@@@@*@%********</text>
+  <text x="267.0" y="1114.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">***@@#</text>
+  <text x="303.0" y="1114.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#***#@#*</text>
+  <text x="363.0" y="1114.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@@@@#%*##@@@@@**#</text>
+  <text x="489.0" y="1114.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@         @@@@@@</text>
+  <text x="585.0" y="1114.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@</text>
+  <text x="603.0" y="1114.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@%@@@@%%%</text>
+  <text x="675.0" y="1114.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %@@@% %***+=-==+**</text>
+  <text x="795.0" y="1114.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*</text>
+  <text x="69.0" y="1125.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%++#--=+----@@</text>
+  <text x="153.0" y="1125.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@**@**********</text>
+  <text x="273.0" y="1125.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*#@@#*</text>
+  <text x="309.0" y="1125.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@#*%@%</text>
+  <text x="369.0" y="1125.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#**@@@@@@@*@@**%@@*</text>
+  <text x="483.0" y="1125.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@   %%%     @@@@</text>
+  <text x="585.0" y="1125.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="597.0" y="1125.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@ </text>
+  <text x="651.0" y="1125.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%  %@@@% %***------***</text>
+  <text x="69.0" y="1137.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--+#%-----@</text>
+  <text x="147.0" y="1137.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@%*@@*=-++=-****</text>
+  <text x="279.0" y="1137.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@***%</text>
+  <text x="315.0" y="1137.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%******#@@</text>
+  <text x="381.0" y="1137.0" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">##@@@@@@*@@@@@@</text>
+  <text x="471.0" y="1137.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#@  %%%%%     @@</text>
+  <text x="579.0" y="1137.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@</text>
+  <text x="591.0" y="1137.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@#@</text>
+  <text x="633.0" y="1137.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@    %%  %@@@% %****+--+****</text>
+  <text x="69.0" y="1148.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+=#-=#-----</text>
+  <text x="141.0" y="1148.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@*#@*-*=---++=*#@</text>
+  <text x="285.0" y="1148.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#%@@#*</text>
+  <text x="321.0" y="1148.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#@@@#***%@</text>
+  <text x="393.0" y="1148.5" class="c919baf" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@*#***</text>
+  <text x="459.0" y="1148.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*@@@@@   %%%%    @@</text>
+  <text x="573.0" y="1148.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@</text>
+  <text x="585.0" y="1148.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@</text>
+  <text x="621.0" y="1148.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@*@@       %@@@% %****+--+**#%</text>
+  <text x="69.0" y="1160.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--+%+----</text>
+  <text x="135.0" y="1160.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-@@@@@@@#*@#==+----=*=*@@@</text>
+  <text x="291.0" y="1160.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#****@</text>
+  <text x="327.0" y="1160.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#**%@@***#@@@@@#@@@@*%@@@@    %%   @@#</text>
+  <text x="567.0" y="1160.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%</text>
+  <text x="579.0" y="1160.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@</text>
+  <text x="609.0" y="1160.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%*#@@     %@@@% %********#%%</text>
+  <text x="69.0" y="1171.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%++*-+=---</text>
+  <text x="129.0" y="1171.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--@@@@@@%*@@**-++--=*==#@***</text>
+  <text x="297.0" y="1171.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%@@#*</text>
+  <text x="333.0" y="1171.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**#***#@@%*@@@@@#@@@#%@@@@@@@  %     @</text>
+  <text x="561.0" y="1171.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="573.0" y="1171.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@%#</text>
+  <text x="597.0" y="1171.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#%@@@@   %   %@@@% %******#%</text>
+  <text x="69.0" y="1183.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#--*%+---</text>
+  <text x="129.0" y="1183.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--@</text>
+  <text x="147.0" y="1183.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="153.0" y="1183.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@*#@</text>
+  <text x="195.0" y="1183.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
+  <text x="207.0" y="1183.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**=-++==**@%*%@@</text>
+  <text x="303.0" y="1183.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#***#@</text>
+  <text x="339.0" y="1183.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@#***#@@@@@@#@@@@@@@@@@@@@       </text>
+  <text x="555.0" y="1183.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="567.0" y="1183.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% @</text>
+  <text x="591.0" y="1183.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%**@@     %%%%% %@@@% %***#%%</text>
+  <text x="69.0" y="1194.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%++#--#--</text>
+  <text x="123.0" y="1194.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--</text>
+  <text x="135.0" y="1194.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-@@@@@*#@#***</text>
+  <text x="213.0" y="1194.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
+  <text x="225.0" y="1194.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">******%@@@#***</text>
+  <text x="309.0" y="1194.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#@@#**@</text>
+  <text x="351.0" y="1194.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*#@%#***@@@@#@@@@@#***#@@@@@    </text>
+  <text x="549.0" y="1194.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> </text>
+  <text x="555.0" y="1194.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%</text>
+  <text x="579.0" y="1194.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% @@@@       %%%% %@@@% %*#%%</text>
+  <text x="69.0" y="1206.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%--+*#</text>
+  <text x="111.0" y="1206.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=</text>
+  <text x="117.0" y="1206.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-</text>
+  <text x="123.0" y="1206.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">---@@@@*#@#******</text>
+  <text x="225.0" y="1206.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**</text>
+  <text x="237.0" y="1206.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****@#****@@#</text>
+  <text x="315.0" y="1206.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#***@#</text>
+  <text x="357.0" y="1206.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**%@@@#**@@@*@@@@@*@@@%*@@@@@@</text>
+  <text x="537.0" y="1206.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="549.0" y="1206.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%</text>
+  <text x="573.0" y="1206.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%             %%%  %@@@% %%</text>
+  <text x="69.0" y="1217.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+=#--</text>
+  <text x="105.0" y="1217.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#</text>
+  <text x="111.0" y="1217.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=----@@@**@%*********</text>
+  <text x="237.0" y="1217.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*</text>
+  <text x="243.0" y="1217.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@%**@@@#**@</text>
+  <text x="321.0" y="1217.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*@@@@@</text>
+  <text x="363.0" y="1217.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*%@**#@@#@@@#@@@@@@@@@*@@@@@</text>
+  <text x="531.0" y="1217.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="543.0" y="1217.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@   </text>
+  <text x="567.0" y="1217.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%      %%      %%  %@@@%%</text>
+  <text x="69.0" y="1229.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#=-</text>
+  <text x="93.0" y="1229.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=#</text>
+  <text x="105.0" y="1229.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#=----@@*#@#*=-=*--+***</text>
+  <text x="243.0" y="1229.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*</text>
+  <text x="249.0" y="1229.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@#@%***@@</text>
+  <text x="327.0" y="1229.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@</text>
+  <text x="375.0" y="1229.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@***@%@@@@@##@@@@@%*%@@@@</text>
+  <text x="525.0" y="1229.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@</text>
+  <text x="537.0" y="1229.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="555.0" y="1229.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@ %%    %%%%%         %%%</text>
+  <text x="69.0" y="1240.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-</text>
+  <text x="87.0" y="1240.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#=</text>
+  <text x="99.0" y="1240.5" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-</text>
+  <text x="105.0" y="1240.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%-----%*#@#*=-----=+***@</text>
+  <text x="249.0" y="1240.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="255.0" y="1240.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@***@%@@@@@@</text>
+  <text x="333.0" y="1240.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@</text>
+  <text x="381.0" y="1240.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@#@#**#@@@@@%#%@@@@#%</text>
+  <text x="513.0" y="1240.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="531.0" y="1240.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="549.0" y="1240.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@      %%%%  </text>
+  <text x="645.0" y="1240.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %%%</text>
+  <text x="69.0" y="1252.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#</text>
+  <text x="81.0" y="1252.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+-</text>
+  <text x="93.0" y="1252.0" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-</text>
+  <text x="99.0" y="1252.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">##-----%%@****+------=*%@*</text>
+  <text x="255.0" y="1252.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="261.0" y="1252.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@**%@@@@@@@@@</text>
+  <text x="339.0" y="1252.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*@@@@@@@</text>
+  <text x="393.0" y="1252.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@***@@@@@@@@@@@@@</text>
+  <text x="507.0" y="1252.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@#*</text>
+  <text x="525.0" y="1252.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@</text>
+  <text x="543.0" y="1252.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@    %%</text>
+  <text x="627.0" y="1252.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %%%</text>
+  <text x="69.0" y="1263.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1263.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+-</text>
+  <text x="87.0" y="1263.5" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*</text>
+  <text x="93.0" y="1263.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+=#-----@@****+---=--=*%@#*@</text>
+  <text x="261.0" y="1263.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="267.0" y="1263.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@%##%</text>
+  <text x="345.0" y="1263.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%##@@@@@@</text>
+  <text x="405.0" y="1263.5" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@#@#@@@@@@@@@</text>
+  <text x="495.0" y="1263.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="519.0" y="1263.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@</text>
+  <text x="537.0" y="1263.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@ </text>
+  <text x="615.0" y="1263.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%</text>
+  <text x="69.0" y="1275.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1275.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#</text>
+  <text x="81.0" y="1275.0" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#</text>
+  <text x="87.0" y="1275.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--##-----#******---+***#@*#@@@</text>
+  <text x="267.0" y="1275.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@</text>
+  <text x="273.0" y="1275.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@%#%%    </text>
+  <text x="351.0" y="1275.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%%@@@@@</text>
+  <text x="417.0" y="1275.0" class="c919ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@%*@@@@@@</text>
+  <text x="483.0" y="1275.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="507.0" y="1275.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@</text>
+  <text x="531.0" y="1275.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@@</text>
+  <text x="609.0" y="1275.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@%%%</text>
+  <text x="69.0" y="1286.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+</text>
+  <text x="81.0" y="1286.5" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-</text>
+  <text x="87.0" y="1286.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+#-%-----%%#**********%@%@%%%%</text>
+  <text x="267.0" y="1286.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="273.0" y="1286.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%#*#% %%% %%</text>
+  <text x="357.0" y="1286.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%  %#@@@@@@@@%%%%%% %%</text>
+  <text x="501.0" y="1286.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%</text>
+  <text x="525.0" y="1286.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@@@@@@</text>
+  <text x="597.0" y="1286.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%</text>
+  <text x="69.0" y="1298.0" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1298.0" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+</text>
+  <text x="81.0" y="1298.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#=-+%=----% %%%#******#@%%%%%  %</text>
+  <text x="273.0" y="1298.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="279.0" y="1298.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%% %%%%%</text>
+  <text x="363.0" y="1298.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%#*%@%%%%%%%% %% </text>
+  <text x="495.0" y="1298.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%</text>
+  <text x="519.0" y="1298.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%@@@@@@@%%</text>
+  <text x="69.0" y="1309.5" class="c9ba591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1309.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*-=#=-*----%     %%##%%%%%%%%% %%</text>
+  <text x="273.0" y="1309.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> </text>
+  <text x="279.0" y="1309.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %% %%%%% %%%%%</text>
+  <text x="369.0" y="1309.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%#%%%%%%%% %%</text>
+  <text x="483.0" y="1309.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %</text>
+  <text x="513.0" y="1309.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %@@%%</text>
+  <text x="69.0" y="1321.0" class="ca5a591" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1321.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+#=-=##----%      %%%%%%%% %%%% %</text>
+  <text x="273.0" y="1321.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="279.0" y="1321.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %% %%%%%%%%%%%</text>
+  <text x="375.0" y="1321.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%% %%%%</text>
+  <text x="477.0" y="1321.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%</text>
+  <text x="507.0" y="1321.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%%%</text>
+  <text x="69.0" y="1332.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#=-#----%      %%%% %%%%%%%%%%%</text>
+  <text x="279.0" y="1332.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="285.0" y="1332.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%% %%%%%%%%% %%</text>
+  <text x="387.0" y="1332.5" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">           %%</text>
+  <text x="465.0" y="1332.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %%%%</text>
+  <text x="501.0" y="1332.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%    %%</text>
+  <text x="69.0" y="1344.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#=-=%#----%      %% %% % %%%%%%%%</text>
+  <text x="279.0" y="1344.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="285.0" y="1344.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% %% %%%%% %%      </text>
+  <text x="399.0" y="1344.0" class="c9b9ba5" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%   </text>
+  <text x="453.0" y="1344.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">    %%%</text>
+  <text x="495.0" y="1344.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%</text>
+  <text x="69.0" y="1355.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#=-+----%       %% %%%%%%%% % %</text>
+  <text x="279.0" y="1355.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="285.0" y="1355.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% % %%%% %%     %%%%%%%%%%     %%%</text>
+  <text x="495.0" y="1355.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%</text>
+  <text x="69.0" y="1367.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*#=-=%=----%         %%%  %% %%%%%</text>
+  <text x="279.0" y="1367.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="285.0" y="1367.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> % %%%% %% %%%%%%%%%%  %%%%%%%%%%%</text>
+  <text x="69.0" y="1378.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-=#-%-----%               %%%%%%%</text>
+  <text x="279.0" y="1378.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="285.0" y="1378.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%%%   %%     %%%% %%%%    %%%</text>
+  <text x="483.0" y="1378.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
+  <text x="69.0" y="1390.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+#=-+%-----%               %%%% %%</text>
+  <text x="279.0" y="1390.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="285.0" y="1390.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%% %    %%%%  %%%%%%%%%% %%% </text>
+  <text x="477.0" y="1390.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %% %%%  %</text>
+  <text x="69.0" y="1401.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%*-=#=%-----%               %%%% %</text>
+  <text x="273.0" y="1401.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="279.0" y="1401.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%% %%        %%   %%% %%     </text>
+  <text x="477.0" y="1401.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%%%%%%</text>
+  <text x="69.0" y="1413.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1413.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+#+-=%-----%               %%%% %</text>
+  <text x="273.0" y="1413.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="279.0" y="1413.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%% %%         %%%     %%    </text>
+  <text x="471.0" y="1413.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  %%%</text>
+  <text x="69.0" y="1424.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1424.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#--#=#=----%               %%%% %</text>
+  <text x="273.0" y="1424.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="279.0" y="1424.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%% %%       %%        %%%% </text>
+  <text x="465.0" y="1424.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">   %%</text>
+  <text x="69.0" y="1436.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1436.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+*+-=%=----%               %% % </text>
+  <text x="267.0" y="1436.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="273.0" y="1436.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%% %%%%  %%%%%%%%%     %%%%%</text>
+  <text x="459.0" y="1436.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%% %%%%%%%</text>
+  <text x="69.0" y="1447.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+</text>
+  <text x="81.0" y="1447.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">--#+-+----%               %% %%</text>
+  <text x="267.0" y="1447.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="273.0" y="1447.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%% %%%%%%%%%%%%%%%%    %%%%%</text>
+  <text x="459.0" y="1447.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%  %</text>
+  <text x="69.0" y="1459.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="75.0" y="1459.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*</text>
+  <text x="81.0" y="1459.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#=--#+----%               %% %</text>
+  <text x="261.0" y="1459.0" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%</text>
+  <text x="267.0" y="1459.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%% %% %%%%%%%%%%%%%    %%%%</text>
+  <text x="453.0" y="1459.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%</text>
+  <text x="69.0" y="1470.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+</text>
+  <text x="81.0" y="1470.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-</text>
+  <text x="87.0" y="1470.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">=#=-+----%                %%%</text>
+  <text x="261.0" y="1470.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%% %% %% %%%%%%%%      %% %</text>
+  <text x="453.0" y="1470.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%% %%</text>
+  <text x="69.0" y="1482.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#</text>
+  <text x="81.0" y="1482.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#-</text>
+  <text x="93.0" y="1482.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-=%=----%                %%</text>
+  <text x="255.0" y="1482.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% %%%%%% % %%%%%%%%%%%%%     %%</text>
+  <text x="447.0" y="1482.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%</text>
+  <text x="69.0" y="1493.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%+-</text>
+  <text x="87.0" y="1493.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">+#</text>
+  <text x="99.0" y="1493.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-#=---+%                 </text>
+  <text x="249.0" y="1493.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">% % %%%%%% % %%   %%%           </text>
+  <text x="441.0" y="1493.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%%  %%</text>
+  <text x="75.0" y="1505.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%+</text>
+  <text x="93.0" y="1505.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">-+</text>
+  <text x="105.0" y="1505.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%--+%%                 </text>
+  <text x="243.0" y="1505.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%###%%%%%% %%%%                 </text>
+  <text x="441.0" y="1505.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %%%%####%</text>
+  <text x="87.0" y="1516.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%*</text>
+  <text x="105.0" y="1516.5" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*</text>
+  <text x="117.0" y="1516.5" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%                 </text>
+  <text x="231.0" y="1516.5" class="ca59b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> </text>
+  <text x="237.0" y="1516.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#*********######################</text>
+  <text x="435.0" y="1516.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">#*********#%</text>
+  <text x="99.0" y="1528.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%% </text>
+  <text x="117.0" y="1528.0" class="c9b9b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">  </text>
+  <text x="129.0" y="1528.0" class="ca59b91" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">                </text>
+  <text x="225.0" y="1528.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve"> %@@@@@@%#************************</text>
+  <text x="429.0" y="1528.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#%@@@@@@@%</text>
+  <text x="225.0" y="1539.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@#*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+  <text x="429.0" y="1539.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@@@@%#%%%%@%</text>
+  <text x="219.0" y="1551.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#@@@@@@@##@@@@#######@@@@@@##%@@@</text>
+  <text x="423.0" y="1551.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">##@@@@#@@@@@@@@%%</text>
+  <text x="207.0" y="1562.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%@@#**#%**@@**#@@@@@@@@@%###@@@@@@@</text>
+  <text x="423.0" y="1562.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">@@@@#%@@#*#***%@@%</text>
+  <text x="201.0" y="1574.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@#@@@@***@@@@%@@@#**#**@@@@@@@@#***</text>
+  <text x="417.0" y="1574.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@@@@@@@@**#@@@@#%</text>
+  <text x="195.0" y="1585.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@@@****%@@@%@@@@*****@@@@@@@@@***</text>
+  <text x="417.0" y="1585.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">**@@@@@@@@#***#@@@@@%</text>
+  <text x="189.0" y="1597.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%@@@@********#@@@@@#******#%@@@@%#***</text>
+  <text x="411.0" y="1597.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">****#%@@@@********%@@@%</text>
+  <text x="183.0" y="1608.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%#************#@@@@**********@@@@#***</text>
+  <text x="405.0" y="1608.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">*******@@@@************#%</text>
+  <text x="171.0" y="1620.0" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%#*****************************##*****</text>
+  <text x="405.0" y="1620.0" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">************************#%</text>
+  <text x="171.0" y="1631.5" class="c9b9b9b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</text>
+  <text x="399.0" y="1631.5" class="c9ba59b" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="10.0" xml:space="preserve">%%%%%%%%%%%%%%%%%%%%%%%%%%%%</text>
   </g>
 
   <!-- Contribution count -->
-  <text x="420" y="1700" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" fill="#7c3aed" font-weight="bold">530 contributions so far in 2026</text>
+  <text x="420" y="1700" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" fill="#7c3aed" font-weight="bold">467 contributions so far in 2026</text>
 </svg>
