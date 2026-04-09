@@ -97,78 +97,115 @@ def parse_art(raw: str) -> tuple[list[str], int, int, int]:
     return lines, int(min_col), int(max_col), first
 
 
+import math
+
+# Metaball blob centers — 5 emotion sources with pseudo-random positions
+# Positions are in normalized [0,1] space
+BLOB_CENTERS = [
+    (0.25, 0.20),  # serene — upper left
+    (0.75, 0.15),  # vibrant — upper right
+    (0.50, 0.50),  # melancholy — center
+    (0.20, 0.75),  # curious — lower left
+    (0.80, 0.80),  # content — lower right
+]
+
+
 def assign_zone(row_idx: int, line: str, min_col: int, max_col: int, total_rows: int) -> int:
-    """Assign a line to a diagonal color zone (0 to NUM_ZONES-1)."""
+    """Assign a line to the nearest emotion blob (metaball-style)."""
     stripped = line.rstrip()
     if not stripped.strip():
         return 0
     leading = len(stripped) - len(stripped.lstrip())
     col_center = (leading + len(stripped)) / 2 - min_col
     col_range = max(max_col - min_col, 1)
-    diagonal = (row_idx / max(total_rows, 1) + col_center / col_range) / 2
-    return int(diagonal * NUM_ZONES) % NUM_ZONES
+    nx = col_center / col_range
+    ny = row_idx / max(total_rows, 1)
+
+    # Find the blob with highest field contribution (inverse square distance)
+    best_blob = 0
+    best_field = -1.0
+    for i, (bx, by) in enumerate(BLOB_CENTERS):
+        dx, dy = nx - bx, ny - by
+        dist_sq = dx * dx + dy * dy + 0.001
+        field = 1.0 / dist_sq
+        if field > best_field:
+            best_field = field
+            best_blob = i
+    return best_blob
 
 
 def generate_keyframes(ratios: dict[str, float]) -> str:
-    """Generate CSS @keyframes rules from emotion ratios.
+    """Generate CSS @keyframes for metaball-style emotion blobs.
 
-    Each zone cycles through all 5 emotion colors, spending time
-    proportional to each emotion's ratio. Zones use the same keyframes
-    but different animation-delays for the wave effect.
+    Each blob (emotion) pulses between its own color and neighboring
+    emotion colors, weighted by emotion ratios. The effect is organic
+    color bleeding between blob regions.
     """
     css_parts = []
 
-    # Normalize ratios to sum to 1.0
     total = sum(ratios.values()) or 1.0
     normalized = {eid: v / total for eid, v in ratios.items()}
 
-    # Build color sequence ordered by ratio (dominant first)
-    ordered = sorted(EMOTIONS, key=lambda e: normalized.get(e["id"], 0.2), reverse=True)
+    for i, emotion in enumerate(EMOTIONS):
+        hex_color = emotion["hex"]
+        ratio = normalized.get(emotion["id"], 0.2)
 
-    # Track each zone's starting color for initial fill
-    zone_start_colors = []
+        # Each blob cycles: own color → blend toward neighbors → back
+        # Neighbors are the two adjacent emotions (wrapping)
+        prev_e = EMOTIONS[(i - 1) % 5]
+        next_e = EMOTIONS[(i + 1) % 5]
 
-    for zone in range(NUM_ZONES):
-        # Rotate the color order per zone for variety
-        rotated = ordered[zone % len(ordered):] + ordered[:zone % len(ordered)]
-        zone_start_colors.append(rotated[0]["hex"])
-        stops = []
-        pct = 0.0
+        # Dominant emotion gets more time at its own color
+        own_pct = max(ratio * 100, 30)
+        blend_pct = (100 - own_pct) / 2
 
-        for i, emotion in enumerate(rotated):
-            ratio = normalized.get(emotion["id"], 0.2)
-            duration_pct = ratio * 100
-            hex_color = emotion["hex"]
+        stops = [
+            f"  0% {{ fill: {hex_color}; }}",
+            f"  {own_pct:.0f}% {{ fill: {hex_color}; }}",
+            f"  {own_pct + blend_pct:.0f}% {{ fill: {next_e['hex']}; }}",
+            f"  {own_pct + blend_pct * 2:.0f}% {{ fill: {prev_e['hex']}; }}",
+            f"  100% {{ fill: {hex_color}; }}",
+        ]
+        css_parts.append(f"@keyframes blob{i} {{\n" + "\n".join(stops) + "\n}")
 
-            stops.append(f"  {pct:.1f}% {{ fill: {hex_color}; }}")
-            pct += duration_pct
-            if i < len(rotated) - 1:
-                stops.append(f"  {min(pct, 100):.1f}% {{ fill: {hex_color}; }}")
+    # Pulse for organic breathing
+    css_parts.append("@keyframes pulse {\n  0%, 100% { opacity: 0.75; }\n  50% { opacity: 1; }\n}")
 
-        stops.append(f"  100% {{ fill: {rotated[0]['hex']}; }}")
-
-        css_parts.append(f"@keyframes z{zone} {{\n" + "\n".join(stops) + "\n}")
-
-    # Pulse animation for opacity
-    css_parts.append("@keyframes pulse {\n  0%, 100% { opacity: 0.7; }\n  50% { opacity: 1; }\n}")
-
-    # Zone class definitions with staggered delays
-    # Use negative delays so animations start mid-cycle (immediate visible motion)
-    for zone in range(NUM_ZONES):
-        # Negative delay = animation starts as if it began N seconds ago
-        delay = -(zone * ZONE_STAGGER)
-        pulse_delay = -(zone * (PULSE_DURATION / NUM_ZONES))
+    # Blob class definitions with staggered timing for organic feel
+    for i, emotion in enumerate(EMOTIONS):
+        # Each blob has a different cycle duration for asynchronous drift
+        duration = CYCLE_DURATION + i * 2
+        delay = -(i * 3)
+        pulse_delay = -(i * (PULSE_DURATION / 5))
         css_parts.append(
-            f".z{zone} {{ fill: {zone_start_colors[zone]}; "
-            f"animation: z{zone} {CYCLE_DURATION}s linear infinite {delay}s, "
+            f".z{i} {{ fill: {emotion['hex']}; "
+            f"animation: blob{i} {duration}s ease-in-out infinite {delay}s, "
             f"pulse {PULSE_DURATION}s ease-in-out infinite {pulse_delay:.1f}s; }}"
         )
 
     return "\n".join(css_parts)
 
 
+def assign_char_zone(row_idx: int, col_idx: int, min_col: int, max_col: int, total_rows: int) -> int:
+    """Assign a character position to the nearest emotion blob."""
+    col_range = max(max_col - min_col, 1)
+    nx = (col_idx - min_col) / col_range
+    ny = row_idx / max(total_rows, 1)
+
+    best_blob = 0
+    best_field = -1.0
+    for i, (bx, by) in enumerate(BLOB_CENTERS):
+        dx, dy = nx - bx, ny - by
+        dist_sq = dx * dx + dy * dy + 0.001
+        field = 1.0 / dist_sq
+        if field > best_field:
+            best_field = field
+            best_blob = i
+    return best_blob
+
+
 def generate_svg(art_lines: list[str], min_col: int, max_col: int, ratios: dict[str, float]) -> str:
-    """Generate the complete SVG string."""
+    """Generate the complete SVG string with per-segment metaball coloring."""
     total_rows = len(art_lines)
     content_width = (max_col - min_col) * CHAR_WIDTH
     content_height = total_rows * LINE_HEIGHT
@@ -183,18 +220,35 @@ def generate_svg(art_lines: list[str], min_col: int, max_col: int, ratios: dict[
         if not stripped.strip():
             continue
 
-        zone = assign_zone(row_idx, line, min_col, max_col, total_rows)
-        # x offset: shift content left by min_col, add padding
         leading = len(stripped) - len(stripped.lstrip())
-        x = (leading - min_col) * CHAR_WIDTH + PADDING
-        y = row_idx * LINE_HEIGHT + PADDING + FONT_SIZE  # baseline offset
+        content = stripped.lstrip()
+        y = row_idx * LINE_HEIGHT + PADDING + FONT_SIZE
 
-        # Escape special XML characters
-        escaped = escape(stripped.lstrip())
+        # Group consecutive characters by zone to avoid per-char elements
+        segments: list[tuple[int, int, str]] = []  # (start_col, zone, text)
+        seg_start = leading
+        seg_zone = assign_char_zone(row_idx, leading, min_col, max_col, total_rows)
+        seg_chars: list[str] = []
 
-        text_elements.append(
-            f'<text x="{x:.1f}" y="{y:.1f}" class="z{zone}" xml:space="preserve">{escaped}</text>'
-        )
+        for ci, ch in enumerate(content):
+            col = leading + ci
+            zone = assign_char_zone(row_idx, col, min_col, max_col, total_rows)
+            if zone != seg_zone:
+                segments.append((seg_start, seg_zone, "".join(seg_chars)))
+                seg_start = col
+                seg_zone = zone
+                seg_chars = [ch]
+            else:
+                seg_chars.append(ch)
+        if seg_chars:
+            segments.append((seg_start, seg_zone, "".join(seg_chars)))
+
+        for col_start, zone, text in segments:
+            x = (col_start - min_col) * CHAR_WIDTH + PADDING
+            escaped = escape(text)
+            text_elements.append(
+                f'<text x="{x:.1f}" y="{y:.1f}" class="z{zone}" xml:space="preserve">{escaped}</text>'
+            )
 
     texts = "\n  ".join(text_elements)
 
