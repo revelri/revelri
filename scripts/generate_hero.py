@@ -342,25 +342,15 @@ def main():
     art_lines, min_col, max_col, _ = parse_art(raw_art)
     print(f"[generate_hero] Art: {len(art_lines)} lines, cols {min_col}-{max_col}")
 
-    # Try to sample live emotion data
+    # Try to sample live emotion data from always-on Zeitgeist service
     ratios = {}
-    backend_proc = None
 
     try:
-        print(f"[generate_hero] Starting backend (port {WS_PORT})...")
-        backend_proc = start_backend()
-
-        if backend_proc:
-            print(f"[generate_hero] Warming up ({WARMUP_SECONDS}s)...")
-            time.sleep(WARMUP_SECONDS)
-
-            if backend_proc.poll() is not None:
-                print("[generate_hero] Backend exited early", file=sys.stderr)
-            else:
-                print(f"[generate_hero] Sampling emotions ({SAMPLE_DURATION}s)...")
-                ratios = asyncio.run(sample_emotions(WS_PORT, SAMPLE_DURATION))
-    finally:
-        stop_backend(backend_proc)
+        print(f"[generate_hero] Connecting to Zeitgeist service (port {WS_PORT})...")
+        print(f"[generate_hero] Sampling emotions ({SAMPLE_DURATION}s)...")
+        ratios = asyncio.run(sample_emotions(WS_PORT, SAMPLE_DURATION))
+    except Exception as e:
+        print(f"[generate_hero] Failed to sample: {e}", file=sys.stderr)
 
     if not ratios:
         print("[generate_hero] Using fallback ratios (equal distribution)")

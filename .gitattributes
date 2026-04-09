@@ -1,0 +1,3 @@
+scripts/* linguist-language=Python
+templates/* linguist-detectable=false
+*.svg linguist-generated=true
