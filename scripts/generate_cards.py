@@ -370,12 +370,12 @@ def render_language_bars(languages):
     Names right-justified at x=530, bars from 535 to 805 (270px max).
     """
     lines = []
-    max_bar_width = 370  # doubled from original 200 → fills most of the box
-    label_x = 520   # right edge for right-justified names
-    bar_x = 528
+    max_bar_width = 340
+    label_x = 518   # right edge for right-justified names
+    bar_x = 526
     pct_x = 805     # right-aligned percentage
-    y_start = 130
-    line_height = 22
+    y_start = 140
+    line_height = 20
 
     for i, (name, pct) in enumerate(languages):
         y = y_start + i * line_height
@@ -385,17 +385,17 @@ def render_language_bars(languages):
         lines.append(
             f'  <text x="{label_x}" y="{y + 2}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="13" fill="{color}" font-weight="bold">{name}</text>'
+            f'font-size="11" fill="{color}" font-weight="bold">{name}</text>'
         )
         # Bar
         lines.append(
-            f'  <rect x="{bar_x}" y="{y - 7}" width="{bar_width}" height="12" rx="2" fill="{color}" opacity="0.85"/>'
+            f'  <rect x="{bar_x}" y="{y - 6}" width="{bar_width}" height="10" rx="2" fill="{color}" opacity="0.85"/>'
         )
         # Percentage right-aligned
         lines.append(
             f'  <text x="{pct_x}" y="{y + 2}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="13" fill="{color}" font-weight="bold">{pct}%</text>'
+            f'font-size="11" fill="{color}" font-weight="bold">{pct}%</text>'
         )
 
     return "\n".join(lines)
@@ -822,8 +822,7 @@ def main():
     # Render unified card
     print("Rendering card.svg...")
     hero_css, ascii_hero_svg, hero_height = render_ascii_hero()
-    card_height = 385 + hero_height + 30  # header/panels + hero + footer
-    footer_y = card_height - 13
+    card_height = 385 + hero_height + 10  # header/panels + hero + bottom pad
 
     card = render_template(
         "card.svg.template",
@@ -840,7 +839,6 @@ def main():
         current_year=str(datetime.now(timezone.utc).year),
         language_summary=lang_summary,
         card_height=str(card_height),
-        footer_y=str(footer_y),
         hero_css=hero_css,
     )
     (ROOT / "card.svg").write_text(card)
