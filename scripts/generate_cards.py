@@ -459,10 +459,14 @@ EMOTION_HERO_DIR = Path(os.environ.get(
 
 
 def _load_production_art() -> list[str]:
-    """Load production ASCII art from emotion-hero content directory."""
-    content_dir = EMOTION_HERO_DIR / "content"
-    # Priority: art.txt in backend/content, then root content
-    for search_dir in [EMOTION_HERO_DIR / "backend" / "content", content_dir]:
+    """Load production ASCII art. Checks local content/ first, then emotion-hero."""
+    # Local copy bundled in this repo
+    local_art = ROOT / "content" / "art.txt"
+    if local_art.exists():
+        return local_art.read_text().rstrip("\n").split("\n")
+
+    # Fall back to emotion-hero directories
+    for search_dir in [EMOTION_HERO_DIR / "backend" / "content", EMOTION_HERO_DIR / "content"]:
         art_txt = search_dir / "art.txt"
         if art_txt.exists():
             return art_txt.read_text().rstrip("\n").split("\n")
