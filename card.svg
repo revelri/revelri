@@ -930,7 +930,7 @@
   <text x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
     <text x="815" y="296" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">4d (best 6d)</tspan></text>
   <text x="815" y="316" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">9.6/day</tspan></text>
-  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">01h 42m ago</tspan></text>
+  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">01h 09m ago</tspan></text>
 
   <!-- Contribution count (centered between PROJECTS and STATS) -->
   <text x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="1">592 contributions in 2026</text>
