@@ -367,15 +367,23 @@ def render_language_bars(languages):
     """Generate SVG elements for language bar chart.
 
     Layout fits inside the LANGUAGES box (x=425..815, y=88..258).
-    Names right-justified at x=530, bars from 535 to 805 (270px max).
+    No header — vertically centered with enlarged fonts.
     """
     lines = []
-    max_bar_width = 340
+    max_bar_width = 320
     label_x = 518   # right edge for right-justified names
-    bar_x = 526
+    bar_x = 528
     pct_x = 805     # right-aligned percentage
-    y_start = 140
-    line_height = 20
+    line_height = 30
+    font_size = 15
+    bar_height = 14
+
+    # Vertically center in box (y=88..258, height=170)
+    box_top = 88
+    box_height = 170
+    n = len(languages)
+    content_height = n * line_height
+    y_start = box_top + (box_height - content_height) // 2 + line_height // 2
 
     for i, (name, pct) in enumerate(languages):
         y = y_start + i * line_height
@@ -385,17 +393,17 @@ def render_language_bars(languages):
         lines.append(
             f'  <text x="{label_x}" y="{y + 2}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="11" fill="{color}" font-weight="bold">{name}</text>'
+            f'font-size="{font_size}" fill="{color}" font-weight="bold">{name}</text>'
         )
         # Bar
         lines.append(
-            f'  <rect x="{bar_x}" y="{y - 6}" width="{bar_width}" height="10" rx="2" fill="{color}" opacity="0.85"/>'
+            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="{bar_height}" rx="2" fill="{color}" opacity="0.85"/>'
         )
         # Percentage right-aligned
         lines.append(
             f'  <text x="{pct_x}" y="{y + 2}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="11" fill="{color}" font-weight="bold">{pct}%</text>'
+            f'font-size="{font_size}" fill="{color}" font-weight="bold">{pct}%</text>'
         )
 
     return "\n".join(lines)
