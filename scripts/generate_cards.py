@@ -485,23 +485,59 @@ def _art_bounds(art_lines: list[str]) -> tuple[int, int, int, int]:
     return first, last, min_col, max_col
 
 
-def _nearest_blob(nx: float, ny: float) -> int:
-    """Return index of nearest metaball blob center."""
-    best, best_field = 0, -1.0
+def _hex_to_rgb(h: str) -> tuple[int, int, int]:
+    h = h.lstrip("#")
+    return int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+
+
+def _rgb_to_hex(r: int, g: int, b: int) -> str:
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+def _metaball_color(nx: float, ny: float) -> str:
+    """Compute blended color at (nx, ny) from all 5 metaball fields."""
+    # Blob radii — different sizes create curved boundaries
+    radii = [0.35, 0.25, 0.40, 0.30, 0.28]
+    fields = []
     for i, (bx, by) in enumerate(BLOB_CENTERS):
         dx, dy = nx - bx, ny - by
-        field = 1.0 / (dx * dx + dy * dy + 0.001)
-        if field > best_field:
-            best_field = field
-            best = i
-    return best
+        dist_sq = dx * dx + dy * dy + 0.0001
+        # Metaball field: r² / d²
+        field = (radii[i] ** 2) / dist_sq
+        fields.append(field)
+
+    total = sum(fields)
+    if total < 0.001:
+        return EMOTION_COLORS[0]
+
+    # Weighted blend of all 5 colors
+    r, g, b = 0.0, 0.0, 0.0
+    for i in range(5):
+        w = fields[i] / total
+        cr, cg, cb = _hex_to_rgb(EMOTION_COLORS[i])
+        r += cr * w
+        g += cg * w
+        b += cb * w
+
+    return _rgb_to_hex(int(r), int(g), int(b))
+
+
+def _quantize_color(hex_color: str, steps: int = 24) -> str:
+    """Quantize a hex color to reduce unique class count."""
+    r, g, b = _hex_to_rgb(hex_color)
+    q = 256 // steps
+    r = (r // q) * q + q // 2
+    g = (g // q) * q + q // 2
+    b = (b // q) * q + q // 2
+    return _rgb_to_hex(min(r, 255), min(g, 255), min(b, 255))
 
 
 def render_ascii_hero() -> tuple[str, str, int]:
-    """Render production ASCII art with metaball-style coloring.
+    """Render production ASCII art with metaball-style soft color blending.
 
     Returns (css_styles, svg_elements, total_height).
-    Uses CSS @keyframes instead of <animate> since GitHub strips SMIL.
+    Colors are computed per-character as a weighted blend from all 5 emotion
+    blob centers, creating organic rounded regions with smooth transitions.
     """
     from html import escape as html_escape
 
@@ -511,7 +547,6 @@ def render_ascii_hero() -> tuple[str, str, int]:
     total_rows = len(content_lines)
     col_range = max(max_col - min_col, 1)
 
-    # Scale font to fit within 840px card width with padding
     card_inner = 800
     char_width_at_1px = 0.6
     font_size = min(10, card_inner / (col_range * char_width_at_1px))
@@ -522,36 +557,10 @@ def render_ascii_hero() -> tuple[str, str, int]:
     x_offset = (840 - total_width) / 2
     y_start = 355
 
-    # Generate CSS keyframes for each blob
-    css_parts = []
-    for i in range(5):
-        base = EMOTION_COLORS[i]
-        next_c = EMOTION_COLORS[(i + 1) % 5]
-        prev_c = EMOTION_COLORS[(i - 1) % 5]
-        dur = 14 + i * 2
-        delay = -(i * 3)
-        pulse_delay = -(i * 1.6)
-
-        css_parts.append(
-            f"@keyframes blob{i} {{\n"
-            f"  0%, 100% {{ fill: {base}; }}\n"
-            f"  40% {{ fill: {next_c}; }}\n"
-            f"  70% {{ fill: {prev_c}; }}\n"
-            f"}}"
-        )
-        css_parts.append(
-            f"@keyframes bpulse{i} {{\n"
-            f"  0%, 100% {{ opacity: 0.7; }}\n"
-            f"  50% {{ opacity: 1; }}\n"
-            f"}}"
-        )
-        css_parts.append(
-            f".b{i} {{ fill: {base}; "
-            f"animation: blob{i} {dur}s ease-in-out infinite {delay}s, "
-            f"bpulse{i} 8s ease-in-out infinite {pulse_delay:.1f}s; }}"
-        )
-
+    # Collect all unique quantized colors used
+    used_colors: set[str] = set()
     elements = []
+
     for row_idx, line in enumerate(content_lines):
         stripped = line.rstrip()
         if not stripped.strip():
@@ -560,34 +569,48 @@ def render_ascii_hero() -> tuple[str, str, int]:
         leading = len(stripped) - len(stripped.lstrip())
         content = stripped.lstrip()
         y = y_start + row_idx * line_height
+        ny = row_idx / max(total_rows, 1)
 
-        # Split into segments by nearest blob
-        segments: list[tuple[int, int, str]] = []
+        # Group adjacent characters by quantized metaball color
+        segments: list[tuple[int, str, str]] = []  # (start_col, qcolor, chars)
         seg_start = leading
-        seg_blob = _nearest_blob((leading - min_col) / col_range, row_idx / max(total_rows, 1))
+        seg_color = _quantize_color(_metaball_color((leading - min_col) / col_range, ny))
         seg_chars: list[str] = []
 
         for ci, ch in enumerate(content):
             col = leading + ci
-            blob = _nearest_blob((col - min_col) / col_range, row_idx / max(total_rows, 1))
-            if blob != seg_blob:
-                segments.append((seg_start, seg_blob, "".join(seg_chars)))
+            nx = (col - min_col) / col_range
+            qc = _quantize_color(_metaball_color(nx, ny))
+            if qc != seg_color:
+                segments.append((seg_start, seg_color, "".join(seg_chars)))
                 seg_start = col
-                seg_blob = blob
+                seg_color = qc
                 seg_chars = [ch]
             else:
                 seg_chars.append(ch)
         if seg_chars:
-            segments.append((seg_start, seg_blob, "".join(seg_chars)))
+            segments.append((seg_start, seg_color, "".join(seg_chars)))
 
-        for col_start, blob_idx, text in segments:
+        for col_start, qcolor, text in segments:
             x = x_offset + (col_start - min_col) * char_width
             escaped = html_escape(text)
+            css_class = "c" + qcolor.lstrip("#")
+            used_colors.add(qcolor)
             elements.append(
-                f'  <text x="{x:.1f}" y="{y:.1f}" class="b{blob_idx}" '
+                f'  <text x="{x:.1f}" y="{y:.1f}" class="{css_class}" '
                 f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
                 f'font-size="{font_size:.1f}" xml:space="preserve">{escaped}</text>'
             )
+
+    # Generate CSS: one class per quantized color + shared pulse animation
+    css_parts = [
+        "@keyframes hpulse {\n  0%, 100% { opacity: 0.75; }\n  50% { opacity: 1; }\n}"
+    ]
+    for qc in sorted(used_colors):
+        cls = "c" + qc.lstrip("#")
+        css_parts.append(
+            f".{cls} {{ fill: {qc}; animation: hpulse 8s ease-in-out infinite; }}"
+        )
 
     hero_height = int(total_rows * line_height + 40)
     return "\n".join(css_parts), "\n".join(elements), hero_height
