@@ -17,7 +17,8 @@ CONFIG_PATH = ROOT / "config.yml"
 MOCK_DATA_PATH = ROOT / "scripts" / "mock_data.json"
 
 # CRT color palette
-HEATMAP_COLORS = ["#333333", "#2d1b4e", "#4c2882", "#7c3aed", "#c084fc"]
+# Heatmap gradient derived from Zeitgeist emotion palette
+HEATMAP_COLORS = ["#333333", "#2a3d35", "#3d6a50", "#6abf7c", "#6aa8c0"]
 
 
 def _run_gh(cmd, label="gh"):
@@ -355,7 +356,7 @@ LANG_COLORS = {
     "Crystal": "#000100",
     "D": "#ba595e",
 }
-LANG_COLOR_FALLBACKS = ["#c084fc", "#f1e05a", "#3178c6", "#dea584", "#00ADD8"]
+LANG_COLOR_FALLBACKS = ["#6aa8c0", "#6abf7c", "#b89f5e", "#c47a9b", "#7c6abf"]
 
 
 def lang_color(name, index):
@@ -625,43 +626,49 @@ def render_ascii_hero() -> tuple[str, str, int]:
                 f'font-size="{font_size:.1f}" xml:space="preserve">{escaped}</text>'
             )
 
-    # Generate CSS: per-color keyframes that shift fill toward neighbors
-    # For each quantized color, compute two shifted variants by nudging
-    # the dominant blob contribution to simulate metaball drift
+    # Generate CSS: 5 shared emotion keyframes + per-color class assignments
+    # Each emotion keyframe drifts 30% toward its two adjacent neighbors.
+    # Each quantized color class is assigned to the nearest emotion's keyframe
+    # with a staggered delay for organic variety. This keeps visual fidelity
+    # while cutting unique @keyframes from ~80 to 5 (massive GPU savings).
     css_parts = []
-    for qc in sorted(used_colors):
-        cls = "c" + qc.lstrip("#")
-        r, g, b = _hex_to_rgb(qc)
 
-        # Shift toward each of the 5 emotion colors to create drift variants
-        # Pick the two emotions closest to this blended color
-        distances = []
-        for i, ec in enumerate(EMOTION_COLORS):
-            er, eg, eb = _hex_to_rgb(ec)
-            dist = (r - er) ** 2 + (g - eg) ** 2 + (b - eb) ** 2
-            distances.append((dist, i))
-        distances.sort()
-        # Blend 30% toward nearest and second-nearest emotion
-        near1 = EMOTION_COLORS[distances[0][1]]
-        near2 = EMOTION_COLORS[distances[1][1]]
-        n1r, n1g, n1b = _hex_to_rgb(near1)
-        n2r, n2g, n2b = _hex_to_rgb(near2)
-        shift1 = _rgb_to_hex(int(r * 0.7 + n1r * 0.3), int(g * 0.7 + n1g * 0.3), int(b * 0.7 + n1b * 0.3))
-        shift2 = _rgb_to_hex(int(r * 0.7 + n2r * 0.3), int(g * 0.7 + n2g * 0.3), int(b * 0.7 + n2b * 0.3))
-
-        kf_name = f"kf_{cls}"
+    # Build the 5 shared keyframes
+    for i, ec in enumerate(EMOTION_COLORS):
+        er, eg, eb = _hex_to_rgb(ec)
+        prev_ec = EMOTION_COLORS[(i - 1) % 5]
+        next_ec = EMOTION_COLORS[(i + 1) % 5]
+        pr, pg, pb = _hex_to_rgb(prev_ec)
+        nr, ng, nb = _hex_to_rgb(next_ec)
+        shift1 = _rgb_to_hex(int(er * 0.7 + pr * 0.3), int(eg * 0.7 + pg * 0.3), int(eb * 0.7 + pb * 0.3))
+        shift2 = _rgb_to_hex(int(er * 0.7 + nr * 0.3), int(eg * 0.7 + ng * 0.3), int(eb * 0.7 + nb * 0.3))
         css_parts.append(
-            f"@keyframes {kf_name} {{\n"
-            f"  0%, 100% {{ fill: {qc}; opacity: 0.8; }}\n"
+            f"@keyframes emo{i} {{\n"
+            f"  0%, 100% {{ fill: {ec}; opacity: 0.8; }}\n"
             f"  33% {{ fill: {shift1}; opacity: 1; }}\n"
             f"  66% {{ fill: {shift2}; opacity: 0.9; }}\n"
             f"}}"
         )
-        # Stagger duration by hash of color for organic feel
-        dur = 4 + (r + g) % 5
-        delay = -((b + g) % 7)
+
+    # Assign each quantized color to nearest emotion keyframe
+    for qc in sorted(used_colors):
+        cls = "c" + qc.lstrip("#")
+        r, g, b = _hex_to_rgb(qc)
+
+        # Find nearest emotion
+        best_i, best_dist = 0, float("inf")
+        for i, ec in enumerate(EMOTION_COLORS):
+            er, eg, eb = _hex_to_rgb(ec)
+            dist = (r - er) ** 2 + (g - eg) ** 2 + (b - eb) ** 2
+            if dist < best_dist:
+                best_i, best_dist = i, dist
+
+        # Stagger duration and delay by color hash for organic feel
+        h = hash(qc) & 0xFFFFFFFF
+        dur = 4 + h % 5
+        delay = -((h >> 8) % 7)
         css_parts.append(
-            f".{cls} {{ fill: {qc}; animation: {kf_name} {dur}s ease-in-out infinite {delay}s; }}"
+            f".{cls} {{ fill: {qc}; animation: emo{best_i} {dur}s ease-in-out infinite {delay}s; }}"
         )
 
     hero_height = int(total_rows * line_height + 40)
@@ -720,8 +727,8 @@ def render_projects_panel(repos, config):
         label = f"› {name}" if not desc else f"› {name} — {desc}"
         label = label[:48]
         lines.append(
-            f'  <text x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="17.3" fill="#c084fc" font-weight="bold">{label}</text>'
+            f'  <text class="zg-primary" x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+            f'font-size="17.3" font-weight="bold">{label}</text>'
         )
     return "\n".join(lines)
 
@@ -740,8 +747,8 @@ def render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_
         lines.append(
             f'  <text x="815" y="{y}" text-anchor="end" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
             f'font-size="17.3" font-weight="bold">'
-            f'<tspan fill="#7c3aed">{label}</tspan>'
-            f'<tspan fill="#c084fc">{value}</tspan>'
+            f'<tspan class="zg-secondary">{label}</tspan>'
+            f'<tspan class="zg-primary">{value}</tspan>'
             f'</text>'
         )
     return "\n".join(lines)
