@@ -269,7 +269,7 @@ def aggregate_languages(repos_data):
             size = edge["size"]
             lang_sizes[name] = lang_sizes.get(name, 0) + size
 
-    # Sort by size, top 4 + other
+    # Sort by size, show individually if ≥3%, lump the rest as "Other"
     sorted_langs = sorted(lang_sizes.items(), key=lambda x: x[1], reverse=True)
     total = sum(s for _, s in sorted_langs)
     if total == 0:
@@ -277,9 +277,9 @@ def aggregate_languages(repos_data):
 
     result = []
     other = 0
-    for i, (name, size) in enumerate(sorted_langs):
+    for name, size in sorted_langs:
         pct = round(size / total * 100)
-        if i < 3:
+        if pct >= 3 and len(result) < 5:
             result.append((name, pct))
         else:
             other += pct
@@ -366,21 +366,31 @@ def lang_color(name, index):
 def render_language_bars(languages):
     """Generate SVG elements for language bar chart."""
     lines = []
-    max_bar_width = 200
-    bar_x = 434
-    text_x = 644
+    max_bar_width = 340
+    label_x = 430  # right edge for right-justified names
+    bar_x = 440
     y_start = 140
-    line_height = 22
+    line_height = 26
 
     for i, (name, pct) in enumerate(languages):
         y = y_start + i * line_height
-        bar_width = max(2, int(max_bar_width * pct / 100))
+        bar_width = max(4, int(max_bar_width * pct / 100))
         color = lang_color(name, i)
+        # Right-justified language name
         lines.append(
-            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="12" rx="2" fill="{color}" opacity="0.85"/>'
+            f'  <text x="{label_x}" y="{y + 2}" text-anchor="end" '
+            f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+            f'font-size="14.4" fill="{color}" font-weight="bold">{name}</text>'
         )
+        # Bar
         lines.append(
-            f'  <text x="{text_x}" y="{y + 2}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="12" fill="{color}" font-weight="bold">{name} {pct}%</text>'
+            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="14" rx="2" fill="{color}" opacity="0.85"/>'
+        )
+        # Percentage after bar
+        lines.append(
+            f'  <text x="{bar_x + bar_width + 6}" y="{y + 2}" '
+            f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+            f'font-size="14.4" fill="{color}" font-weight="bold">{pct}%</text>'
         )
 
     return "\n".join(lines)
@@ -547,7 +557,7 @@ def render_ascii_hero() -> tuple[str, str, int]:
     total_rows = len(content_lines)
     col_range = max(max_col - min_col, 1)
 
-    card_inner = 800
+    card_inner = 800 * 0.67  # 33% smaller than full width
     char_width_at_1px = 0.6
     font_size = min(10, card_inner / (col_range * char_width_at_1px))
     char_width = font_size * char_width_at_1px
@@ -669,7 +679,7 @@ def render_projects_panel(repos, config):
         label = label[:48]
         lines.append(
             f'  <text x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="12" fill="#c084fc" font-weight="bold">{label}</text>'
+            f'font-size="14.4" fill="#c084fc" font-weight="bold">{label}</text>'
         )
     return "\n".join(lines)
 
@@ -687,7 +697,7 @@ def render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_
         y = y_start + i * 20
         lines.append(
             f'  <text x="815" y="{y}" text-anchor="end" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="12" font-weight="bold">'
+            f'font-size="14.4" font-weight="bold">'
             f'<tspan fill="#7c3aed">{label}</tspan>'
             f'<tspan fill="#c084fc">{value}</tspan>'
             f'</text>'
