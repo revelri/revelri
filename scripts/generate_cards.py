@@ -617,14 +617,43 @@ def render_ascii_hero() -> tuple[str, str, int]:
                 f'font-size="{font_size:.1f}" xml:space="preserve">{escaped}</text>'
             )
 
-    # Generate CSS: one class per quantized color + shared pulse animation
-    css_parts = [
-        "@keyframes hpulse {\n  0%, 100% { opacity: 0.75; }\n  50% { opacity: 1; }\n}"
-    ]
+    # Generate CSS: per-color keyframes that shift fill toward neighbors
+    # For each quantized color, compute two shifted variants by nudging
+    # the dominant blob contribution to simulate metaball drift
+    css_parts = []
     for qc in sorted(used_colors):
         cls = "c" + qc.lstrip("#")
+        r, g, b = _hex_to_rgb(qc)
+
+        # Shift toward each of the 5 emotion colors to create drift variants
+        # Pick the two emotions closest to this blended color
+        distances = []
+        for i, ec in enumerate(EMOTION_COLORS):
+            er, eg, eb = _hex_to_rgb(ec)
+            dist = (r - er) ** 2 + (g - eg) ** 2 + (b - eb) ** 2
+            distances.append((dist, i))
+        distances.sort()
+        # Blend 30% toward nearest and second-nearest emotion
+        near1 = EMOTION_COLORS[distances[0][1]]
+        near2 = EMOTION_COLORS[distances[1][1]]
+        n1r, n1g, n1b = _hex_to_rgb(near1)
+        n2r, n2g, n2b = _hex_to_rgb(near2)
+        shift1 = _rgb_to_hex(int(r * 0.7 + n1r * 0.3), int(g * 0.7 + n1g * 0.3), int(b * 0.7 + n1b * 0.3))
+        shift2 = _rgb_to_hex(int(r * 0.7 + n2r * 0.3), int(g * 0.7 + n2g * 0.3), int(b * 0.7 + n2b * 0.3))
+
+        kf_name = f"kf_{cls}"
         css_parts.append(
-            f".{cls} {{ fill: {qc}; animation: hpulse 4s ease-in-out infinite; }}"
+            f"@keyframes {kf_name} {{\n"
+            f"  0%, 100% {{ fill: {qc}; opacity: 0.8; }}\n"
+            f"  33% {{ fill: {shift1}; opacity: 1; }}\n"
+            f"  66% {{ fill: {shift2}; opacity: 0.9; }}\n"
+            f"}}"
+        )
+        # Stagger duration by hash of color for organic feel
+        dur = 4 + (r + g) % 5
+        delay = -((b + g) % 7)
+        css_parts.append(
+            f".{cls} {{ fill: {qc}; animation: {kf_name} {dur}s ease-in-out infinite {delay}s; }}"
         )
 
     hero_height = int(total_rows * line_height + 40)
