@@ -449,13 +449,13 @@ def render_heatmap(calendar_data):
     return "\n".join(cells)
 
 
-# Emotion-hero color palette
+# Emotion-hero colors — boosted vibrancy to match CRT card palette
 EMOTION_COLORS = [
-    "#87a99e",  # Serene - muted teal-green
-    "#ad9387",  # Vibrant - soft terracotta
-    "#919baf",  # Melancholy - muted slate blue
-    "#a5a091",  # Curious - soft warm gray
-    "#9ba591",  # Content - muted olive green
+    "#6aa8c0",  # Serene - vivid teal
+    "#c47a9b",  # Vibrant - warm magenta-rose
+    "#7c6abf",  # Melancholy - rich purple
+    "#b89f5e",  # Curious - amber gold
+    "#6abf7c",  # Content - vivid green
 ]
 
 # Metaball blob centers in normalized [0,1] space
@@ -570,7 +570,7 @@ def render_ascii_hero() -> tuple[str, str, int]:
 
     total_width = col_range * char_width
     x_offset = (840 - total_width) / 2
-    y_start = 355
+    y_start = 385
 
     # Collect all unique quantized colors used
     used_colors: set[str] = set()
@@ -677,7 +677,7 @@ def render_projects_panel(repos, config):
         items = [(name, "") for name in repos[:3]]
 
     lines = []
-    y_start = 270
+    y_start = 296
     for i, (name, desc) in enumerate(items):
         y = y_start + i * 20
         label = f"› {name}" if not desc else f"› {name} — {desc}"
@@ -697,7 +697,7 @@ def render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_
         ("last: ", f"{last_commit_ago}"),
     ]
     lines = []
-    y_start = 270
+    y_start = 296
     for i, (label, value) in enumerate(stats):
         y = y_start + i * 20
         lines.append(
@@ -793,7 +793,7 @@ def main():
     # Render unified card
     print("Rendering card.svg...")
     hero_css, ascii_hero_svg, hero_height = render_ascii_hero()
-    card_height = 355 + hero_height + 30  # header/panels + hero + footer
+    card_height = 385 + hero_height + 30  # header/panels + hero + footer
     footer_y = card_height - 13
 
     card = render_template(
