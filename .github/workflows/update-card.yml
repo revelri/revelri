@@ -47,7 +47,7 @@ jobs:
 
       - name: Generate hero SVG
         env:
-          EMOTION_HERO_DIR: ${{ vars.EMOTION_HERO_DIR || '/home/revelri/Dev/Pipeline/Building/ascii/emotion-hero' }}
+          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Pipeline/Building/ascii/zeitgeist' }}
         run: .venv/bin/python3 scripts/generate_hero.py
 
       - name: Commit SVG if changed

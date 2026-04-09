@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Generate hero.svg from emotion-hero ASCII art with CSS-animated emotion colors.
+"""Generate hero.svg from Zeitgeist ASCII art with CSS-animated emotion colors.
 
-Connects to the emotion-hero backend via WebSocket to sample live emotion ratios
+Connects to the Zeitgeist backend via WebSocket to sample live emotion ratios
 from Bluesky Jetstream, then renders the ASCII art as an SVG with diagonal color
 wave animations driven by those ratios.
 
@@ -20,9 +20,9 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
-EMOTION_HERO_DIR = Path(os.environ.get(
-    "EMOTION_HERO_DIR",
-    str(ROOT_DIR.parent / "ascii" / "emotion-hero")
+ZEITGEIST_DIR = Path(os.environ.get(
+    "ZEITGEIST_DIR",
+    str(ROOT_DIR.parent / "ascii" / "zeitgeist")
 ))
 OUTPUT_SVG = ROOT_DIR / "hero.svg"
 
@@ -53,7 +53,7 @@ PADDING = 10
 
 def find_ascii_art() -> str:
     """Find and read the ASCII art file from the content directory."""
-    content_dir = EMOTION_HERO_DIR / "content"
+    content_dir = ZEITGEIST_DIR / "content"
 
     # Priority: art.txt > any .txt that isn't colors.txt
     art_txt = content_dir / "art.txt"
@@ -266,7 +266,7 @@ text {{ font-family: 'Courier New', Courier, monospace; font-size: {FONT_SIZE}px
 
 
 async def sample_emotions(port: int, duration: int) -> dict[str, float]:
-    """Connect to the emotion-hero backend WS and average emotion ratios."""
+    """Connect to the Zeitgeist backend WS and average emotion ratios."""
     import websockets
 
     uri = f"ws://localhost:{port}"
@@ -297,8 +297,8 @@ async def sample_emotions(port: int, duration: int) -> dict[str, float]:
 
 
 def start_backend() -> subprocess.Popen | None:
-    """Start the emotion-hero backend as a subprocess."""
-    backend_dir = EMOTION_HERO_DIR / "backend"
+    """Start the Zeitgeist backend as a subprocess."""
+    backend_dir = ZEITGEIST_DIR / "backend"
     index_js = backend_dir / "dist" / "index.js"
 
     if not index_js.exists():
