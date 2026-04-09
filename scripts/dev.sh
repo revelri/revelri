@@ -2,7 +2,7 @@
 # Hot-reload dev server for profile card design iteration.
 # Usage: ./dev.sh [--port PORT] [--no-open]
 set -euo pipefail
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 PORT="${1:-8080}"
 NO_OPEN="${2:-}"

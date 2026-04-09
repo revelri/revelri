@@ -449,7 +449,7 @@ def render_heatmap(calendar_data):
     return "\n".join(cells)
 
 
-# Emotion-hero colors — boosted vibrancy to match CRT card palette
+# Zeitgeist colors — boosted vibrancy to match CRT card palette
 EMOTION_COLORS = [
     "#6aa8c0",  # Serene - vivid teal
     "#c47a9b",  # Vibrant - warm magenta-rose
@@ -467,21 +467,21 @@ BLOB_CENTERS = [
     (0.80, 0.80),  # content
 ]
 
-EMOTION_HERO_DIR = Path(os.environ.get(
-    "EMOTION_HERO_DIR",
-    str(ROOT.parent / "ascii" / "emotion-hero")
+ZEITGEIST_DIR = Path(os.environ.get(
+    "ZEITGEIST_DIR",
+    str(ROOT.parent / "ascii" / "zeitgeist")
 ))
 
 
 def _load_production_art() -> list[str]:
-    """Load production ASCII art. Checks local content/ first, then emotion-hero."""
+    """Load production ASCII art. Checks local content/ first, then Zeitgeist."""
     # Local copy bundled in this repo
     local_art = ROOT / "content" / "art.txt"
     if local_art.exists():
         return local_art.read_text().rstrip("\n").split("\n")
 
-    # Fall back to emotion-hero directories
-    for search_dir in [EMOTION_HERO_DIR / "backend" / "content", EMOTION_HERO_DIR / "content"]:
+    # Fall back to Zeitgeist directories
+    for search_dir in [ZEITGEIST_DIR / "backend" / "content", ZEITGEIST_DIR / "content"]:
         art_txt = search_dir / "art.txt"
         if art_txt.exists():
             return art_txt.read_text().rstrip("\n").split("\n")

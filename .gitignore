@@ -1,6 +1,5 @@
 .playwright-mcp/
 .gstack/
-node_modules/
-package-lock.json
 scripts/mock_data.json
 dev.html
+*.kra
