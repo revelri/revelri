@@ -40,19 +40,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Capture hero GIF
-        env:
-          EMOTION_HERO_DIR: ${{ vars.EMOTION_HERO_DIR || '/home/revelri/Dev/ascii/emotion-hero' }}
-        run: bash scripts/capture_hero.sh
+      - name: Setup venv
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -q websockets
 
-      - name: Commit GIF if changed
+      - name: Generate hero SVG
+        env:
+          EMOTION_HERO_DIR: ${{ vars.EMOTION_HERO_DIR || '/home/revelri/Dev/Pipeline/Building/ascii/emotion-hero' }}
+        run: .venv/bin/python3 scripts/generate_hero.py
+
+      - name: Commit SVG if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main
-          git diff --quiet hero.gif || {
-            git add hero.gif
-            git commit -m "Update hero GIF"
+          git diff --quiet hero.svg || {
+            git add hero.svg
+            git commit -m "Update hero SVG"
             git push
           }
 
