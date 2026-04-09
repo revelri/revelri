@@ -713,7 +713,7 @@ def render_projects_panel(repos, config):
         label = label[:48]
         lines.append(
             f'  <text x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="14.4" fill="#c084fc" font-weight="bold">{label}</text>'
+            f'font-size="17.3" fill="#c084fc" font-weight="bold">{label}</text>'
         )
     return "\n".join(lines)
 
@@ -731,7 +731,7 @@ def render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_
         y = y_start + i * 20
         lines.append(
             f'  <text x="815" y="{y}" text-anchor="end" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="14.4" font-weight="bold">'
+            f'font-size="17.3" font-weight="bold">'
             f'<tspan fill="#7c3aed">{label}</tspan>'
             f'<tspan fill="#c084fc">{value}</tspan>'
             f'</text>'

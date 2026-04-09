@@ -52,15 +52,15 @@
   {language_bars}
 
   <!-- PROJECTS panel (left) -->
-  <text x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13.2" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">PROJECTS</text>
+  <text x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">PROJECTS</text>
   {projects_panel}
 
   <!-- STATS panel (right) -->
-  <text x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13.2" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
+  <text x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
   {stats_panel}
 
   <!-- Contribution count (centered between PROJECTS and STATS) -->
-  <text x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13.2" fill="#7c3aed" font-weight="bold" letter-spacing="1">{total_contributions} contributions in {current_year}</text>
+  <text x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="1">{total_contributions} contributions in {current_year}</text>
 
   <!-- Divider -->
   <line x1="30" y1="365" x2="810" y2="365" stroke="#6a6bf6" stroke-width="0.5" opacity="0.3"/>

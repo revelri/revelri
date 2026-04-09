@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="1340" viewBox="0 0 840 1340" role="img">
   <title>GitHub profile card for sl revoy // revelri</title>
-  <desc>46 commits this week. Top languages: TypeScript 30%, Rust 29%, JavaScript 21%. 537 contributions in 2026.</desc>
+  <desc>3 commits this week. Top languages: JavaScript 58%, Python 26%, Rust 12%. 467 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -531,7 +531,7 @@
       <rect x="40" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="34" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="48" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="40" y="62" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="40" y="62" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="40" y="104" width="11" height="11" rx="2" fill="#333333"/>
@@ -598,7 +598,7 @@
   <rect x="166" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="166" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="166" y="104" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="180" y="20" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="180" y="20" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="180" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="180" y="48" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="180" y="62" width="11" height="11" rx="2" fill="#333333"/>
@@ -608,7 +608,7 @@
   <rect x="194" y="20" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="48" width="11" height="11" rx="2" fill="#4c2882"/>
-  <rect x="194" y="62" width="11" height="11" rx="2" fill="#4c2882"/>
+  <rect x="194" y="62" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="76" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="194" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="194" y="104" width="11" height="11" rx="2" fill="#4c2882"/>
@@ -616,14 +616,14 @@
   <rect x="208" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="208" y="48" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="62" width="11" height="11" rx="2" fill="#333333"/>
-  <rect x="208" y="76" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="208" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="208" y="104" width="11" height="11" rx="2" fill="#2d1b4e"/>
   <rect x="222" y="20" width="11" height="11" rx="2" fill="#333333"/>
-  <rect x="222" y="34" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="222" y="48" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="222" y="62" width="11" height="11" rx="2" fill="#2d1b4e"/>
-  <rect x="222" y="76" width="11" height="11" rx="2" fill="#2d1b4e"/>
+  <rect x="222" y="34" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="48" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="62" width="11" height="11" rx="2" fill="#333333"/>
+  <rect x="222" y="76" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="90" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="222" y="104" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="236" y="20" width="11" height="11" rx="2" fill="#333333"/>
@@ -896,45 +896,40 @@
   <!-- THIS WEEK panel (left) -->
   <rect x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="211" y="120" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">THIS WEEK</text>
-  <text x="211" y="162" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" fill="#c084fc" font-weight="bold" filter="url(#glow)">46 commits</text>
-  <text x="211" y="198" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" fill="#c084fc" font-weight="bold">+266,139 / -15,285</text>
+  <text x="211" y="162" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" fill="#c084fc" font-weight="bold" filter="url(#glow)">3 commits</text>
+  <text x="211" y="198" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" fill="#c084fc" font-weight="bold">+30 / -36</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="620" y="120" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">LANGUAGES</text>
-    <text x="518" y="142" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3178c6" font-weight="bold">TypeScript</text>
-  <rect x="526" y="134" width="102" height="10" rx="2" fill="#3178c6" opacity="0.85"/>
-  <text x="805" y="142" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3178c6" font-weight="bold">30%</text>
-  <text x="518" y="162" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#dea584" font-weight="bold">Rust</text>
-  <rect x="526" y="154" width="98" height="10" rx="2" fill="#dea584" opacity="0.85"/>
-  <text x="805" y="162" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#dea584" font-weight="bold">29%</text>
-  <text x="518" y="182" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#f1e05a" font-weight="bold">JavaScript</text>
-  <rect x="526" y="174" width="71" height="10" rx="2" fill="#f1e05a" opacity="0.85"/>
-  <text x="805" y="182" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#f1e05a" font-weight="bold">21%</text>
-  <text x="518" y="202" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3572A5" font-weight="bold">Python</text>
-  <rect x="526" y="194" width="30" height="10" rx="2" fill="#3572A5" opacity="0.85"/>
-  <text x="805" y="202" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3572A5" font-weight="bold">9%</text>
-  <text x="518" y="222" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#f34b7d" font-weight="bold">C++</text>
-  <rect x="526" y="214" width="27" height="10" rx="2" fill="#f34b7d" opacity="0.85"/>
-  <text x="805" y="222" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#f34b7d" font-weight="bold">8%</text>
-  <text x="518" y="242" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#8b949e" font-weight="bold">Other</text>
-  <rect x="526" y="234" width="10" height="10" rx="2" fill="#8b949e" opacity="0.85"/>
-  <text x="805" y="242" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#8b949e" font-weight="bold">3%</text>
+    <text x="518" y="142" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#f1e05a" font-weight="bold">JavaScript</text>
+  <rect x="526" y="134" width="197" height="10" rx="2" fill="#f1e05a" opacity="0.85"/>
+  <text x="805" y="142" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#f1e05a" font-weight="bold">58%</text>
+  <text x="518" y="162" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3572A5" font-weight="bold">Python</text>
+  <rect x="526" y="154" width="88" height="10" rx="2" fill="#3572A5" opacity="0.85"/>
+  <text x="805" y="162" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3572A5" font-weight="bold">26%</text>
+  <text x="518" y="182" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#dea584" font-weight="bold">Rust</text>
+  <rect x="526" y="174" width="40" height="10" rx="2" fill="#dea584" opacity="0.85"/>
+  <text x="805" y="182" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#dea584" font-weight="bold">12%</text>
+  <text x="518" y="202" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3178c6" font-weight="bold">TypeScript</text>
+  <rect x="526" y="194" width="10" height="10" rx="2" fill="#3178c6" opacity="0.85"/>
+  <text x="805" y="202" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#3178c6" font-weight="bold">3%</text>
+  <text x="518" y="222" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#8b949e" font-weight="bold">Other</text>
+  <rect x="526" y="214" width="4" height="10" rx="2" fill="#8b949e" opacity="0.85"/>
+  <text x="805" y="222" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#8b949e" font-weight="bold">1%</text>
 
   <!-- PROJECTS panel (left) -->
-  <text x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13.2" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">PROJECTS</text>
-    <text x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14.4" fill="#c084fc" font-weight="bold">› emotion-hero</text>
-  <text x="16" y="316" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14.4" fill="#c084fc" font-weight="bold">› tf2-rs</text>
-  <text x="16" y="336" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14.4" fill="#c084fc" font-weight="bold">› oh-my-openagent</text>
+  <text x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">PROJECTS</text>
+    <text x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" fill="#c084fc" font-weight="bold">› StriVo</text>
 
   <!-- STATS panel (right) -->
-  <text x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13.2" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
-    <text x="815" y="296" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14.4" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">4d (best 6d)</tspan></text>
-  <text x="815" y="316" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14.4" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">6.6/day</tspan></text>
-  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14.4" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">00m ago</tspan></text>
+  <text x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
+    <text x="815" y="296" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">0d (best 6d)</tspan></text>
+  <text x="815" y="316" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">0.4/day</tspan></text>
+  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">3d 04h 11m ago</tspan></text>
 
   <!-- Contribution count (centered between PROJECTS and STATS) -->
-  <text x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13.2" fill="#7c3aed" font-weight="bold" letter-spacing="1">537 contributions in 2026</text>
+  <text x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" fill="#7c3aed" font-weight="bold" letter-spacing="1">467 contributions in 2026</text>
 
   <!-- Divider -->
   <line x1="30" y1="365" x2="810" y2="365" stroke="#6a6bf6" stroke-width="0.5" opacity="0.3"/>
