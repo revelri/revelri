@@ -497,11 +497,11 @@ def _nearest_blob(nx: float, ny: float) -> int:
     return best
 
 
-def render_ascii_hero() -> tuple[str, int]:
+def render_ascii_hero() -> tuple[str, str, int]:
     """Render production ASCII art with metaball-style coloring.
 
-    Returns (svg_elements, total_height) where total_height is the pixel
-    height consumed by the hero section so the card can expand to fit.
+    Returns (css_styles, svg_elements, total_height).
+    Uses CSS @keyframes instead of <animate> since GitHub strips SMIL.
     """
     from html import escape as html_escape
 
@@ -511,9 +511,9 @@ def render_ascii_hero() -> tuple[str, int]:
     total_rows = len(content_lines)
     col_range = max(max_col - min_col, 1)
 
-    # Scale font to fit within 840px card width with some padding
-    card_inner = 800  # 840 - 40px padding
-    char_width_at_1px = 0.6  # monospace char width / font-size ratio
+    # Scale font to fit within 840px card width with padding
+    card_inner = 800
+    char_width_at_1px = 0.6
     font_size = min(10, card_inner / (col_range * char_width_at_1px))
     char_width = font_size * char_width_at_1px
     line_height = font_size * 1.15
@@ -521,6 +521,35 @@ def render_ascii_hero() -> tuple[str, int]:
     total_width = col_range * char_width
     x_offset = (840 - total_width) / 2
     y_start = 355
+
+    # Generate CSS keyframes for each blob
+    css_parts = []
+    for i in range(5):
+        base = EMOTION_COLORS[i]
+        next_c = EMOTION_COLORS[(i + 1) % 5]
+        prev_c = EMOTION_COLORS[(i - 1) % 5]
+        dur = 14 + i * 2
+        delay = -(i * 3)
+        pulse_delay = -(i * 1.6)
+
+        css_parts.append(
+            f"@keyframes blob{i} {{\n"
+            f"  0%, 100% {{ fill: {base}; }}\n"
+            f"  40% {{ fill: {next_c}; }}\n"
+            f"  70% {{ fill: {prev_c}; }}\n"
+            f"}}"
+        )
+        css_parts.append(
+            f"@keyframes bpulse{i} {{\n"
+            f"  0%, 100% {{ opacity: 0.7; }}\n"
+            f"  50% {{ opacity: 1; }}\n"
+            f"}}"
+        )
+        css_parts.append(
+            f".b{i} {{ fill: {base}; "
+            f"animation: blob{i} {dur}s ease-in-out infinite {delay}s, "
+            f"bpulse{i} 8s ease-in-out infinite {pulse_delay:.1f}s; }}"
+        )
 
     elements = []
     for row_idx, line in enumerate(content_lines):
@@ -554,29 +583,14 @@ def render_ascii_hero() -> tuple[str, int]:
         for col_start, blob_idx, text in segments:
             x = x_offset + (col_start - min_col) * char_width
             escaped = html_escape(text)
-            base = EMOTION_COLORS[blob_idx]
-            next_c = EMOTION_COLORS[(blob_idx + 1) % 5]
-            prev_c = EMOTION_COLORS[(blob_idx - 1) % 5]
-            dur = 14 + blob_idx * 2
-            delay = round(blob_idx * 2.5, 1)
-            pulse_delay = round(blob_idx * 1.6, 1)
-
             elements.append(
-                f'  <text x="{x:.1f}" y="{y:.1f}" '
-                f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="{font_size:.1f}" '
-                f'fill="{base}" opacity="0.85" xml:space="preserve">'
-                f'{escaped}'
-                f'<animate attributeName="fill" '
-                f'values="{base};{next_c};{prev_c};{base}" '
-                f'dur="{dur}s" begin="{delay}s" repeatCount="indefinite"/>'
-                f'<animate attributeName="opacity" '
-                f'values="0.7;1;0.8;1;0.7" '
-                f'dur="8s" begin="{pulse_delay}s" repeatCount="indefinite"/>'
-                f'</text>'
+                f'  <text x="{x:.1f}" y="{y:.1f}" class="b{blob_idx}" '
+                f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+                f'font-size="{font_size:.1f}" xml:space="preserve">{escaped}</text>'
             )
 
     hero_height = int(total_rows * line_height + 40)
-    return "\n".join(elements), hero_height
+    return "\n".join(css_parts), "\n".join(elements), hero_height
 
 
 def render_template(template_name, **kwargs):
@@ -740,7 +754,7 @@ def main():
 
     # Render unified card
     print("Rendering card.svg...")
-    ascii_hero_svg, hero_height = render_ascii_hero()
+    hero_css, ascii_hero_svg, hero_height = render_ascii_hero()
     card_height = 355 + hero_height + 30  # header/panels + hero + footer
     footer_y = card_height - 13
 
@@ -760,6 +774,7 @@ def main():
         language_summary=lang_summary,
         card_height=str(card_height),
         footer_y=str(footer_y),
+        hero_css=hero_css,
     )
     (ROOT / "card.svg").write_text(card)
 
