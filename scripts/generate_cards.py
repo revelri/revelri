@@ -624,7 +624,7 @@ def render_ascii_hero() -> tuple[str, str, int]:
     for qc in sorted(used_colors):
         cls = "c" + qc.lstrip("#")
         css_parts.append(
-            f".{cls} {{ fill: {qc}; animation: hpulse 8s ease-in-out infinite; }}"
+            f".{cls} {{ fill: {qc}; animation: hpulse 4s ease-in-out infinite; }}"
         )
 
     hero_height = int(total_rows * line_height + 40)
