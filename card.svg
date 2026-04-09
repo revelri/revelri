@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="750" viewBox="0 0 840 750" role="img">
   <title>GitHub profile card for sl revoy // revelri</title>
-  <desc>26 commits this week. Top languages: TypeScript 30%, Rust 29%, JavaScript 21%. 505 contributions in 2026.</desc>
+  <desc>29 commits this week. Top languages: TypeScript 30%, Rust 29%, JavaScript 21%. 508 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -404,8 +404,8 @@
   <!-- THIS WEEK panel (left) -->
   <rect x="16" y="88" width="390" height="145" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
   <text x="211" y="110" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">THIS WEEK</text>
-  <text x="211" y="150" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold" filter="url(#glow)">26 commits</text>
-  <text x="211" y="183" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold">+259,810 / -11,969</text>
+  <text x="211" y="150" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold" filter="url(#glow)">29 commits</text>
+  <text x="211" y="183" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" fill="#c084fc" font-weight="bold">+259,816 / -11,975</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect x="425" y="88" width="390" height="145" rx="8" ry="8" fill="none" stroke="#6a6bf6" stroke-width="1" opacity="0.5"/>
@@ -428,7 +428,7 @@
   <!-- STATS panel (right) -->
   <text x="815" y="252" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" fill="#7c3aed" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
     <text x="815" y="270" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">streak: </tspan><tspan fill="#c084fc">4d (best 6d)</tspan></text>
-  <text x="815" y="290" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">3.7/day</tspan></text>
+  <text x="815" y="290" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">avg: </tspan><tspan fill="#c084fc">4.1/day</tspan></text>
   <text x="815" y="310" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="12" font-weight="bold"><tspan fill="#7c3aed">last: </tspan><tspan fill="#c084fc">00m ago</tspan></text>
 
   <!-- Divider -->
@@ -454,5 +454,5 @@
   </g>
 
   <!-- Contribution count -->
-  <text x="420" y="737" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" fill="#7c3aed" font-weight="bold">505 contributions so far in 2026</text>
+  <text x="420" y="737" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" fill="#7c3aed" font-weight="bold">508 contributions so far in 2026</text>
 </svg>
