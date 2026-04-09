@@ -2,113 +2,113 @@
 <style>
 text { font-family: 'Courier New', Courier, monospace; font-size: 7px; }
 @keyframes z0 {
-  0.0% { fill: #919baf; }
-  33.8% { fill: #919baf; }
-  33.8% { fill: #87a99e; }
-  66.4% { fill: #87a99e; }
-  66.4% { fill: #9ba591; }
-  81.4% { fill: #9ba591; }
-  81.4% { fill: #a5a091; }
-  90.7% { fill: #a5a091; }
-  90.7% { fill: #ad9387; }
-  100% { fill: #919baf; }
-}
-@keyframes z1 {
   0.0% { fill: #87a99e; }
-  32.6% { fill: #87a99e; }
-  32.6% { fill: #9ba591; }
-  47.6% { fill: #9ba591; }
-  47.6% { fill: #a5a091; }
-  56.9% { fill: #a5a091; }
-  56.9% { fill: #ad9387; }
-  66.2% { fill: #ad9387; }
-  66.2% { fill: #919baf; }
+  36.9% { fill: #87a99e; }
+  36.9% { fill: #9ba591; }
+  57.0% { fill: #9ba591; }
+  57.0% { fill: #919baf; }
+  76.5% { fill: #919baf; }
+  76.5% { fill: #a5a091; }
+  91.6% { fill: #a5a091; }
+  91.6% { fill: #ad9387; }
   100% { fill: #87a99e; }
 }
-@keyframes z2 {
+@keyframes z1 {
   0.0% { fill: #9ba591; }
-  15.0% { fill: #9ba591; }
-  15.0% { fill: #a5a091; }
-  24.3% { fill: #a5a091; }
-  24.3% { fill: #ad9387; }
-  33.6% { fill: #ad9387; }
-  33.6% { fill: #919baf; }
-  67.4% { fill: #919baf; }
-  67.4% { fill: #87a99e; }
+  20.1% { fill: #9ba591; }
+  20.1% { fill: #919baf; }
+  39.6% { fill: #919baf; }
+  39.6% { fill: #a5a091; }
+  54.7% { fill: #a5a091; }
+  54.7% { fill: #ad9387; }
+  63.1% { fill: #ad9387; }
+  63.1% { fill: #87a99e; }
   100% { fill: #9ba591; }
+}
+@keyframes z2 {
+  0.0% { fill: #919baf; }
+  19.6% { fill: #919baf; }
+  19.6% { fill: #a5a091; }
+  34.6% { fill: #a5a091; }
+  34.6% { fill: #ad9387; }
+  43.0% { fill: #ad9387; }
+  43.0% { fill: #87a99e; }
+  79.9% { fill: #87a99e; }
+  79.9% { fill: #9ba591; }
+  100% { fill: #919baf; }
 }
 @keyframes z3 {
   0.0% { fill: #a5a091; }
-  9.3% { fill: #a5a091; }
-  9.3% { fill: #ad9387; }
-  18.6% { fill: #ad9387; }
-  18.6% { fill: #919baf; }
-  52.4% { fill: #919baf; }
-  52.4% { fill: #87a99e; }
-  85.0% { fill: #87a99e; }
-  85.0% { fill: #9ba591; }
+  15.1% { fill: #a5a091; }
+  15.1% { fill: #ad9387; }
+  23.5% { fill: #ad9387; }
+  23.5% { fill: #87a99e; }
+  60.4% { fill: #87a99e; }
+  60.4% { fill: #9ba591; }
+  80.4% { fill: #9ba591; }
+  80.4% { fill: #919baf; }
   100% { fill: #a5a091; }
 }
 @keyframes z4 {
   0.0% { fill: #ad9387; }
-  9.3% { fill: #ad9387; }
-  9.3% { fill: #919baf; }
-  43.1% { fill: #919baf; }
-  43.1% { fill: #87a99e; }
-  75.7% { fill: #87a99e; }
-  75.7% { fill: #9ba591; }
-  90.7% { fill: #9ba591; }
-  90.7% { fill: #a5a091; }
+  8.4% { fill: #ad9387; }
+  8.4% { fill: #87a99e; }
+  45.3% { fill: #87a99e; }
+  45.3% { fill: #9ba591; }
+  65.4% { fill: #9ba591; }
+  65.4% { fill: #919baf; }
+  84.9% { fill: #919baf; }
+  84.9% { fill: #a5a091; }
   100% { fill: #ad9387; }
 }
 @keyframes z5 {
-  0.0% { fill: #919baf; }
-  33.8% { fill: #919baf; }
-  33.8% { fill: #87a99e; }
-  66.4% { fill: #87a99e; }
-  66.4% { fill: #9ba591; }
-  81.4% { fill: #9ba591; }
-  81.4% { fill: #a5a091; }
-  90.7% { fill: #a5a091; }
-  90.7% { fill: #ad9387; }
-  100% { fill: #919baf; }
-}
-@keyframes z6 {
   0.0% { fill: #87a99e; }
-  32.6% { fill: #87a99e; }
-  32.6% { fill: #9ba591; }
-  47.6% { fill: #9ba591; }
-  47.6% { fill: #a5a091; }
-  56.9% { fill: #a5a091; }
-  56.9% { fill: #ad9387; }
-  66.2% { fill: #ad9387; }
-  66.2% { fill: #919baf; }
+  36.9% { fill: #87a99e; }
+  36.9% { fill: #9ba591; }
+  57.0% { fill: #9ba591; }
+  57.0% { fill: #919baf; }
+  76.5% { fill: #919baf; }
+  76.5% { fill: #a5a091; }
+  91.6% { fill: #a5a091; }
+  91.6% { fill: #ad9387; }
   100% { fill: #87a99e; }
 }
-@keyframes z7 {
+@keyframes z6 {
   0.0% { fill: #9ba591; }
-  15.0% { fill: #9ba591; }
-  15.0% { fill: #a5a091; }
-  24.3% { fill: #a5a091; }
-  24.3% { fill: #ad9387; }
-  33.6% { fill: #ad9387; }
-  33.6% { fill: #919baf; }
-  67.4% { fill: #919baf; }
-  67.4% { fill: #87a99e; }
+  20.1% { fill: #9ba591; }
+  20.1% { fill: #919baf; }
+  39.6% { fill: #919baf; }
+  39.6% { fill: #a5a091; }
+  54.7% { fill: #a5a091; }
+  54.7% { fill: #ad9387; }
+  63.1% { fill: #ad9387; }
+  63.1% { fill: #87a99e; }
   100% { fill: #9ba591; }
+}
+@keyframes z7 {
+  0.0% { fill: #919baf; }
+  19.6% { fill: #919baf; }
+  19.6% { fill: #a5a091; }
+  34.6% { fill: #a5a091; }
+  34.6% { fill: #ad9387; }
+  43.0% { fill: #ad9387; }
+  43.0% { fill: #87a99e; }
+  79.9% { fill: #87a99e; }
+  79.9% { fill: #9ba591; }
+  100% { fill: #919baf; }
 }
 @keyframes pulse {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
 }
-.z0 { fill: #919baf; animation: z0 24s linear infinite 0s, pulse 8s ease-in-out infinite -0.0s; }
-.z1 { fill: #87a99e; animation: z1 24s linear infinite -3s, pulse 8s ease-in-out infinite -1.0s; }
-.z2 { fill: #9ba591; animation: z2 24s linear infinite -6s, pulse 8s ease-in-out infinite -2.0s; }
+.z0 { fill: #87a99e; animation: z0 24s linear infinite 0s, pulse 8s ease-in-out infinite -0.0s; }
+.z1 { fill: #9ba591; animation: z1 24s linear infinite -3s, pulse 8s ease-in-out infinite -1.0s; }
+.z2 { fill: #919baf; animation: z2 24s linear infinite -6s, pulse 8s ease-in-out infinite -2.0s; }
 .z3 { fill: #a5a091; animation: z3 24s linear infinite -9s, pulse 8s ease-in-out infinite -3.0s; }
 .z4 { fill: #ad9387; animation: z4 24s linear infinite -12s, pulse 8s ease-in-out infinite -4.0s; }
-.z5 { fill: #919baf; animation: z5 24s linear infinite -15s, pulse 8s ease-in-out infinite -5.0s; }
-.z6 { fill: #87a99e; animation: z6 24s linear infinite -18s, pulse 8s ease-in-out infinite -6.0s; }
-.z7 { fill: #9ba591; animation: z7 24s linear infinite -21s, pulse 8s ease-in-out infinite -7.0s; }
+.z5 { fill: #87a99e; animation: z5 24s linear infinite -15s, pulse 8s ease-in-out infinite -5.0s; }
+.z6 { fill: #9ba591; animation: z6 24s linear infinite -18s, pulse 8s ease-in-out infinite -6.0s; }
+.z7 { fill: #919baf; animation: z7 24s linear infinite -21s, pulse 8s ease-in-out infinite -7.0s; }
 </style>
 <rect width="100%" height="100%" fill="#0d0d0d"/>
 <g>
