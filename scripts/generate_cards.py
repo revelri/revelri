@@ -364,33 +364,38 @@ def lang_color(name, index):
 
 
 def render_language_bars(languages):
-    """Generate SVG elements for language bar chart."""
+    """Generate SVG elements for language bar chart.
+
+    Layout fits inside the LANGUAGES box (x=425..815, y=88..258).
+    Names right-justified at x=530, bars from 535 to 805 (270px max).
+    """
     lines = []
-    max_bar_width = 340
-    label_x = 430  # right edge for right-justified names
-    bar_x = 440
-    y_start = 140
-    line_height = 26
+    max_bar_width = 370  # doubled from original 200 → fills most of the box
+    label_x = 520   # right edge for right-justified names
+    bar_x = 528
+    pct_x = 805     # right-aligned percentage
+    y_start = 130
+    line_height = 22
 
     for i, (name, pct) in enumerate(languages):
         y = y_start + i * line_height
-        bar_width = max(4, int(max_bar_width * pct / 100))
+        bar_width = min(max(4, int(max_bar_width * pct / 100)), 265)
         color = lang_color(name, i)
         # Right-justified language name
         lines.append(
             f'  <text x="{label_x}" y="{y + 2}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="14.4" fill="{color}" font-weight="bold">{name}</text>'
+            f'font-size="13" fill="{color}" font-weight="bold">{name}</text>'
         )
         # Bar
         lines.append(
-            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="14" rx="2" fill="{color}" opacity="0.85"/>'
+            f'  <rect x="{bar_x}" y="{y - 7}" width="{bar_width}" height="12" rx="2" fill="{color}" opacity="0.85"/>'
         )
-        # Percentage after bar
+        # Percentage right-aligned
         lines.append(
-            f'  <text x="{bar_x + bar_width + 6}" y="{y + 2}" '
+            f'  <text x="{pct_x}" y="{y + 2}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="14.4" fill="{color}" font-weight="bold">{pct}%</text>'
+            f'font-size="13" fill="{color}" font-weight="bold">{pct}%</text>'
         )
 
     return "\n".join(lines)
