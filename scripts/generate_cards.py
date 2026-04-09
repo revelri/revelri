@@ -434,23 +434,7 @@ def render_heatmap(calendar_data):
     return "\n".join(cells)
 
 
-# Emotion-hero heart ASCII art
-HEART_ASCII = [
-    "      ******       ******",
-    "   **********   **********",
-    "  ************ ************",
-    " ***************************",
-    "  *************************",
-    "   ***********************",
-    "     *******************",
-    "       ***************",
-    "         ***********",
-    "           *******",
-    "             ***",
-    "              *",
-]
-
-# Emotion-hero color palette (adapted for CRT aesthetic)
+# Emotion-hero color palette
 EMOTION_COLORS = [
     "#87a99e",  # Serene - muted teal-green
     "#ad9387",  # Vibrant - soft terracotta
@@ -459,63 +443,136 @@ EMOTION_COLORS = [
     "#9ba591",  # Content - muted olive green
 ]
 
+# Metaball blob centers in normalized [0,1] space
+BLOB_CENTERS = [
+    (0.25, 0.20),  # serene
+    (0.75, 0.15),  # vibrant
+    (0.50, 0.50),  # melancholy
+    (0.20, 0.75),  # curious
+    (0.80, 0.80),  # content
+]
 
-def render_ascii_hero():
-    """Generate SVG elements for the ASCII heart hero with animated colors."""
-    lines = []
-    char_width = 16  # TX-02 approximate character width at 26px
-    font_size = 26
-    line_height = 30
-    # Center the heart horizontally in the 840px card
-    max_line_len = max(len(row) for row in HEART_ASCII)
-    total_width = max_line_len * char_width
+EMOTION_HERO_DIR = Path(os.environ.get(
+    "EMOTION_HERO_DIR",
+    str(ROOT.parent / "ascii" / "emotion-hero")
+))
+
+
+def _load_production_art() -> list[str]:
+    """Load production ASCII art from emotion-hero content directory."""
+    content_dir = EMOTION_HERO_DIR / "content"
+    # Priority: art.txt in backend/content, then root content
+    for search_dir in [EMOTION_HERO_DIR / "backend" / "content", content_dir]:
+        art_txt = search_dir / "art.txt"
+        if art_txt.exists():
+            return art_txt.read_text().rstrip("\n").split("\n")
+        for f in sorted(search_dir.glob("*.txt")):
+            if f.name != "colors.txt":
+                return f.read_text().rstrip("\n").split("\n")
+    return ["* no art found *"]
+
+
+def _art_bounds(art_lines: list[str]) -> tuple[int, int, int, int]:
+    """Find content bounds: (first_row, last_row, min_col, max_col)."""
+    first = next((i for i, l in enumerate(art_lines) if l.strip()), 0)
+    last = next((i for i in range(len(art_lines) - 1, -1, -1) if art_lines[i].strip()), len(art_lines) - 1)
+    min_col = min((len(l) - len(l.lstrip()) for l in art_lines[first:last + 1] if l.strip()), default=0)
+    max_col = max((len(l.rstrip()) for l in art_lines[first:last + 1] if l.strip()), default=1)
+    return first, last, min_col, max_col
+
+
+def _nearest_blob(nx: float, ny: float) -> int:
+    """Return index of nearest metaball blob center."""
+    best, best_field = 0, -1.0
+    for i, (bx, by) in enumerate(BLOB_CENTERS):
+        dx, dy = nx - bx, ny - by
+        field = 1.0 / (dx * dx + dy * dy + 0.001)
+        if field > best_field:
+            best_field = field
+            best = i
+    return best
+
+
+def render_ascii_hero() -> tuple[str, int]:
+    """Render production ASCII art with metaball-style coloring.
+
+    Returns (svg_elements, total_height) where total_height is the pixel
+    height consumed by the hero section so the card can expand to fit.
+    """
+    from html import escape as html_escape
+
+    art_lines = _load_production_art()
+    first, last, min_col, max_col = _art_bounds(art_lines)
+    content_lines = art_lines[first:last + 1]
+    total_rows = len(content_lines)
+    col_range = max(max_col - min_col, 1)
+
+    # Scale font to fit within 840px card width with some padding
+    card_inner = 800  # 840 - 40px padding
+    char_width_at_1px = 0.6  # monospace char width / font-size ratio
+    font_size = min(10, card_inner / (col_range * char_width_at_1px))
+    char_width = font_size * char_width_at_1px
+    line_height = font_size * 1.15
+
+    total_width = col_range * char_width
     x_offset = (840 - total_width) / 2
-    y_start = 385  # Below the info panes + projects/stats panels
+    y_start = 355
 
-    num_colors = len(EMOTION_COLORS)
-    num_bands = 8  # Number of diagonal color bands across the heart
+    elements = []
+    for row_idx, line in enumerate(content_lines):
+        stripped = line.rstrip()
+        if not stripped.strip():
+            continue
 
-    for row_idx, row in enumerate(HEART_ASCII):
+        leading = len(stripped) - len(stripped.lstrip())
+        content = stripped.lstrip()
         y = y_start + row_idx * line_height
 
-        # Group consecutive '*' characters by their diagonal band color
-        i = 0
-        while i < len(row):
-            if row[i] == '*':
-                # Find the run of '*' characters
-                start = i
-                while i < len(row) and row[i] == '*':
-                    i += 1
-                run_text = row[start:i]
-                x = x_offset + start * char_width
+        # Split into segments by nearest blob
+        segments: list[tuple[int, int, str]] = []
+        seg_start = leading
+        seg_blob = _nearest_blob((leading - min_col) / col_range, row_idx / max(total_rows, 1))
+        seg_chars: list[str] = []
 
-                # Calculate diagonal band index for color assignment
-                mid_col = (start + i) / 2
-                band = int((mid_col + row_idx * 2) / max_line_len * num_bands) % num_colors
-                base_color = EMOTION_COLORS[band]
-                next_color = EMOTION_COLORS[(band + 1) % num_colors]
-                third_color = EMOTION_COLORS[(band + 2) % num_colors]
-
-                # Stagger animation timing based on position for wave effect
-                delay = round((mid_col + row_idx * 3) / (max_line_len + len(HEART_ASCII) * 3) * 12, 1)
-
-                lines.append(
-                    f'  <text x="{x:.1f}" y="{y}" '
-                    f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="{font_size}" '
-                    f'fill="{base_color}" opacity="0.85">'
-                    f'{run_text}'
-                    f'<animate attributeName="fill" '
-                    f'values="{base_color};{next_color};{third_color};{base_color}" '
-                    f'dur="12s" begin="{delay}s" repeatCount="indefinite"/>'
-                    f'<animate attributeName="opacity" '
-                    f'values="0.7;1;0.8;1;0.7" '
-                    f'dur="8s" begin="{delay * 0.7:.1f}s" repeatCount="indefinite"/>'
-                    f'</text>'
-                )
+        for ci, ch in enumerate(content):
+            col = leading + ci
+            blob = _nearest_blob((col - min_col) / col_range, row_idx / max(total_rows, 1))
+            if blob != seg_blob:
+                segments.append((seg_start, seg_blob, "".join(seg_chars)))
+                seg_start = col
+                seg_blob = blob
+                seg_chars = [ch]
             else:
-                i += 1
+                seg_chars.append(ch)
+        if seg_chars:
+            segments.append((seg_start, seg_blob, "".join(seg_chars)))
 
-    return "\n".join(lines)
+        for col_start, blob_idx, text in segments:
+            x = x_offset + (col_start - min_col) * char_width
+            escaped = html_escape(text)
+            base = EMOTION_COLORS[blob_idx]
+            next_c = EMOTION_COLORS[(blob_idx + 1) % 5]
+            prev_c = EMOTION_COLORS[(blob_idx - 1) % 5]
+            dur = 14 + blob_idx * 2
+            delay = round(blob_idx * 2.5, 1)
+            pulse_delay = round(blob_idx * 1.6, 1)
+
+            elements.append(
+                f'  <text x="{x:.1f}" y="{y:.1f}" '
+                f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="{font_size:.1f}" '
+                f'fill="{base}" opacity="0.85" xml:space="preserve">'
+                f'{escaped}'
+                f'<animate attributeName="fill" '
+                f'values="{base};{next_c};{prev_c};{base}" '
+                f'dur="{dur}s" begin="{delay}s" repeatCount="indefinite"/>'
+                f'<animate attributeName="opacity" '
+                f'values="0.7;1;0.8;1;0.7" '
+                f'dur="8s" begin="{pulse_delay}s" repeatCount="indefinite"/>'
+                f'</text>'
+            )
+
+    hero_height = int(total_rows * line_height + 40)
+    return "\n".join(elements), hero_height
 
 
 def render_template(template_name, **kwargs):
@@ -679,6 +736,10 @@ def main():
 
     # Render unified card
     print("Rendering card.svg...")
+    ascii_hero_svg, hero_height = render_ascii_hero()
+    card_height = 355 + hero_height + 30  # header/panels + hero + footer
+    footer_y = card_height - 13
+
     card = render_template(
         "card.svg.template",
         name=config["name"],
@@ -689,10 +750,12 @@ def main():
         language_bars=render_language_bars(languages),
         projects_panel=render_projects_panel(top_repos, config),
         stats_panel=render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_ago),
-        ascii_hero=render_ascii_hero(),
+        ascii_hero=ascii_hero_svg,
         total_contributions=str(total_contributions),
         current_year=str(datetime.now(timezone.utc).year),
         language_summary=lang_summary,
+        card_height=str(card_height),
+        footer_y=str(footer_y),
     )
     (ROOT / "card.svg").write_text(card)
 
