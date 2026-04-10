@@ -4,7 +4,7 @@ text { font-family: 'Courier New', Courier, monospace; font-size: 7px; }
 @keyframes blob0 {
   0% { fill: #87a99e; }
   35% { fill: #87a99e; }
-  68% { fill: #ad9387; }
+  67% { fill: #ad9387; }
   100% { fill: #9ba591; }
   100% { fill: #87a99e; }
 }
@@ -17,8 +17,8 @@ text { font-family: 'Courier New', Courier, monospace; font-size: 7px; }
 }
 @keyframes blob2 {
   0% { fill: #919baf; }
-  30% { fill: #919baf; }
-  65% { fill: #a5a091; }
+  31% { fill: #919baf; }
+  66% { fill: #a5a091; }
   100% { fill: #ad9387; }
   100% { fill: #919baf; }
 }
