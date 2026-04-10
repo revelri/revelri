@@ -60,16 +60,47 @@ def load_config():
     config = {"name": "revelri", "tagline": ""}
     if not CONFIG_PATH.exists():
         return config
+    current_list = None
+    current_item = {}
     with open(CONFIG_PATH) as f:
         for line in f:
-            line = line.strip()
-            if line.startswith("#") or not line or ":" not in line:
+            raw = line.rstrip()
+            stripped = raw.strip()
+            if stripped.startswith("#") or not stripped:
                 continue
-            key, _, val = line.partition(":")
+            # Detect list items (  - name: value)
+            if raw.startswith("    - ") or raw.startswith("  - "):
+                if current_list is not None:
+                    if current_item:
+                        config.setdefault(current_list, []).append(current_item)
+                    current_item = {}
+                k, _, v = stripped.lstrip("- ").partition(":")
+                current_item[k.strip()] = v.strip().strip('"').strip("'")
+                continue
+            # Detect continuation of list item (    key: value)
+            if current_list and (raw.startswith("      ") or raw.startswith("    ")) and ":" in stripped and not stripped.startswith("- "):
+                k, _, v = stripped.partition(":")
+                current_item[k.strip()] = v.strip().strip('"').strip("'")
+                continue
+            # Flush pending list item
+            if current_item and current_list:
+                config.setdefault(current_list, []).append(current_item)
+                current_item = {}
+            # Top-level key
+            if ":" not in stripped:
+                continue
+            key, _, val = stripped.partition(":")
             key = key.strip()
             val = val.strip().strip('"').strip("'")
-            if key in ("name", "tagline"):
+            if not val:
+                # Start of a list section
+                current_list = key
+            elif key in ("name", "tagline"):
                 config[key] = val
+                current_list = None
+        # Flush final item
+        if current_item and current_list:
+            config.setdefault(current_list, []).append(current_item)
     return config
 
 
