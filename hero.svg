@@ -3,8 +3,8 @@
 text { font-family: 'Courier New', Courier, monospace; font-size: 7px; }
 @keyframes blob0 {
   0% { fill: #87a99e; }
-  39% { fill: #87a99e; }
-  69% { fill: #ad9387; }
+  35% { fill: #87a99e; }
+  68% { fill: #ad9387; }
   100% { fill: #9ba591; }
   100% { fill: #87a99e; }
 }
