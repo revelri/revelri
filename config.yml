@@ -4,9 +4,7 @@
 name: "sl revoy | revelri"
 tagline: ""
 
-# Optional: pin specific repos instead of auto-detecting
-# featured_repos:
-#   - name: gstack
-#     description: AI-powered development toolkit
-#   - name: engine
-#     description: High-performance compute layer
+featured_repos:
+  - name: gutenberg
+  - name: zeitgeist
+  - name: StriVo
