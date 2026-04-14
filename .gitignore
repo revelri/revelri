@@ -1,5 +1,6 @@
 .playwright-mcp/
 .gstack/
+.venv/
 scripts/mock_data.json
 dev.html
 *.kra

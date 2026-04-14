@@ -12,25 +12,30 @@ permissions:
 
 jobs:
   update-card:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - name: Setup venv
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -q playwright Pillow
+          .venv/bin/python3 -m playwright install chromium
 
       - name: Generate SVG card
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: python scripts/generate_cards.py
+        run: .venv/bin/python3 scripts/generate_cards.py
+
+      - name: Render APNG from SVG
+        run: .venv/bin/python3 scripts/render_apng.py
 
       - name: Commit card if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet card.svg || {
-            git add card.svg
+          git diff --quiet card.svg card.png 2>/dev/null || {
+            git add card.svg card.png
             git commit -m "Update profile card"
             git push
           }
