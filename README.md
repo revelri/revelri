@@ -1,6 +1,6 @@
 # revelri
 
-Auto-generated GitHub profile card. Pulls live data from the GitHub API every 30 minutes via GitHub Actions and renders it as an animated SVG.
+Auto-generated GitHub profile card. Pulls live data from the GitHub API every 30 minutes via GitHub Actions and renders it as an animated APNG.
 
 [![Python](https://img.shields.io/badge/Python-3-blue)]()
 [![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-blue)]()
@@ -8,7 +8,7 @@ Auto-generated GitHub profile card. Pulls live data from the GitHub API every 30
 
 ---
 
-![Profile](card.svg)
+![Profile](card.png)
 
 ## How it works
 
@@ -34,6 +34,6 @@ python scripts/generate_cards.py
 
 Add the GitHub Actions workflow to auto-update on push and every 30 minutes.
 
-**Stack:** Python 3, GitHub GraphQL API, SVG, CSS animations. Zero external dependencies beyond `gh` CLI.
+**Stack:** Python 3, Playwright (APNG rendering), GitHub GraphQL API, SVG, CSS animations.
 
 </details>
