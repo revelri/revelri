@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Render card.svg animation frames and assemble into APNG.
 
-Captures the animated SVG at 10fps for one full animation cycle (6s),
-producing an APNG that costs zero GPU at display time.
+Pauses CSS animations and seeks them deterministically to each frame
+target so playback speed doesn't drift with screenshot wall time.
 
 Dependencies: playwright, Pillow (9.1+ for APNG support)
 """
@@ -39,9 +39,8 @@ def main():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.goto(svg_uri, wait_until="networkidle")
-        page.wait_for_timeout(2000)  # let animations start + font render
+        page.wait_for_timeout(2000)  # let fonts render
 
-        # Get actual rendered height from the SVG
         dims = page.evaluate("""() => {
             const svg = document.querySelector('svg');
             const r = svg.getBoundingClientRect();
@@ -51,16 +50,20 @@ def main():
         page.set_viewport_size({"width": WIDTH, "height": height})
         page.wait_for_timeout(500)
 
+        page.evaluate("() => { for (const a of document.getAnimations()) a.pause(); }")
+
         for i in range(FRAME_COUNT):
+            target_ms = i * FRAME_DELAY_MS
+            page.evaluate(
+                "(t) => { for (const a of document.getAnimations()) a.currentTime = t; }",
+                target_ms,
+            )
             png_bytes = page.screenshot(
                 type="png",
                 clip={"x": 0, "y": 0, "width": WIDTH, "height": height},
                 timeout=120000,
             )
-            img = Image.open(BytesIO(png_bytes)).convert("RGBA")
-            frames.append(img)
-            if i < FRAME_COUNT - 1:
-                page.wait_for_timeout(FRAME_DELAY_MS)
+            frames.append(Image.open(BytesIO(png_bytes)).convert("RGBA"))
             if (i + 1) % 10 == 0:
                 print(f"  frame {i + 1}/{FRAME_COUNT}")
 
