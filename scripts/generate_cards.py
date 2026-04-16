@@ -410,9 +410,10 @@ def render_language_bars(languages):
     font_size = 15
     bar_height = 14
 
-    # Vertically center in box (y=88..258, height=170)
-    box_top = 88
-    box_height = 170
+    # Vertically center in box (y=88..258, height=170) with inset padding
+    padding = 6
+    box_top = 88 + padding
+    box_height = 170 - 2 * padding
     n = len(languages)
     content_height = n * line_height
     y_start = box_top + (box_height - content_height) // 2 + line_height // 2
