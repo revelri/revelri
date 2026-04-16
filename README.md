@@ -1,7 +1,4 @@
 # revelri
-
-Auto-generated GitHub profile card. Pulls live data from the GitHub API every 30 minutes via GitHub Actions and renders it as an animated APNG.
-
 [![Python](https://img.shields.io/badge/Python-3-blue)]()
 [![GitHub Actions](https://img.shields.io/badge/CI-GitHub_Actions-blue)]()
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)]()
