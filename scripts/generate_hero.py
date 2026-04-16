@@ -44,9 +44,9 @@ FONT_SIZE = 7
 CHAR_WIDTH = 4.202  # Courier New at 7px
 LINE_HEIGHT = 8
 NUM_ZONES = 8
-CYCLE_DURATION = 12  # seconds per full color cycle
+CYCLE_DURATION = 24  # seconds per full color cycle
 ZONE_STAGGER = 1.5   # seconds between zone animation starts
-PULSE_DURATION = 4   # seconds per opacity pulse cycle
+PULSE_DURATION = 8   # seconds per opacity pulse cycle
 BG_COLOR = "#0d0d0d"
 PADDING = 10
 
