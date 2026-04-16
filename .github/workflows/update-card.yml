@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: update-card
+  cancel-in-progress: true
+
 jobs:
   update-card:
     runs-on: self-hosted
@@ -37,6 +41,7 @@ jobs:
           git diff --quiet card.svg card.png 2>/dev/null || {
             git add card.svg card.png
             git commit -m "Update profile card"
+            git pull --rebase origin main
             git push
           }
 
