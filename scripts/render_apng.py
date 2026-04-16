@@ -69,17 +69,21 @@ def main():
 
         browser.close()
 
-    print(f"Assembling APNG ({len(frames)} frames)...")
-    frames[0].save(
+    # Ping-pong: append reversed frames (skip first and last to avoid doubling)
+    pingpong = frames + frames[-2:0:-1]
+
+    print(f"Assembling APNG ({len(pingpong)} frames, ping-pong)...")
+    pingpong[0].save(
         APNG_PATH,
         save_all=True,
-        append_images=frames[1:],
+        append_images=pingpong[1:],
         duration=FRAME_DELAY_MS,
         loop=0,  # infinite loop
     )
 
     size_kb = APNG_PATH.stat().st_size / 1024
-    print(f"Done! {APNG_PATH.name}: {size_kb:.0f} KB ({len(frames)} frames, {FPS}fps, {DURATION_S}s cycle)")
+    cycle_s = len(pingpong) / FPS
+    print(f"Done! {APNG_PATH.name}: {size_kb:.0f} KB ({len(pingpong)} frames, {FPS}fps, {cycle_s:.1f}s cycle)")
 
 
 if __name__ == "__main__":
