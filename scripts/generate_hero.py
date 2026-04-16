@@ -8,15 +8,12 @@ wave animations driven by those ratios.
 Falls back to equal ratios (0.2 each) if the backend is unavailable.
 """
 
-import asyncio
-import json
 import os
-import signal
-import subprocess
 import sys
-import time
 from html import escape
 from pathlib import Path
+
+from sample_emotions import EMOTIONS, sample
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT_DIR = SCRIPT_DIR.parent
@@ -25,19 +22,6 @@ ZEITGEIST_DIR = Path(os.environ.get(
     str(ROOT_DIR.parent / "ascii" / "zeitgeist")
 ))
 OUTPUT_SVG = ROOT_DIR / "hero.svg"
-
-# Emotion definitions matching shared/emotions.ts
-EMOTIONS = [
-    {"id": "serene",     "hex": "#87a99e"},
-    {"id": "vibrant",    "hex": "#ad9387"},
-    {"id": "melancholy", "hex": "#919baf"},
-    {"id": "curious",    "hex": "#a5a091"},
-    {"id": "content",    "hex": "#9ba591"},
-]
-
-WS_PORT = int(os.environ.get("WS_PORT", "8090"))
-SAMPLE_DURATION = int(os.environ.get("SAMPLE_DURATION", "30"))
-WARMUP_SECONDS = int(os.environ.get("WARMUP_SECONDS", "5"))
 
 # SVG layout
 FONT_SIZE = 7
@@ -265,99 +249,13 @@ text {{ font-family: 'Courier New', Courier, monospace; font-size: {FONT_SIZE}px
 """
 
 
-async def sample_emotions(port: int, duration: int) -> dict[str, float]:
-    """Connect to the Zeitgeist backend WS and average emotion ratios."""
-    import websockets
-
-    uri = f"ws://localhost:{port}"
-    ratios: dict[str, list[float]] = {e["id"]: [] for e in EMOTIONS}
-
-    try:
-        async with websockets.connect(uri, open_timeout=10) as ws:
-            end_time = time.time() + duration
-            while time.time() < end_time:
-                try:
-                    raw = await asyncio.wait_for(ws.recv(), timeout=5)
-                    msg = json.loads(raw)
-                    if msg.get("type") == "emotions":
-                        for eid, state in msg["emotions"].items():
-                            if eid in ratios:
-                                ratios[eid].append(state["value"])
-                except asyncio.TimeoutError:
-                    continue
-    except Exception as e:
-        print(f"[generate_hero] WS sampling failed: {e}", file=sys.stderr)
-        return {}
-
-    # Average collected samples
-    averaged = {}
-    for eid, values in ratios.items():
-        averaged[eid] = sum(values) / len(values) if values else 0.2
-    return averaged
-
-
-def start_backend() -> subprocess.Popen | None:
-    """Start the Zeitgeist backend as a subprocess."""
-    backend_dir = ZEITGEIST_DIR / "backend"
-    index_js = backend_dir / "dist" / "index.js"
-
-    if not index_js.exists():
-        print(f"[generate_hero] Backend not built: {index_js}", file=sys.stderr)
-        return None
-
-    env = os.environ.copy()
-    env["WS_PORT"] = str(WS_PORT)
-
-    try:
-        proc = subprocess.Popen(
-            ["node", str(index_js)],
-            cwd=str(backend_dir),
-            env=env,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-        )
-        return proc
-    except Exception as e:
-        print(f"[generate_hero] Failed to start backend: {e}", file=sys.stderr)
-        return None
-
-
-def stop_backend(proc: subprocess.Popen | None):
-    """Gracefully stop the backend subprocess."""
-    if proc is None:
-        return
-    try:
-        proc.send_signal(signal.SIGTERM)
-        proc.wait(timeout=5)
-    except subprocess.TimeoutExpired:
-        proc.kill()
-        proc.wait()
-    except Exception:
-        pass
-
-
 def main():
     print("[generate_hero] Reading ASCII art...")
     raw_art = find_ascii_art()
     art_lines, min_col, max_col, _ = parse_art(raw_art)
     print(f"[generate_hero] Art: {len(art_lines)} lines, cols {min_col}-{max_col}")
 
-    # Try to sample live emotion data from always-on Zeitgeist service
-    ratios = {}
-
-    try:
-        print(f"[generate_hero] Connecting to Zeitgeist service (port {WS_PORT})...")
-        print(f"[generate_hero] Sampling emotions ({SAMPLE_DURATION}s)...")
-        ratios = asyncio.run(sample_emotions(WS_PORT, SAMPLE_DURATION))
-    except Exception as e:
-        print(f"[generate_hero] Failed to sample: {e}", file=sys.stderr)
-
-    if not ratios:
-        print("[generate_hero] Using fallback ratios (equal distribution)")
-        ratios = {e["id"]: 0.2 for e in EMOTIONS}
-    else:
-        summary = ", ".join(f"{k}={v:.3f}" for k, v in ratios.items())
-        print(f"[generate_hero] Sampled ratios: {summary}")
+    ratios = sample()
 
     print("[generate_hero] Generating SVG...")
     svg = generate_svg(art_lines, min_col, max_col, ratios)

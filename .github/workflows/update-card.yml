@@ -23,12 +23,13 @@ jobs:
       - name: Setup venv
         run: |
           python3 -m venv .venv
-          .venv/bin/pip install -q playwright Pillow
+          .venv/bin/pip install -q playwright Pillow websockets
           .venv/bin/python3 -m playwright install chromium
 
       - name: Generate SVG card
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Pipeline/Building/ascii/zeitgeist' }}
         run: .venv/bin/python3 scripts/generate_cards.py
 
       - name: Render APNG from SVG

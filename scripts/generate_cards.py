@@ -508,6 +508,8 @@ BLOB_CENTERS = [
     (0.80, 0.80),  # content
 ]
 
+from sample_emotions import EMOTIONS as JETSTREAM_EMOTIONS, EMOTION_IDS, sample as sample_emotions
+
 ZEITGEIST_DIR = Path(os.environ.get(
     "ZEITGEIST_DIR",
     str(ROOT.parent / "ascii" / "zeitgeist")
@@ -550,23 +552,27 @@ def _rgb_to_hex(r: int, g: int, b: int) -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
-def _metaball_color(nx: float, ny: float) -> str:
-    """Compute blended color at (nx, ny) from all 5 metaball fields."""
-    # Blob radii — different sizes create curved boundaries
-    radii = [0.35, 0.25, 0.40, 0.30, 0.28]
+def _metaball_color(nx: float, ny: float, blob_weights: list[float] | None = None) -> str:
+    """Compute blended color at (nx, ny) from all 5 metaball fields.
+
+    blob_weights scales each emotion's field strength — driven by live
+    Jetstream ratios so dominant emotions claim more visual territory.
+    """
+    base_radii = [0.35, 0.25, 0.40, 0.30, 0.28]
+    if blob_weights is None:
+        blob_weights = [1.0] * 5
     fields = []
     for i, (bx, by) in enumerate(BLOB_CENTERS):
         dx, dy = nx - bx, ny - by
         dist_sq = dx * dx + dy * dy + 0.0001
-        # Metaball field: r² / d²
-        field = (radii[i] ** 2) / dist_sq
+        # Metaball field: r² / d², scaled by emotion weight
+        field = blob_weights[i] * (base_radii[i] ** 2) / dist_sq
         fields.append(field)
 
     total = sum(fields)
     if total < 0.001:
         return EMOTION_COLORS[0]
 
-    # Weighted blend of all 5 colors
     r, g, b = 0.0, 0.0, 0.0
     for i in range(5):
         w = fields[i] / total
@@ -588,14 +594,24 @@ def _quantize_color(hex_color: str, steps: int = 24) -> str:
     return _rgb_to_hex(min(r, 255), min(g, 255), min(b, 255))
 
 
-def render_ascii_hero() -> tuple[str, str, int]:
+def render_ascii_hero(emotion_ratios: dict[str, float] | None = None) -> tuple[str, str, int]:
     """Render production ASCII art with metaball-style soft color blending.
 
     Returns (css_styles, svg_elements, total_height).
     Colors are computed per-character as a weighted blend from all 5 emotion
-    blob centers, creating organic rounded regions with smooth transitions.
+    blob centers, scaled by live Jetstream emotion ratios so dominant moods
+    claim more territory in the color field.
     """
     from html import escape as html_escape
+
+    # Convert ratio dict to ordered weight list matching EMOTION_IDS
+    if emotion_ratios:
+        raw = [emotion_ratios.get(eid, 0.2) for eid in EMOTION_IDS]
+        # Normalize so mean=1.0, then amplify contrast so ratios matter visually
+        mean_r = sum(raw) / len(raw) or 1.0
+        blob_weights = [(r / mean_r) ** 1.5 for r in raw]
+    else:
+        blob_weights = [1.0] * 5
 
     art_lines = _load_production_art()
     first, last, min_col, max_col = _art_bounds(art_lines)
@@ -630,13 +646,13 @@ def render_ascii_hero() -> tuple[str, str, int]:
         # Group adjacent characters by quantized metaball color
         segments: list[tuple[int, str, str]] = []  # (start_col, qcolor, chars)
         seg_start = leading
-        seg_color = _quantize_color(_metaball_color((leading - min_col) / col_range, ny))
+        seg_color = _quantize_color(_metaball_color((leading - min_col) / col_range, ny, blob_weights))
         seg_chars: list[str] = []
 
         for ci, ch in enumerate(content):
             col = leading + ci
             nx = (col - min_col) / col_range
-            qc = _quantize_color(_metaball_color(nx, ny))
+            qc = _quantize_color(_metaball_color(nx, ny, blob_weights))
             if qc != seg_color:
                 segments.append((seg_start, seg_color, "".join(seg_chars)))
                 seg_start = col
@@ -866,9 +882,13 @@ def main():
     # Build language summary for accessibility
     lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
+    # Sample live Jetstream emotion ratios for the ASCII hero
+    print("Sampling Bluesky Jetstream emotions...")
+    emotion_ratios = sample_emotions()
+
     # Render unified card
     print("Rendering card.svg...")
-    hero_css, ascii_hero_svg, hero_height = render_ascii_hero()
+    hero_css, ascii_hero_svg, hero_height = render_ascii_hero(emotion_ratios)
     card_height = 385 + hero_height + 10  # header/panels + hero + bottom pad
 
     card = render_template(
