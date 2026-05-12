@@ -139,28 +139,57 @@ def fetch_contributions():
     return gh_graphql(query, **{"from": week_ago, "yearStart": year_start})
 
 
+REPO_FIELDS = """
+  nodes {
+    name
+    pushedAt
+    isPrivate
+    owner { login }
+    languages(first: 5, orderBy: {field: SIZE, direction: DESC}) {
+      edges {
+        size
+        node { name }
+      }
+    }
+  }
+"""
+
+EXTRA_ORGS = ["Dromoturge"]
+
+
 def fetch_repos():
-    """Fetch repository data via GraphQL."""
-    query = """
+    """Fetch repos viewer owns plus repos under EXTRA_ORGS, merged + sorted by pushedAt desc."""
+    viewer_query = """
     query {
       viewer {
         repositories(first: 100, ownerAffiliations: OWNER, orderBy: {field: PUSHED_AT, direction: DESC}) {
-          nodes {
-            name
-            pushedAt
-            isPrivate
-            languages(first: 5, orderBy: {field: SIZE, direction: DESC}) {
-              edges {
-                size
-                node { name }
-              }
-            }
-          }
+          REPO_FIELDS_PLACEHOLDER
         }
       }
     }
-    """
-    return gh_graphql(query)
+    """.replace("REPO_FIELDS_PLACEHOLDER", REPO_FIELDS)
+
+    org_query = """
+    query($login: String!) {
+      organization(login: $login) {
+        repositories(first: 100, orderBy: {field: PUSHED_AT, direction: DESC}) {
+          REPO_FIELDS_PLACEHOLDER
+        }
+      }
+    }
+    """.replace("REPO_FIELDS_PLACEHOLDER", REPO_FIELDS)
+
+    merged = []
+    viewer = gh_graphql(viewer_query) or {}
+    merged.extend(viewer.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", []) or [])
+
+    for org in EXTRA_ORGS:
+        result = gh_graphql(org_query, login=org) or {}
+        nodes = (result.get("data", {}).get("organization") or {}).get("repositories", {}).get("nodes", []) or []
+        merged.extend(nodes)
+
+    merged.sort(key=lambda r: r.get("pushedAt") or "", reverse=True)
+    return {"data": {"viewer": {"repositories": {"nodes": merged}}}}
 
 
 def fetch_lines_changed(repos_data, username):
@@ -178,6 +207,8 @@ def fetch_lines_changed(repos_data, username):
         dt = datetime.fromisoformat(pushed.replace("Z", "+00:00"))
         if dt < week_ago:
             break  # Sorted by pushedAt desc
+
+        owner = (repo.get("owner") or {}).get("login") or username
 
         query = """
         query($owner: String!, $name: String!, $since: GitTimestamp!) {
@@ -198,7 +229,7 @@ def fetch_lines_changed(repos_data, username):
           }
         }
         """
-        result = gh_graphql(query, owner=username, name=repo["name"], since=week_ago_str)
+        result = gh_graphql(query, owner=owner, name=repo["name"], since=week_ago_str)
         if not result:
             continue
 

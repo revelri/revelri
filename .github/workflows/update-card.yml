@@ -2,7 +2,7 @@ name: Update profile cards
 
 on:
   schedule:
-    - cron: '0,30 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -17,19 +17,34 @@ concurrency:
 jobs:
   update-card:
     runs-on: self-hosted
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - name: Cache playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-chromium-v1
+
+      - name: Cache venv
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: ${{ runner.os }}-card-venv-playwright-pillow-websockets-v1
 
       - name: Setup venv
         run: |
-          python3 -m venv .venv
-          .venv/bin/pip install -q playwright Pillow websockets
+          if [ ! -d .venv ]; then
+            python3 -m venv .venv
+            .venv/bin/pip install -q playwright Pillow websockets
+          fi
           .venv/bin/python3 -m playwright install chromium
 
       - name: Generate SVG card
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Pipeline/Building/ascii/zeitgeist' }}
+          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Building/Personal/zeitgeist' }}
         run: .venv/bin/python3 scripts/generate_cards.py
 
       - name: Render APNG from SVG
@@ -48,18 +63,27 @@ jobs:
 
   update-hero:
     runs-on: self-hosted
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - name: Cache venv
+        uses: actions/cache@v4
+        with:
+          path: .venv-hero
+          key: ${{ runner.os }}-hero-venv-websockets-v1
 
       - name: Setup venv
         run: |
-          python3 -m venv .venv
-          .venv/bin/pip install -q websockets
+          if [ ! -d .venv-hero ]; then
+            python3 -m venv .venv-hero
+            .venv-hero/bin/pip install -q websockets
+          fi
 
       - name: Generate hero SVG
         env:
-          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Pipeline/Building/ascii/zeitgeist' }}
-        run: .venv/bin/python3 scripts/generate_hero.py
+          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Building/Personal/zeitgeist' }}
+        run: .venv-hero/bin/python3 scripts/generate_hero.py
 
       - name: Commit SVG if changed
         run: |
@@ -71,4 +95,3 @@ jobs:
             git pull --rebase origin main
             git push
           }
-
