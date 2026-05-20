@@ -44,7 +44,7 @@ jobs:
       - name: Generate SVG card
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Building/Personal/zeitgeist' }}
+          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/revelri/zeitgeist' }}
         run: .venv/bin/python3 scripts/generate_cards.py
 
       - name: Render APNG from SVG
@@ -82,7 +82,7 @@ jobs:
 
       - name: Generate hero SVG
         env:
-          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/Building/Personal/zeitgeist' }}
+          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/revelri/zeitgeist' }}
         run: .venv-hero/bin/python3 scripts/generate_hero.py
 
       - name: Commit SVG if changed
