@@ -11,3 +11,5 @@ exclude_repos:
   - name: labortech
   - name: last-queen
   - name: lutris-mcp
+  - name: revelri
+  - name: revoy.xyz
