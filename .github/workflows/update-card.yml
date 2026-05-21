@@ -55,10 +55,24 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet card.svg card.png 2>/dev/null || {
-            git add card.svg card.png
+            # Bust GitHub camo image-proxy cache by versioning the README image
+            # URL with a build timestamp. Without this, profile viewers see a
+            # stale render via camo for hours after the card is regenerated.
+            ts=$(date -u +%s)
+            sed -i -E "s|!\\[Profile\\]\\(card\\.png(\\?v=[0-9]+)?\\)|![Profile](card.png?v=${ts})|" README.md
+            git add card.svg card.png README.md
+            git diff --cached --quiet && exit 0
             git commit -m "Update profile card"
-            git pull --rebase origin main
-            git push
+            # Retry push under contention from concurrent CI runs (binary
+            # card.png rebases otherwise conflict).
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              echo "push attempt $attempt failed; rebasing..."
+              # Prefer OUR freshly-generated card on binary conflicts.
+              git pull --rebase --autostash -X ours origin main || git rebase --abort || true
+            done
+            echo "push failed after 3 attempts" >&2
+            exit 1
           }
 
   update-hero:
