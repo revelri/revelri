@@ -4,7 +4,10 @@
 name: "sl revoy | revelri"
 tagline: ""
 
-featured_repos:
-  - name: gutenberg
-  - name: zeitgeist
-  - name: StriVo
+# Repos to hide from the dynamic ACTIVE REPOS panel.
+# Matches case-insensitively; accepts either "name" or "owner/name".
+# Useful when a repo is high-traffic but you don't want it on the public card.
+exclude_repos:
+  - name: labortech
+  - name: last-queen
+  - name: lutris-mcp

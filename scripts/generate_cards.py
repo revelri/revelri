@@ -36,7 +36,7 @@ HEATMAP_COLORS = ["#333333"] + [
 
 
 def _run_gh(cmd, label="gh"):
-    """Run a gh CLI command with retry on rate-limit (403/429)."""
+    """Run a gh CLI command with retry on rate-limit and transient network errors."""
     for attempt in range(3):
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode == 0:
@@ -45,6 +45,13 @@ def _run_gh(cmd, label="gh"):
         if "rate limit" in stderr or "403" in stderr or "429" in stderr:
             wait = 2 ** attempt * 5
             print(f"Rate limited on {label}, retrying in {wait}s...", file=sys.stderr)
+            time.sleep(wait)
+            continue
+        # Transient network errors during long fetches drop responses;
+        # retry briefly so a single blip doesn't truncate the repo set.
+        if any(s in stderr for s in ("error connecting", "timeout", "tls handshake", "eof", "connection reset")):
+            wait = 2 + attempt * 3
+            print(f"Network error on {label}, retrying in {wait}s...", file=sys.stderr)
             time.sleep(wait)
             continue
         print(f"Error calling {label}: {result.stderr}", file=sys.stderr)
@@ -815,16 +822,20 @@ def _relative_time(iso_ts: str) -> str:
     return f"{s // (86400 * 30)}mo"
 
 
-def fetch_active_repos(repos_data, username, limit=5, window_days=30):
+def fetch_active_repos(repos_data, username, limit=5, window_days=30, exclude=None):
     """Find user's most active repos in the last `window_days`.
 
     Returns list of dicts: {owner, name, count, commits: [{sha7, msg, ago}, ...]}.
     Only counts commits authored by `username` on the default branch.
+
+    `exclude` is a set of normalized identifiers matched case-insensitively
+    against both bare repo names and `owner/name` forms.
     """
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
     since = datetime.now(timezone.utc) - timedelta(days=window_days)
     since_str = since.strftime("%Y-%m-%dT%H:%M:%SZ")
     candidates = []
+    exclude = {e.lower() for e in (exclude or set())}
 
     # Resolve viewer's node ID once; GraphQL's history(author:{id:...}) filter
     # gives us a proper totalCount instead of capping at the fetched node count.
@@ -866,6 +877,8 @@ def fetch_active_repos(repos_data, username, limit=5, window_days=30):
             break  # sorted desc by pushedAt — nothing after this point qualifies
 
         owner = (repo.get("owner") or {}).get("login") or username
+        if name.lower() in exclude or f"{owner}/{name}".lower() in exclude:
+            continue
         result = gh_graphql(query, owner=owner, name=name, since=since_str)
         if not result:
             continue
@@ -1089,7 +1102,12 @@ def main():
     last_commit_ago = calc_last_commit_ago(repos_data)
     languages = aggregate_languages(repos_data)
     print("Computing top active repos (last 30d)...")
-    active_repos = fetch_active_repos(repos_data, username, limit=5, window_days=30)
+    exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
+    if exclude_set:
+        print(f"Excluding repos from ACTIVE REPOS: {sorted(exclude_set)}")
+    active_repos = fetch_active_repos(
+        repos_data, username, limit=5, window_days=30, exclude=exclude_set
+    )
 
     lines_added = f"+{additions:,}" if additions else "+--"
     lines_deleted = f"-{deletions:,}" if deletions else "---"
