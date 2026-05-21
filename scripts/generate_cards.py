@@ -266,6 +266,82 @@ def fetch_lines_changed(repos_data, username):
     return additions, deletions
 
 
+def fetch_daily_loc(repos_data, username, window_days=30):
+    """Sum user-authored additions+deletions per day across all repos.
+
+    Returns an ordered list of (date_obj, loc) tuples spanning `window_days`
+    ending today (UTC). Days with no activity are 0.
+    """
+    nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
+    since_dt = datetime.now(timezone.utc) - timedelta(days=window_days - 1)
+    since_date = since_dt.date()
+    since_str = since_dt.strftime("%Y-%m-%dT00:00:00Z")
+
+    # Pre-fill the bucket so days with no commits still render at zero.
+    buckets = {since_date + timedelta(days=i): 0 for i in range(window_days)}
+
+    # Resolve viewer ID so we filter commits at the API instead of locally
+    viewer_id_resp = gh_graphql("query{viewer{id}}") or {}
+    viewer_id = (viewer_id_resp.get("data", {}).get("viewer") or {}).get("id")
+    author_clause = f', author: {{id: "{viewer_id}"}}' if viewer_id else ""
+
+    def _build_query(after_cursor):
+        # Inline the cursor (or omit it) since `gh api graphql -f` cannot pass
+        # null. Cursor is always an opaque base64 token, safe to interpolate.
+        after_clause = f', after: "{after_cursor}"' if after_cursor else ""
+        return f"""
+        query($owner: String!, $name: String!, $since: GitTimestamp!) {{
+          repository(owner: $owner, name: $name) {{
+            defaultBranchRef {{
+              target {{
+                ... on Commit {{
+                  history(since: $since, first: 100{after_clause}{author_clause}) {{
+                    pageInfo {{ hasNextPage endCursor }}
+                    nodes {{
+                      additions
+                      deletions
+                      committedDate
+                    }}
+                  }}
+                }}
+              }}
+            }}
+          }}
+        }}
+        """
+
+    MAX_PAGES = 6  # bound the per-repo API spend (covers up to 600 commits/30d)
+    for repo in nodes:
+        pushed = repo.get("pushedAt")
+        if not pushed:
+            continue
+        dt = datetime.fromisoformat(pushed.replace("Z", "+00:00"))
+        if dt < since_dt:
+            break  # sorted desc by pushedAt
+        owner = (repo.get("owner") or {}).get("login") or username
+        name = repo.get("name", "")
+        cursor = None
+        for _ in range(MAX_PAGES):
+            result = gh_graphql(_build_query(cursor), owner=owner, name=name, since=since_str)
+            if not result:
+                break
+            target = ((result.get("data", {}).get("repository") or {}).get("defaultBranchRef") or {}).get("target") or {}
+            hist = target.get("history") or {}
+            for c in hist.get("nodes", []) or []:
+                committed = c.get("committedDate")
+                if not committed:
+                    continue
+                day = datetime.fromisoformat(committed.replace("Z", "+00:00")).date()
+                if day in buckets:
+                    buckets[day] += (c.get("additions") or 0) + (c.get("deletions") or 0)
+            page = hist.get("pageInfo") or {}
+            if not page.get("hasNextPage"):
+                break
+            cursor = page.get("endCursor")
+
+    return sorted(buckets.items())
+
+
 def calc_streak(calendar_data):
     """Calculate current and longest streak from contribution calendar."""
     all_days = []
@@ -955,6 +1031,116 @@ def render_active_repos_panel(active_repos, y_start=296):
     return "\n".join(lines), y
 
 
+def render_loc_chart(daily_loc, x, y, width, height):
+    """Render a line-with-filled-area chart of daily LoC shipped.
+
+    daily_loc: list of (date, loc) ordered chronologically.
+    Returns SVG group with axes, gridlines, area fill, line, and labels.
+    """
+    if not daily_loc:
+        return f'  <text x="{x + width/2}" y="{y + height/2}" text-anchor="middle" class="zg-secondary" font-family="\'TX-02\', monospace" font-size="14">(no activity)</text>'
+
+    # Layout: reserve padding for axes/labels
+    pad_l = 56  # space for y-axis labels
+    pad_r = 16
+    pad_t = 26  # space for title
+    pad_b = 28  # space for x-axis labels
+    plot_x = x + pad_l
+    plot_y = y + pad_t
+    plot_w = width - pad_l - pad_r
+    plot_h = height - pad_t - pad_b
+
+    max_loc = max((v for _, v in daily_loc), default=0)
+    # Pick a clean gridline step targeting ~6-10 lines for legibility.
+    # Bias toward 250 LoC at low ranges, jumping to 1-2-5*10^k as data grows.
+    if max_loc <= 250:
+        step = 50
+    elif max_loc <= 1000:
+        step = 250
+    elif max_loc <= 5000:
+        step = 1000
+    elif max_loc <= 20000:
+        step = 2500
+    elif max_loc <= 50000:
+        step = 5000
+    elif max_loc <= 200000:
+        step = 25000
+    else:
+        step = 50000
+    y_max = max(step, ((max_loc // step) + 1) * step)
+
+    def sx(i):  # x position for day index
+        n = max(len(daily_loc) - 1, 1)
+        return plot_x + (i / n) * plot_w
+
+    def sy(v):  # y position for value v
+        return plot_y + plot_h - (v / y_max) * plot_h
+
+    elements = []
+
+    # Title (top-left of the chart frame)
+    total_loc = sum(v for _, v in daily_loc)
+    title = f"DAILY LoC SHIPPED · {len(daily_loc)}d · total {total_loc:,}"
+    elements.append(
+        f'  <text class="zg-secondary" x="{x + pad_l}" y="{y + 16}" '
+        f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+        f'font-size="13" font-weight="bold" letter-spacing="1.5" filter="url(#glow)">{title}</text>'
+    )
+
+    # Y-axis gridlines + labels
+    n_lines = y_max // step + 1
+    for k in range(n_lines):
+        v = k * step
+        gy = sy(v)
+        elements.append(
+            f'  <line class="zg-border" x1="{plot_x}" y1="{gy:.1f}" x2="{plot_x + plot_w}" y2="{gy:.1f}" '
+            f'stroke-width="0.4" opacity="0.25"/>'
+        )
+        elements.append(
+            f'  <text class="zg-secondary" x="{plot_x - 6}" y="{gy + 4:.1f}" text-anchor="end" '
+            f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="9">{v:,}</text>'
+        )
+
+    # X-axis date ticks (every ~5 days)
+    step_days = max(1, len(daily_loc) // 6)
+    for i in range(0, len(daily_loc), step_days):
+        d = daily_loc[i][0]
+        tx = sx(i)
+        elements.append(
+            f'  <line class="zg-border" x1="{tx:.1f}" y1="{plot_y + plot_h}" x2="{tx:.1f}" y2="{plot_y + plot_h + 4}" '
+            f'stroke-width="0.5" opacity="0.4"/>'
+        )
+        elements.append(
+            f'  <text class="zg-secondary" x="{tx:.1f}" y="{plot_y + plot_h + 16}" text-anchor="middle" '
+            f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="9">{d.strftime("%m/%d")}</text>'
+        )
+
+    # Build polyline / polygon points
+    pts = [(sx(i), sy(v)) for i, (_, v) in enumerate(daily_loc)]
+    pts_str = " ".join(f"{px:.1f},{py:.1f}" for px, py in pts)
+
+    # Filled area (close to baseline)
+    area_pts = pts_str + f" {pts[-1][0]:.1f},{plot_y + plot_h} {pts[0][0]:.1f},{plot_y + plot_h}"
+    elements.append(
+        f'  <polygon points="{area_pts}" fill="#6abf7c" opacity="0.18"/>'
+    )
+
+    # Line
+    elements.append(
+        f'  <polyline points="{pts_str}" fill="none" stroke="#6abf7c" stroke-width="1.6" '
+        f'stroke-linejoin="round" filter="url(#hero_glow)"/>'
+    )
+
+    # Dots for non-zero days
+    for i, (_, v) in enumerate(daily_loc):
+        if v <= 0:
+            continue
+        px, py = pts[i]
+        elements.append(f'  <circle cx="{px:.1f}" cy="{py:.1f}" r="1.8" fill="#6aa8c0"/>')
+
+    return "\n".join(elements)
+
+
 def render_emotion_legend(emotions, x, y_start, hero_height, ingest_ts=None):
     """Vertical legend next to the ASCII hero.
 
@@ -1120,11 +1306,8 @@ def main():
     # Build language summary for accessibility
     lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
-    # Sample live Jetstream emotion ratios for the ASCII hero
-    print(f"Zeitgeist emotions ({len(JETSTREAM_EMOTIONS)}): {[e['id'] for e in JETSTREAM_EMOTIONS]}")
-    print("Sampling Bluesky Jetstream emotions...")
-    emotion_ratios = sample_emotions()
-    ingest_ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%MZ")
+    print("Fetching daily LoC for 30d...")
+    daily_loc = fetch_daily_loc(repos_data, username, window_days=30)
 
     # Render unified card
     print("Rendering card.svg...")
@@ -1154,15 +1337,18 @@ def main():
     else:
         name_font_size = title_max_font
 
-    # Layout the dynamic ACTIVE REPOS panel; let it push the hero down as needed.
+    # Layout the dynamic ACTIVE REPOS panel; let it push the chart down as needed.
     active_panel_svg, active_panel_bottom = render_active_repos_panel(active_repos, y_start=296)
-    hero_top = max(385, active_panel_bottom + 14)
-    hero_css, ascii_hero_svg, hero_height = render_ascii_hero(emotion_ratios, y_start=hero_top)
-    emotion_legend_svg = render_emotion_legend(
-        JETSTREAM_EMOTIONS, x=635, y_start=hero_top - 6,
-        hero_height=hero_height, ingest_ts=ingest_ts,
-    )
-    card_height = hero_top + hero_height + 10
+    chart_top = max(385, active_panel_bottom + 14)
+    chart_height = 320  # roughly half the prior ASCII hero
+    chart_width = 808
+    chart_x = 16
+    loc_chart_svg = render_loc_chart(daily_loc, x=chart_x, y=chart_top, width=chart_width, height=chart_height)
+    card_height = chart_top + chart_height + 14
+    # No more ASCII hero or emotion legend — keep template placeholders empty.
+    hero_css = ""
+    ascii_hero_svg = loc_chart_svg
+    emotion_legend_svg = ""
 
     card = render_template(
         "card.svg.template",
@@ -1182,7 +1368,7 @@ def main():
         current_year=str(datetime.now(timezone.utc).year),
         language_summary=lang_summary,
         card_height=str(card_height),
-        divider_y=f"{hero_top - 20:.1f}",
+        divider_y=f"{chart_top - 12:.1f}",
         hero_css=hero_css,
     )
     (ROOT / "card.svg").write_text(card)
