@@ -83,15 +83,23 @@ def parse_art(raw: str) -> tuple[list[str], int, int, int]:
 
 import math
 
-# Metaball blob centers — 5 emotion sources with pseudo-random positions
-# Positions are in normalized [0,1] space
-BLOB_CENTERS = [
-    (0.25, 0.20),  # serene — upper left
-    (0.75, 0.15),  # vibrant — upper right
-    (0.50, 0.50),  # melancholy — center
-    (0.20, 0.75),  # curious — lower left
-    (0.80, 0.80),  # content — lower right
-]
+import math as _math
+
+
+def _default_blob_centers(n: int) -> list[tuple[float, float]]:
+    """Evenly distribute n blob centers around the canvas (matches generate_cards)."""
+    if n <= 1:
+        return [(0.5, 0.5)]
+    centers = []
+    for i in range(n):
+        theta = (i / n) * 2 * _math.pi - _math.pi / 2
+        cx = 0.5 + 0.32 * _math.cos(theta)
+        cy = 0.5 + 0.32 * _math.sin(theta)
+        centers.append((cx, cy))
+    return centers
+
+
+BLOB_CENTERS = _default_blob_centers(len(EMOTIONS))
 
 
 def assign_zone(row_idx: int, line: str, min_col: int, max_col: int, total_rows: int) -> int:
@@ -132,12 +140,12 @@ def generate_keyframes(ratios: dict[str, float]) -> str:
 
     for i, emotion in enumerate(EMOTIONS):
         hex_color = emotion["hex"]
-        ratio = normalized.get(emotion["id"], 0.2)
+        ratio = normalized.get(emotion["id"], 1.0 / max(len(EMOTIONS), 1))
 
         # Each blob cycles: own color → blend toward neighbors → back
         # Neighbors are the two adjacent emotions (wrapping)
-        prev_e = EMOTIONS[(i - 1) % 5]
-        next_e = EMOTIONS[(i + 1) % 5]
+        prev_e = EMOTIONS[(i - 1) % len(EMOTIONS)]
+        next_e = EMOTIONS[(i + 1) % len(EMOTIONS)]
 
         # Dominant emotion gets more time at its own color
         own_pct = max(ratio * 100, 30)
@@ -160,7 +168,7 @@ def generate_keyframes(ratios: dict[str, float]) -> str:
         # Each blob has a different cycle duration for asynchronous drift
         duration = CYCLE_DURATION + i * 2
         delay = -(i * 3)
-        pulse_delay = -(i * (PULSE_DURATION / 5))
+        pulse_delay = -(i * (PULSE_DURATION / max(len(EMOTIONS), 1)))
         css_parts.append(
             f".z{i} {{ fill: {emotion['hex']}; "
             f"animation: blob{i} {duration}s ease-in-out infinite {delay}s, "
