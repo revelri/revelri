@@ -17,8 +17,22 @@ CONFIG_PATH = ROOT / "config.yml"
 MOCK_DATA_PATH = ROOT / "scripts" / "mock_data.json"
 
 # CRT color palette
-# Heatmap gradient derived from Zeitgeist emotion palette
-HEATMAP_COLORS = ["#333333", "#2a3d35", "#3d6a50", "#6abf7c", "#6aa8c0"]
+# Heatmap gradient derived from Zeitgeist emotion palette.
+# 11 stops: empty (#333333) + 10 stops interpolated from deep green-grey -> teal.
+def _lerp_hex(a: str, b: str, t: float) -> str:
+    ar, ag, ab = int(a[1:3], 16), int(a[3:5], 16), int(a[5:7], 16)
+    br, bg, bb = int(b[1:3], 16), int(b[3:5], 16), int(b[5:7], 16)
+    r = int(ar + (br - ar) * t)
+    g = int(ag + (bg - ag) * t)
+    b = int(ab + (bb - ab) * t)
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+_HEATMAP_RAMP_START = "#2a3d35"
+_HEATMAP_RAMP_END = "#6aa8c0"
+HEATMAP_COLORS = ["#333333"] + [
+    _lerp_hex(_HEATMAP_RAMP_START, _HEATMAP_RAMP_END, i / 9) for i in range(10)
+]
 
 
 def _run_gh(cmd, label="gh"):
@@ -154,7 +168,7 @@ REPO_FIELDS = """
   }
 """
 
-EXTRA_ORGS = ["Dromoturge"]
+EXTRA_ORGS = ["Chorosyne"]
 
 
 def fetch_repos():
@@ -476,13 +490,15 @@ def render_language_bars(languages):
 
 
 def render_heatmap(calendar_data):
-    """Generate SVG heatmap cells from contribution calendar."""
+    """Generate SVG heatmap cells from contribution calendar.
+
+    Returns (cells_svg, raw_width, raw_height) so the caller can compute
+    a transform that fits the heatmap inside a target box.
+    """
     weeks = calendar_data.get("weeks", [])
     cells = []
     cell_size = 11
     gap = 3
-    x_offset = 40
-    y_offset = 20
 
     # Find max for color scaling
     max_count = 1
@@ -492,54 +508,58 @@ def render_heatmap(calendar_data):
 
     # Take last 52 weeks
     display_weeks = weeks[-52:] if len(weeks) > 52 else weeks
+    num_weeks = len(display_weeks)
+
+    # Log-scaled bucketing across 10 non-zero stops (indices 1..10)
+    log_max = math.log1p(max_count)
 
     for wi, week in enumerate(display_weeks):
         for day in week.get("contributionDays", []):
             weekday = day["weekday"]
             count = day["contributionCount"]
 
-            x = x_offset + wi * (cell_size + gap)
-            y = y_offset + weekday * (cell_size + gap)
+            x = wi * (cell_size + gap)
+            y = weekday * (cell_size + gap)
 
-            # Map count to color index (0-4)
             if count == 0:
                 ci = 0
-            elif count <= max_count * 0.25:
-                ci = 1
-            elif count <= max_count * 0.5:
-                ci = 2
-            elif count <= max_count * 0.75:
-                ci = 3
             else:
-                ci = 4
+                ratio = math.log1p(count) / log_max if log_max > 0 else 0
+                ci = 1 + min(9, int(ratio * 9 + 0.5))
 
             color = HEATMAP_COLORS[ci]
             cells.append(
                 f'  <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="2" fill="{color}"/>'
             )
 
-    return "\n".join(cells)
+    raw_width = num_weeks * (cell_size + gap) - gap if num_weeks else 0
+    raw_height = 7 * (cell_size + gap) - gap
+    return "\n".join(cells), raw_width, raw_height
 
-
-# Zeitgeist colors — boosted vibrancy to match CRT card palette
-EMOTION_COLORS = [
-    "#6aa8c0",  # Serene - vivid teal
-    "#c47a9b",  # Vibrant - warm magenta-rose
-    "#7c6abf",  # Melancholy - rich purple
-    "#b89f5e",  # Curious - amber gold
-    "#6abf7c",  # Content - vivid green
-]
-
-# Metaball blob centers in normalized [0,1] space
-BLOB_CENTERS = [
-    (0.25, 0.20),  # serene
-    (0.75, 0.15),  # vibrant
-    (0.50, 0.50),  # melancholy
-    (0.20, 0.75),  # curious
-    (0.80, 0.80),  # content
-]
 
 from sample_emotions import EMOTIONS as JETSTREAM_EMOTIONS, EMOTION_IDS, sample as sample_emotions
+
+# Emotion colors auto-loaded from zeitgeist's colors.txt (via sample_emotions).
+EMOTION_COLORS = [e["hex"] for e in JETSTREAM_EMOTIONS]
+
+
+def _default_blob_centers(n: int) -> list[tuple[float, float]]:
+    """Evenly distribute n blob centers around the canvas."""
+    if n <= 0:
+        return [(0.5, 0.5)]
+    if n == 1:
+        return [(0.5, 0.5)]
+    # Spread on a ring around center, with a slight inset so blobs cover edges too.
+    centers = []
+    for i in range(n):
+        theta = (i / n) * 2 * math.pi - math.pi / 2
+        cx = 0.5 + 0.32 * math.cos(theta)
+        cy = 0.5 + 0.32 * math.sin(theta)
+        centers.append((cx, cy))
+    return centers
+
+
+BLOB_CENTERS = _default_blob_centers(len(EMOTION_COLORS))
 
 ZEITGEIST_DIR = Path(os.environ.get(
     "ZEITGEIST_DIR",
@@ -584,20 +604,20 @@ def _rgb_to_hex(r: int, g: int, b: int) -> str:
 
 
 def _metaball_color(nx: float, ny: float, blob_weights: list[float] | None = None) -> str:
-    """Compute blended color at (nx, ny) from all 5 metaball fields.
+    """Compute blended color at (nx, ny) from all metaball fields.
 
     blob_weights scales each emotion's field strength — driven by live
     Jetstream ratios so dominant emotions claim more visual territory.
     """
-    base_radii = [0.35, 0.25, 0.40, 0.30, 0.28]
+    n = len(EMOTION_COLORS)
+    base_radius = 0.32
     if blob_weights is None:
-        blob_weights = [1.0] * 5
+        blob_weights = [1.0] * n
     fields = []
     for i, (bx, by) in enumerate(BLOB_CENTERS):
         dx, dy = nx - bx, ny - by
         dist_sq = dx * dx + dy * dy + 0.0001
-        # Metaball field: r² / d², scaled by emotion weight
-        field = blob_weights[i] * (base_radii[i] ** 2) / dist_sq
+        field = blob_weights[i] * (base_radius ** 2) / dist_sq
         fields.append(field)
 
     total = sum(fields)
@@ -605,7 +625,7 @@ def _metaball_color(nx: float, ny: float, blob_weights: list[float] | None = Non
         return EMOTION_COLORS[0]
 
     r, g, b = 0.0, 0.0, 0.0
-    for i in range(5):
+    for i in range(n):
         w = fields[i] / total
         cr, cg, cb = _hex_to_rgb(EMOTION_COLORS[i])
         r += cr * w
@@ -625,7 +645,7 @@ def _quantize_color(hex_color: str, steps: int = 24) -> str:
     return _rgb_to_hex(min(r, 255), min(g, 255), min(b, 255))
 
 
-def render_ascii_hero(emotion_ratios: dict[str, float] | None = None) -> tuple[str, str, int]:
+def render_ascii_hero(emotion_ratios: dict[str, float] | None = None, y_start: float = 385) -> tuple[str, str, int]:
     """Render production ASCII art with metaball-style soft color blending.
 
     Returns (css_styles, svg_elements, total_height).
@@ -636,13 +656,14 @@ def render_ascii_hero(emotion_ratios: dict[str, float] | None = None) -> tuple[s
     from html import escape as html_escape
 
     # Convert ratio dict to ordered weight list matching EMOTION_IDS
+    n_emotions = len(EMOTION_COLORS)
+    default_ratio = 1.0 / n_emotions if n_emotions else 0.2
     if emotion_ratios:
-        raw = [emotion_ratios.get(eid, 0.2) for eid in EMOTION_IDS]
-        # Normalize so mean=1.0, then amplify contrast so ratios matter visually
+        raw = [emotion_ratios.get(eid, default_ratio) for eid in EMOTION_IDS]
         mean_r = sum(raw) / len(raw) or 1.0
         blob_weights = [(r / mean_r) ** 1.5 for r in raw]
     else:
-        blob_weights = [1.0] * 5
+        blob_weights = [1.0] * n_emotions
 
     art_lines = _load_production_art()
     first, last, min_col, max_col = _art_bounds(art_lines)
@@ -658,7 +679,6 @@ def render_ascii_hero(emotion_ratios: dict[str, float] | None = None) -> tuple[s
 
     total_width = col_range * char_width
     x_offset = (840 - total_width) / 2
-    y_start = 385
 
     # Collect all unique quantized colors used
     used_colors: set[str] = set()
@@ -712,11 +732,12 @@ def render_ascii_hero(emotion_ratios: dict[str, float] | None = None) -> tuple[s
     # while cutting unique @keyframes from ~80 to 5 (massive GPU savings).
     css_parts = []
 
-    # Build the 5 shared keyframes
+    # Build one shared keyframe per emotion
+    n_emo = len(EMOTION_COLORS)
     for i, ec in enumerate(EMOTION_COLORS):
         er, eg, eb = _hex_to_rgb(ec)
-        prev_ec = EMOTION_COLORS[(i - 1) % 5]
-        next_ec = EMOTION_COLORS[(i + 1) % 5]
+        prev_ec = EMOTION_COLORS[(i - 1) % n_emo]
+        next_ec = EMOTION_COLORS[(i + 1) % n_emo]
         pr, pg, pb = _hex_to_rgb(prev_ec)
         nr, ng, nb = _hex_to_rgb(next_ec)
         shift1 = _rgb_to_hex(int(er * 0.7 + pr * 0.3), int(eg * 0.7 + pg * 0.3), int(eb * 0.7 + pb * 0.3))
@@ -775,40 +796,185 @@ def get_username():
     return result.stdout.strip()
 
 
-def fetch_top_repos(repos_data, limit=3):
-    """Get top recently-pushed repos with descriptions."""
+def _relative_time(iso_ts: str) -> str:
+    """Compact human delta: 2h, 3d, 2w."""
+    try:
+        dt = datetime.fromisoformat(iso_ts.replace("Z", "+00:00"))
+    except Exception:
+        return ""
+    delta = datetime.now(timezone.utc) - dt
+    s = int(delta.total_seconds())
+    if s < 3600:
+        return f"{max(s // 60, 1)}m"
+    if s < 86400:
+        return f"{s // 3600}h"
+    if s < 86400 * 14:
+        return f"{s // 86400}d"
+    if s < 86400 * 60:
+        return f"{s // (86400 * 7)}w"
+    return f"{s // (86400 * 30)}mo"
+
+
+def fetch_active_repos(repos_data, username, limit=5, window_days=30):
+    """Find user's most active repos in the last `window_days`.
+
+    Returns list of dicts: {owner, name, count, commits: [{sha7, msg, ago}, ...]}.
+    Only counts commits authored by `username` on the default branch.
+    """
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
-    result = []
+    since = datetime.now(timezone.utc) - timedelta(days=window_days)
+    since_str = since.strftime("%Y-%m-%dT%H:%M:%SZ")
+    candidates = []
+
+    query = """
+    query($owner: String!, $name: String!, $since: GitTimestamp!) {
+      repository(owner: $owner, name: $name) {
+        defaultBranchRef {
+          target {
+            ... on Commit {
+              history(since: $since, first: 50) {
+                nodes {
+                  oid
+                  messageHeadline
+                  committedDate
+                  author { user { login } }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+
     for repo in nodes:
         if repo.get("isPrivate"):
             continue
         name = repo.get("name", "")
         if name.lower() == "revelri":
             continue
-        result.append(name)
-        if len(result) >= limit:
-            break
-    return result
+        pushed = repo.get("pushedAt")
+        if not pushed:
+            continue
+        dt = datetime.fromisoformat(pushed.replace("Z", "+00:00"))
+        if dt < since:
+            break  # sorted desc by pushedAt — nothing after this point qualifies
+
+        owner = (repo.get("owner") or {}).get("login") or username
+        result = gh_graphql(query, owner=owner, name=name, since=since_str)
+        if not result:
+            continue
+        target = ((result.get("data", {}).get("repository") or {}).get("defaultBranchRef") or {}).get("target") or {}
+        commits = (target.get("history") or {}).get("nodes", []) or []
+        mine = [
+            c for c in commits
+            if ((c.get("author") or {}).get("user") or {}).get("login", "").lower() == username.lower()
+        ]
+        if not mine:
+            continue
+        candidates.append({
+            "owner": owner,
+            "name": name,
+            "count": len(mine),
+            "commits": [
+                {
+                    "sha7": (c.get("oid") or "")[:7],
+                    "msg": c.get("messageHeadline") or "",
+                    "ago": _relative_time(c.get("committedDate") or ""),
+                }
+                for c in mine[:3]
+            ],
+        })
+
+    candidates.sort(key=lambda r: r["count"], reverse=True)
+    return candidates[:limit]
 
 
-def render_projects_panel(repos, config):
-    """Generate SVG for the PROJECTS panel."""
-    featured = config.get("featured_repos", [])
-    if featured:
-        items = [(r["name"], r.get("description", "")) for r in featured[:3]]
-    else:
-        items = [(name, "") for name in repos[:3]]
+def render_active_repos_panel(active_repos, y_start=296):
+    """Render top-5 active repos with last 3 commits each indented underneath.
 
+    Returns (svg_string, bottom_y) so the caller can place the next panel.
+    """
     lines = []
-    y_start = 296
-    for i, (name, desc) in enumerate(items):
-        y = y_start + i * 20
-        label = f"› {name}" if not desc else f"› {name} — {desc}"
-        label = label[:48]
+    y = y_start
+    repo_font = 14
+    commit_font = 9.5
+    repo_line_h = 17
+    commit_line_h = 12
+    gap = 6
+
+    if not active_repos:
         lines.append(
             f'  <text class="zg-primary" x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="17.3" font-weight="bold">{label}</text>'
+            f'font-size="{repo_font}">(no recent activity)</text>'
         )
+        return "\n".join(lines), y + repo_line_h
+
+    for repo in active_repos:
+        head = f"› {repo['owner']}/{repo['name']} ({repo['count']})"
+        head = head[:46]
+        lines.append(
+            f'  <text class="zg-primary" x="16" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+            f'font-size="{repo_font}" font-weight="bold">{head}</text>'
+        )
+        y += repo_line_h
+        for c in repo["commits"]:
+            msg = c["msg"]
+            label = f"  • {c['sha7']} {msg} · {c['ago']}"
+            # truncate to fit panel width (~48 monospace chars at this size)
+            label = label[:54]
+            from html import escape as _esc
+            lines.append(
+                f'  <text class="zg-secondary" x="22" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+                f'font-size="{commit_font}">{_esc(label)}</text>'
+            )
+            y += commit_line_h
+        y += gap
+
+    return "\n".join(lines), y
+
+
+def render_emotion_legend(emotions, x, y_start, hero_height):
+    """Vertical legend next to the ASCII hero.
+
+    Each row: a 12x12 swatch pulsing on the same `emo{i}` keyframe as the hero
+    chars, plus the emotion id label. Header `EMOTIONS` above, `Generated by
+    zeitgeist` footer below.
+    """
+    from html import escape as _esc
+
+    lines = []
+    # Header
+    lines.append(
+        f'  <text class="zg-secondary" x="{x}" y="{y_start}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+        f'font-size="12" font-weight="bold" letter-spacing="2" filter="url(#glow)">EMOTIONS</text>'
+    )
+
+    row_h = 18
+    swatch = 11
+    label_dx = 18
+    for i, e in enumerate(emotions):
+        ry = y_start + 14 + i * row_h
+        lines.append(
+            f'  <rect x="{x}" y="{ry - swatch + 2}" width="{swatch}" height="{swatch}" rx="2" '
+            f'fill="{e["hex"]}" style="animation: emo{i} 6s ease-in-out infinite;"/>'
+        )
+        lines.append(
+            f'  <text class="zg-primary" x="{x + label_dx}" y="{ry}" '
+            f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="12">{_esc(e["id"])}</text>'
+        )
+
+    footer_y = y_start + 14 + len(emotions) * row_h + 10
+    # Clamp footer to bottom of hero area if it would overflow
+    max_footer_y = y_start + hero_height - 8
+    if footer_y > max_footer_y:
+        footer_y = max_footer_y
+    lines.append(
+        f'  <text class="zg-secondary" x="{x}" y="{footer_y}" '
+        f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" font-size="9" '
+        f'font-style="italic">generated by zeitgeist</text>'
+    )
+
     return "\n".join(lines)
 
 
@@ -905,7 +1071,8 @@ def main():
     avg_per_day = round(weekly_commits / 7, 1)
     last_commit_ago = calc_last_commit_ago(repos_data)
     languages = aggregate_languages(repos_data)
-    top_repos = fetch_top_repos(repos_data)
+    print("Computing top active repos (last 30d)...")
+    active_repos = fetch_active_repos(repos_data, username, limit=5, window_days=30)
 
     lines_added = f"+{additions:,}" if additions else "+--"
     lines_deleted = f"-{deletions:,}" if deletions else "---"
@@ -914,29 +1081,66 @@ def main():
     lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
     # Sample live Jetstream emotion ratios for the ASCII hero
+    print(f"Zeitgeist emotions ({len(JETSTREAM_EMOTIONS)}): {[e['id'] for e in JETSTREAM_EMOTIONS]}")
     print("Sampling Bluesky Jetstream emotions...")
     emotion_ratios = sample_emotions()
 
     # Render unified card
     print("Rendering card.svg...")
-    hero_css, ascii_hero_svg, hero_height = render_ascii_hero(emotion_ratios)
-    card_height = 385 + hero_height + 10  # header/panels + hero + bottom pad
+
+    # Fit heatmap into LANGUAGES box (x=425..815, y=88..258 -> width 390, height 170).
+    heatmap_cells, hm_raw_w, hm_raw_h = render_heatmap(calendar)
+    HM_BOX_X, HM_BOX_Y, HM_BOX_W, HM_BOX_H = 425, 4, 390, 80
+    if hm_raw_w > 0 and hm_raw_h > 0:
+        hm_scale = min(HM_BOX_W / hm_raw_w, HM_BOX_H / hm_raw_h)
+        hm_drawn_w = hm_raw_w * hm_scale
+        hm_drawn_h = hm_raw_h * hm_scale
+        hm_tx = HM_BOX_X + (HM_BOX_W - hm_drawn_w)  # right-align in box
+        hm_ty = HM_BOX_Y + (HM_BOX_H - hm_drawn_h) / 2
+        heatmap_transform = f"matrix({hm_scale:.4f}, 0, 0, {hm_scale:.4f}, {hm_tx:.2f}, {hm_ty:.2f})"
+    else:
+        heatmap_transform = "translate(425, 4)"
+
+    # Auto-fit title font to THIS WEEK box (x=16..406; inset to 30..394 -> ~364px usable).
+    title_text = config["name"]
+    title_max_width = 364
+    title_max_font = 31.2
+    title_min_font = 18
+    if title_text:
+        # TX-02 monospace advance is ~0.6 * font_size per glyph.
+        ideal = title_max_width / (len(title_text) * 0.6)
+        name_font_size = max(title_min_font, min(title_max_font, ideal))
+    else:
+        name_font_size = title_max_font
+
+    # Layout the dynamic ACTIVE REPOS panel; let it push the hero down as needed.
+    active_panel_svg, active_panel_bottom = render_active_repos_panel(active_repos, y_start=296)
+    hero_top = max(385, active_panel_bottom + 14)
+    hero_css, ascii_hero_svg, hero_height = render_ascii_hero(emotion_ratios, y_start=hero_top)
+    emotion_legend_svg = render_emotion_legend(
+        JETSTREAM_EMOTIONS, x=700, y_start=hero_top - 6, hero_height=hero_height
+    )
+    card_height = hero_top + hero_height + 10
 
     card = render_template(
         "card.svg.template",
-        name=config["name"],
-        heatmap_cells=render_heatmap(calendar),
+        name=title_text,
+        name_font_size=f"{name_font_size:.1f}",
+        heatmap_cells=heatmap_cells,
+        heatmap_transform=heatmap_transform,
         weekly_commits=str(weekly_commits),
         lines_added=lines_added,
         lines_deleted=lines_deleted,
         language_bars=render_language_bars(languages),
-        projects_panel=render_projects_panel(top_repos, config),
+        projects_panel=active_panel_svg,
         stats_panel=render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_ago),
         ascii_hero=ascii_hero_svg,
+        emotion_legend=emotion_legend_svg,
         total_contributions=str(total_contributions),
         current_year=str(datetime.now(timezone.utc).year),
         language_summary=lang_summary,
         card_height=str(card_height),
+        divider_y=f"{hero_top - 20:.1f}",
         hero_css=hero_css,
     )
     (ROOT / "card.svg").write_text(card)
