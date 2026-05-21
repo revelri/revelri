@@ -9,10 +9,12 @@ averaged ratios. Falls back to equal distribution if unavailable.
 import asyncio
 import json
 import os
+import re
 import sys
 import time
+from pathlib import Path
 
-EMOTIONS = [
+_FALLBACK_EMOTIONS = [
     {"id": "serene",     "hex": "#87a99e"},
     {"id": "vibrant",    "hex": "#ad9387"},
     {"id": "melancholy", "hex": "#919baf"},
@@ -20,12 +22,46 @@ EMOTIONS = [
     {"id": "content",    "hex": "#9ba591"},
 ]
 
+
+def _load_emotions_from_zeitgeist() -> list[dict]:
+    """Parse `name=#hex` lines from zeitgeist's colors.txt.
+
+    Source of truth: ${ZEITGEIST_DIR}/backend/content/colors.txt.
+    Order is preserved. Returns [] if file missing or empty so caller can fall back.
+    """
+    zeit_dir = Path(os.environ.get(
+        "ZEITGEIST_DIR",
+        str(Path(__file__).resolve().parent.parent.parent / "zeitgeist"),
+    ))
+    colors_path = zeit_dir / "backend" / "content" / "colors.txt"
+    if not colors_path.exists():
+        return []
+
+    emotions = []
+    pat = re.compile(r"^\s*([a-zA-Z_][\w-]*)\s*=\s*(#[0-9a-fA-F]{6})\s*$")
+    for raw in colors_path.read_text().splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        m = pat.match(line)
+        if m:
+            emotions.append({"id": m.group(1).lower(), "hex": m.group(2).lower()})
+    return emotions
+
+
+_loaded = _load_emotions_from_zeitgeist()
+if _loaded:
+    EMOTIONS = _loaded
+else:
+    print("[sample_emotions] zeitgeist colors.txt missing/empty — using fallback emotions", file=sys.stderr)
+    EMOTIONS = _FALLBACK_EMOTIONS
+
 EMOTION_IDS = [e["id"] for e in EMOTIONS]
 
 WS_PORT = int(os.environ.get("WS_PORT", "8090"))
 SAMPLE_DURATION = int(os.environ.get("SAMPLE_DURATION", "30"))
 
-FALLBACK_RATIOS = {e["id"]: 0.2 for e in EMOTIONS}
+FALLBACK_RATIOS = {e["id"]: 1.0 / len(EMOTIONS) for e in EMOTIONS}
 
 
 async def _sample_ws(port: int, duration: int) -> dict[str, float]:
@@ -54,7 +90,7 @@ async def _sample_ws(port: int, duration: int) -> dict[str, float]:
 
     averaged = {}
     for eid, values in ratios.items():
-        averaged[eid] = sum(values) / len(values) if values else 0.2
+        averaged[eid] = sum(values) / len(values) if values else 1.0 / len(EMOTION_IDS)
     return averaged
 
 
