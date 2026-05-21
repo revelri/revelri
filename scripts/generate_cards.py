@@ -826,30 +826,37 @@ def fetch_active_repos(repos_data, username, limit=5, window_days=30):
     since_str = since.strftime("%Y-%m-%dT%H:%M:%SZ")
     candidates = []
 
-    query = """
-    query($owner: String!, $name: String!, $since: GitTimestamp!) {
-      repository(owner: $owner, name: $name) {
-        defaultBranchRef {
-          target {
-            ... on Commit {
-              history(since: $since, first: 50) {
-                nodes {
+    # Resolve viewer's node ID once; GraphQL's history(author:{id:...}) filter
+    # gives us a proper totalCount instead of capping at the fetched node count.
+    viewer_id_resp = gh_graphql("query{viewer{id}}") or {}
+    viewer_id = (viewer_id_resp.get("data", {}).get("viewer") or {}).get("id")
+
+    # CommitAuthor is an input object; gh_graphql passes -f flat strings so
+    # we inline the author filter directly. viewer_id is an opaque base64
+    # node ID safe to substitute.
+    author_clause = f', author: {{id: "{viewer_id}"}}' if viewer_id else ""
+    query = f"""
+    query($owner: String!, $name: String!, $since: GitTimestamp!) {{
+      repository(owner: $owner, name: $name) {{
+        defaultBranchRef {{
+          target {{
+            ... on Commit {{
+              history(since: $since, first: 3{author_clause}) {{
+                totalCount
+                nodes {{
                   oid
                   messageHeadline
                   committedDate
-                  author { user { login } }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+                }}
+              }}
+            }}
+          }}
+        }}
+      }}
+    }}
     """
 
     for repo in nodes:
-        if repo.get("isPrivate"):
-            continue
         name = repo.get("name", "")
         pushed = repo.get("pushedAt")
         if not pushed:
@@ -863,24 +870,22 @@ def fetch_active_repos(repos_data, username, limit=5, window_days=30):
         if not result:
             continue
         target = ((result.get("data", {}).get("repository") or {}).get("defaultBranchRef") or {}).get("target") or {}
-        commits = (target.get("history") or {}).get("nodes", []) or []
-        mine = [
-            c for c in commits
-            if ((c.get("author") or {}).get("user") or {}).get("login", "").lower() == username.lower()
-        ]
-        if not mine:
+        history = (target.get("history") or {})
+        total = history.get("totalCount") or 0
+        if total == 0:
             continue
+        commits = history.get("nodes", []) or []
         candidates.append({
             "owner": owner,
             "name": name,
-            "count": len(mine),
+            "count": total,
             "commits": [
                 {
                     "sha7": (c.get("oid") or "")[:7],
                     "msg": c.get("messageHeadline") or "",
                     "ago": _relative_time(c.get("committedDate") or ""),
                 }
-                for c in mine[:3]
+                for c in commits[:3]
             ],
         })
 
