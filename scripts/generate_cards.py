@@ -266,13 +266,18 @@ def fetch_lines_changed(repos_data, username):
     return additions, deletions
 
 
-def fetch_daily_loc(repos_data, username, window_days=30):
+def fetch_daily_loc(repos_data, username, window_days=30, exclude=None):
     """Sum user-authored additions+deletions per day across all repos.
 
     Returns an ordered list of (date_obj, loc) tuples spanning `window_days`
     ending today (UTC). Days with no activity are 0.
+
+    `exclude` is a set of bare names or owner/name identifiers (matched
+    case-insensitively) to drop from the sum — same denylist that gates the
+    ACTIVE REPOS panel, so a repo hidden there doesn't leak into the chart.
     """
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
+    exclude = {e.lower() for e in (exclude or set())}
     since_dt = datetime.now(timezone.utc) - timedelta(days=window_days - 1)
     since_date = since_dt.date()
     since_str = since_dt.strftime("%Y-%m-%dT00:00:00Z")
@@ -320,6 +325,8 @@ def fetch_daily_loc(repos_data, username, window_days=30):
             break  # sorted desc by pushedAt
         owner = (repo.get("owner") or {}).get("login") or username
         name = repo.get("name", "")
+        if name.lower() in exclude or f"{owner}/{name}".lower() in exclude:
+            continue
         cursor = None
         for _ in range(MAX_PAGES):
             result = gh_graphql(_build_query(cursor), owner=owner, name=name, since=since_str)
@@ -1023,7 +1030,7 @@ def render_active_repos_panel(active_repos, y_start=296):
             from html import escape as _esc
             lines.append(
                 f'  <text class="zg-secondary" x="22" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-                f'font-size="{commit_font}">{_esc(label)}</text>'
+                f'font-size="{commit_font}" font-weight="bold">{_esc(label)}</text>'
             )
             y += commit_line_h
         y += gap
@@ -1073,8 +1080,13 @@ def render_loc_chart(daily_loc, x, y, width, height):
         n = max(len(daily_loc) - 1, 1)
         return plot_x + (i / n) * plot_w
 
+    # Square-root scale: outlier spikes don't flatten the rest of the series,
+    # but ordering and zero still read correctly.
+    import math
+    y_max_sqrt = math.sqrt(y_max) or 1.0
+
     def sy(v):  # y position for value v
-        return plot_y + plot_h - (v / y_max) * plot_h
+        return plot_y + plot_h - (math.sqrt(max(v, 0)) / y_max_sqrt) * plot_h
 
     elements = []
 
@@ -1084,13 +1096,19 @@ def render_loc_chart(daily_loc, x, y, width, height):
     elements.append(
         f'  <text class="zg-secondary" x="{x + pad_l}" y="{y + 16}" '
         f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-        f'font-size="13" font-weight="bold" letter-spacing="1.5" filter="url(#glow)">{title}</text>'
+        f'font-size="13" font-weight="bold" letter-spacing="1.5" filter="url(#subtle_glow)">{title}</text>'
     )
 
-    # Y-axis gridlines + labels
-    n_lines = y_max // step + 1
-    for k in range(n_lines):
-        v = k * step
+    # Y-axis gridlines + labels — spaced evenly along the sqrt axis so labels
+    # don't bunch up near the top under outlier spikes.
+    tick_fracs = [0.0, 0.0625, 0.25, 0.5625, 1.0]  # sqrt positions: 0, .25, .5, .75, 1
+    raw_ticks = [f * y_max for f in tick_fracs]
+    snapped = []
+    for v in raw_ticks:
+        snap = round(v / step) * step
+        if snap not in snapped:
+            snapped.append(snap)
+    for v in snapped:
         gy = sy(v)
         elements.append(
             f'  <line class="zg-border" x1="{plot_x}" y1="{gy:.1f}" x2="{plot_x + plot_w}" y2="{gy:.1f}" '
@@ -1292,10 +1310,10 @@ def main():
     avg_per_day = round(weekly_commits / 7, 1)
     last_commit_ago = calc_last_commit_ago(repos_data)
     languages = aggregate_languages(repos_data)
-    print("Computing top active repos (last 30d)...")
     exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
     if exclude_set:
-        print(f"Excluding repos from ACTIVE REPOS: {sorted(exclude_set)}")
+        print(f"Excluding repos from ACTIVE REPOS + LoC chart: {sorted(exclude_set)}")
+    print("Computing top active repos (last 30d)...")
     active_repos = fetch_active_repos(
         repos_data, username, limit=5, window_days=30, exclude=exclude_set
     )
@@ -1307,7 +1325,7 @@ def main():
     lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
     print("Fetching daily LoC for 30d...")
-    daily_loc = fetch_daily_loc(repos_data, username, window_days=30)
+    daily_loc = fetch_daily_loc(repos_data, username, window_days=30, exclude=exclude_set)
 
     # Render unified card
     print("Rendering card.svg...")
