@@ -1328,8 +1328,8 @@ def main():
     # Build language summary for accessibility
     lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
-    print("Fetching daily LoC for 30d...")
-    daily_loc = fetch_daily_loc(repos_data, username, window_days=30, exclude=exclude_set)
+    print("Fetching daily LoC for 7d...")
+    daily_loc = fetch_daily_loc(repos_data, username, window_days=7, exclude=exclude_set)
 
     # Render unified card
     print("Rendering card.svg...")
