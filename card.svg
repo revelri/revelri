@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>288 commits this week. Top languages: Rust 92%, Python 4%, JavaScript 3%. 1847 contributions in 2026.</desc>
+  <desc>289 commits this week. Top languages: Rust 92%, Python 4%, JavaScript 3%. 1848 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -438,8 +438,8 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="142" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="178" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" font-weight="bold">288 commits</text>
-  <text class="zg-primary" x="211" y="210" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" font-weight="bold">+403,978 / -59,247</text>
+  <text class="zg-primary" x="211" y="178" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" font-weight="bold">289 commits</text>
+  <text class="zg-primary" x="211" y="210" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="26.4" font-weight="bold">+403,733 / -59,219</text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -464,11 +464,11 @@
   <text class="zg-secondary" x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 578fabe feat(ux): add search magnifier, clear button, Esc-to-clear (iter 36) </text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/strivo (200)</text>
   <text class="zg-secondary" x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • a3cb6d9 fix(recording): pin matroska muxer + ADTS-&gt;ASC bsf so captures are re</text>
-  <text class="zg-secondary" x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 0e21239 feat(web): magic-byte Content-Type sniffer for downloads · 2h</text>
-  <text class="zg-secondary" x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 08d50cd feat(web): in-app player handles audio-only files · 2h</text>
+  <text class="zg-secondary" x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 0e21239 feat(web): magic-byte Content-Type sniffer for downloads · 3h</text>
+  <text class="zg-secondary" x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 08d50cd feat(web): in-app player handles audio-only files · 3h</text>
   <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/strivo-plugins (31)</text>
-  <text class="zg-secondary" x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 8a06166 feat(crunchr,archiver): public read APIs for the webui · 3h</text>
-  <text class="zg-secondary" x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • c283476 feat(viewguard): new plugin module — viewbot detection · 3h</text>
+  <text class="zg-secondary" x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 8a06166 feat(crunchr,archiver): public read APIs for the webui · 5h</text>
+  <text class="zg-secondary" x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • c283476 feat(viewguard): new plugin module — viewbot detection · 5h</text>
   <text class="zg-secondary" x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 1be7291 refactor(plugins): on_verb takes VerbContext, not &amp;AppState (W2-phase</text>
   <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/demixer (15)</text>
   <text class="zg-secondary" x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • f6a16e7 docs: project README · 2d</text>
@@ -482,18 +482,15 @@
   <!-- STATS panel (right) -->
   <text class="zg-secondary" x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
     <text x="815" y="296" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">streak: </tspan><tspan class="zg-primary">3d (best 12d)</tspan></text>
-  <text x="815" y="316" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">41.1/day</tspan></text>
-  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">00m ago</tspan></text>
+  <text x="815" y="316" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">41.3/day</tspan></text>
+  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">01h 01m ago</tspan></text>
 
   <!-- Contribution count (centered between PROJECTS and STATS) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">1847 contributions in 2026</text>
-
-  <!-- Divider -->
-  <line class="zg-border" x1="30" y1="623.0" x2="810" y2="623.0" stroke-width="0.5" opacity="0.3"/>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">1848 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="72" y="651" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 30d · total 1,042,761</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 30d total: 1,042,761</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
   <line class="zg-border" x1="72" y1="773.4" x2="808" y2="773.4" stroke-width="0.4" opacity="0.25"/>
