@@ -1090,11 +1090,11 @@ def render_loc_chart(daily_loc, x, y, width, height):
 
     elements = []
 
-    # Title (top-left of the chart frame)
+    # Title (centered above the chart frame)
     total_loc = sum(v for _, v in daily_loc)
-    title = f"DAILY LoC SHIPPED · {len(daily_loc)}d · total {total_loc:,}"
+    title = f"DAILY LoC SHIPPED · {len(daily_loc)}d total: {total_loc:,}"
     elements.append(
-        f'  <text class="zg-secondary" x="{x + pad_l}" y="{y + 16}" '
+        f'  <text class="zg-secondary" x="{x + width / 2}" y="{y + 16}" text-anchor="middle" '
         f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
         f'font-size="13" font-weight="bold" letter-spacing="1.5">{title}</text>'
     )

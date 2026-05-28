@@ -94,9 +94,6 @@
   <!-- Contribution count (centered between PROJECTS and STATS) -->
   <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">{total_contributions} contributions in {current_year}</text>
 
-  <!-- Divider -->
-  <line class="zg-border" x1="30" y1="{divider_y}" x2="810" y2="{divider_y}" stroke-width="0.5" opacity="0.3"/>
-
   <!-- ASCII Hero -->
   <g>
     {ascii_hero}
