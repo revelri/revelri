@@ -418,10 +418,11 @@ def calc_last_commit_ago(repos_data):
     return " ".join(parts)
 
 
-def aggregate_languages(repos_data):
+def aggregate_languages(repos_data, exclude=None):
     """Aggregate language sizes across recently pushed repos."""
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
     cutoff = datetime.now(timezone.utc) - timedelta(days=90)
+    exclude_set = {n.lower() for n in (exclude or set())}
     lang_sizes = {}
 
     for repo in nodes:
@@ -430,6 +431,8 @@ def aggregate_languages(repos_data):
             continue
         dt = datetime.fromisoformat(pushed.replace("Z", "+00:00"))
         if dt < cutoff:
+            continue
+        if repo.get("name", "").lower() in exclude_set:
             continue
         for edge in repo.get("languages", {}).get("edges", []):
             name = edge["node"]["name"]
@@ -1313,10 +1316,10 @@ def main():
     current_streak, longest_streak = calc_streak(calendar)
     avg_per_day = round(weekly_commits / 7, 1)
     last_commit_ago = calc_last_commit_ago(repos_data)
-    languages = aggregate_languages(repos_data)
     exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
     if exclude_set:
-        print(f"Excluding repos from ACTIVE REPOS + LoC chart: {sorted(exclude_set)}")
+        print(f"Excluding repos from ACTIVE REPOS + LoC chart + languages: {sorted(exclude_set)}")
+    languages = aggregate_languages(repos_data, exclude=exclude_set)
     print("Computing top active repos (last 30d)...")
     active_repos = fetch_active_repos(
         repos_data, username, limit=5, window_days=30, exclude=exclude_set
