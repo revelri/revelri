@@ -1096,7 +1096,7 @@ def render_loc_chart(daily_loc, x, y, width, height):
     elements.append(
         f'  <text class="zg-secondary" x="{x + pad_l}" y="{y + 16}" '
         f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-        f'font-size="13" font-weight="bold" letter-spacing="1.5" filter="url(#subtle_glow)">{title}</text>'
+        f'font-size="13" font-weight="bold" letter-spacing="1.5">{title}</text>'
     )
 
     # Y-axis gridlines + labels — spaced evenly along the sqrt axis so labels
@@ -1146,7 +1146,7 @@ def render_loc_chart(daily_loc, x, y, width, height):
     # Line
     elements.append(
         f'  <polyline points="{pts_str}" fill="none" stroke="#6abf7c" stroke-width="1.6" '
-        f'stroke-linejoin="round" filter="url(#hero_glow)"/>'
+        f'stroke-linejoin="round"/>'
     )
 
     # Dots for non-zero days
