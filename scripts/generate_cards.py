@@ -1080,13 +1080,10 @@ def render_loc_chart(daily_loc, x, y, width, height):
         n = max(len(daily_loc) - 1, 1)
         return plot_x + (i / n) * plot_w
 
-    # Square-root scale: outlier spikes don't flatten the rest of the series,
-    # but ordering and zero still read correctly.
-    import math
-    y_max_sqrt = math.sqrt(y_max) or 1.0
-
+    # Linear scale: tick labels correspond to their proportional vertical
+    # position so the axis reads at a glance.
     def sy(v):  # y position for value v
-        return plot_y + plot_h - (math.sqrt(max(v, 0)) / y_max_sqrt) * plot_h
+        return plot_y + plot_h - (max(v, 0) / y_max) * plot_h
 
     elements = []
 
@@ -1099,15 +1096,22 @@ def render_loc_chart(daily_loc, x, y, width, height):
         f'font-size="13" font-weight="bold" letter-spacing="1.5">{title}</text>'
     )
 
-    # Y-axis gridlines + labels — spaced evenly along the sqrt axis so labels
-    # don't bunch up near the top under outlier spikes.
-    tick_fracs = [0.0, 0.0625, 0.25, 0.5625, 1.0]  # sqrt positions: 0, .25, .5, .75, 1
-    raw_ticks = [f * y_max for f in tick_fracs]
+    # Y-axis gridlines + labels — pick a label step that yields ~5 ticks,
+    # snapped to a 1/2/2.5/5 * 10^k cadence so values read cleanly.
+    target_ticks = 5
+    rough = y_max / target_ticks
+    import math
+    mag = 10 ** math.floor(math.log10(rough)) if rough > 0 else 1
+    for m in (1, 2, 2.5, 5, 10):
+        label_step = m * mag
+        if y_max / label_step <= target_ticks + 1:
+            break
+    label_step = int(label_step) if label_step >= 1 else label_step
     snapped = []
-    for v in raw_ticks:
-        snap = round(v / step) * step
-        if snap not in snapped:
-            snapped.append(snap)
+    v = 0
+    while v <= y_max + 1e-6:
+        snapped.append(int(v) if isinstance(label_step, int) else v)
+        v += label_step
     for v in snapped:
         gy = sy(v)
         elements.append(
