@@ -349,44 +349,6 @@ def fetch_daily_loc(repos_data, username, window_days=30, exclude=None):
     return sorted(buckets.items())
 
 
-def calc_streak(calendar_data):
-    """Calculate current and longest streak from contribution calendar."""
-    all_days = []
-    for week in calendar_data.get("weeks", []):
-        for day in week.get("contributionDays", []):
-            all_days.append(day)
-
-    # Sort by date
-    all_days.sort(key=lambda d: d["date"])
-
-    # Current streak: walk backwards from today
-    # Treat today and yesterday as "in progress" to handle API lag
-    current_streak = 0
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    yesterday = (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d")
-    for day in reversed(all_days):
-        if day["date"] > today:
-            continue
-        if day["contributionCount"] > 0:
-            current_streak += 1
-        elif day["date"] in (today, yesterday):
-            continue
-        else:
-            break
-
-    # Longest streak
-    longest = 0
-    current = 0
-    for day in all_days:
-        if day["contributionCount"] > 0:
-            current += 1
-            longest = max(longest, current)
-        else:
-            current = 0
-
-    return current_streak, longest
-
-
 def calc_last_commit_ago(repos_data):
     """Calculate time since most recent push across all repos."""
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
@@ -544,39 +506,44 @@ def render_language_bars(languages):
     label_x = 518   # right edge for right-justified names
     bar_x = 528
     pct_x = 805     # right-aligned percentage
-    line_height = 30
     font_size = 15
     bar_height = 14
 
-    # Vertically center in box (y=88..258, height=170) with inset padding
-    padding = 6
-    box_top = 88 + padding
-    box_height = 170 - 2 * padding
+    # Vertically center the rows in the box (y=88..258, height=170) with a
+    # guaranteed top/bottom margin. Shrink the per-row pitch when there are
+    # enough languages that the default 30px pitch would overflow and let the
+    # top/bottom rows touch the box edge.
+    margin = 12
+    box_top = 88
+    box_height = 170
+    inner_top = box_top + margin
+    inner_height = box_height - 2 * margin
     n = len(languages)
-    content_height = n * line_height
-    y_start = box_top + (box_height - content_height) // 2 + line_height // 2
+    line_height = min(30, inner_height / n) if n else 30
+    stack_top = inner_top + (inner_height - n * line_height) / 2
 
     # Reserve room for the right-aligned percentage so the bar never
     # overdraws the text (was overflowing on 90%+ entries).
     pct_text_room = 50
     max_drawable = pct_x - bar_x - pct_text_room
     for i, (name, pct) in enumerate(languages):
-        y = y_start + i * line_height
+        row_center = stack_top + i * line_height + line_height / 2
+        ty = row_center + font_size * 0.34   # text baseline, visually centered
         bar_width = min(max(4, int(max_bar_width * pct / 100)), max_drawable)
         color = lang_color(name, i)
         # Right-justified language name
         lines.append(
-            f'  <text x="{label_x}" y="{y + 2}" text-anchor="end" '
+            f'  <text x="{label_x}" y="{ty:.1f}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
             f'font-size="{font_size}" fill="{color}" font-weight="bold">{name}</text>'
         )
         # Bar
         lines.append(
-            f'  <rect x="{bar_x}" y="{y - 8}" width="{bar_width}" height="{bar_height}" rx="2" fill="{color}" opacity="0.85"/>'
+            f'  <rect x="{bar_x}" y="{row_center - bar_height / 2:.1f}" width="{bar_width}" height="{bar_height}" rx="2" fill="{color}" opacity="0.85"/>'
         )
         # Percentage right-aligned
         lines.append(
-            f'  <text x="{pct_x}" y="{y + 2}" text-anchor="end" '
+            f'  <text x="{pct_x}" y="{ty:.1f}" text-anchor="end" '
             f'font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
             f'font-size="{font_size}" fill="{color}" font-weight="bold">{pct}%</text>'
         )
@@ -1016,6 +983,7 @@ def render_active_repos_panel(active_repos, y_start=296):
         )
         return "\n".join(lines), y + repo_line_h
 
+    from html import escape as _esc
     for repo in active_repos:
         head = f"› {repo['owner']}/{repo['name']} ({repo['count']})"
         head = head[:46]
@@ -1025,15 +993,22 @@ def render_active_repos_panel(active_repos, y_start=296):
         )
         y += repo_line_h
         for c in repo["commits"]:
-            msg = c["msg"]
-            label = f"  • {c['sha7']} {msg} · {c['ago']}"
-            # Truncate to fit the panel column; 50% wider than the original
-            # 54-char budget so longer commit headlines remain legible.
-            label = label[:81]
-            from html import escape as _esc
+            ago = c["ago"]
+            sep = " · "
+            head = f"  • {c['sha7']} "
+            # Full page width now that the STATS column is gone — budget ~118
+            # chars including the trailing timestamp. Truncate only the message
+            # so the "· {ago}" separator and bold timestamp always survive.
+            max_chars = 118
+            msg_budget = max_chars - len(head) - len(sep) - len(ago)
+            msg = c["msg"][:max(0, msg_budget)]
+            prefix = f"{head}{msg}{sep}"
             lines.append(
-                f'  <text class="zg-secondary" x="22" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-                f'font-size="{commit_font}" font-weight="bold">{_esc(label)}</text>'
+                f'  <text x="22" y="{y}" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
+                f'font-size="{commit_font}">'
+                f'<tspan class="zg-secondary">{_esc(prefix)}</tspan>'
+                f'<tspan class="zg-primary" font-weight="bold">{_esc(ago)}</tspan>'
+                f'</text>'
             )
             y += commit_line_h
         y += gap
@@ -1224,27 +1199,6 @@ def render_emotion_legend(emotions, x, y_start, hero_height, ingest_ts=None):
     return "\n".join(lines)
 
 
-def render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_ago):
-    """Generate SVG for the STATS panel."""
-    stats = [
-        ("streak: ", f"{current_streak}d (best {longest_streak}d)"),
-        ("avg: ", f"{avg_per_day}/day"),
-        ("last: ", f"{last_commit_ago}"),
-    ]
-    lines = []
-    y_start = 296
-    for i, (label, value) in enumerate(stats):
-        y = y_start + i * 20
-        lines.append(
-            f'  <text x="815" y="{y}" text-anchor="end" font-family="\'TX-02\', \'Courier New\', Courier, monospace" '
-            f'font-size="17.3" font-weight="bold">'
-            f'<tspan class="zg-secondary">{label}</tspan>'
-            f'<tspan class="zg-primary">{value}</tspan>'
-            f'</text>'
-        )
-    return "\n".join(lines)
-
-
 def main():
     parser = argparse.ArgumentParser(description="Generate GitHub profile SVG cards")
     parser.add_argument("--mock", action="store_true", help="Use cached mock data instead of API")
@@ -1313,9 +1267,12 @@ def main():
     weekly_commits = weekly["totalCommitContributions"] + weekly["restrictedContributionsCount"]
     total_contributions = calendar["totalContributions"]
 
-    current_streak, longest_streak = calc_streak(calendar)
-    avg_per_day = round(weekly_commits / 7, 1)
     last_commit_ago = calc_last_commit_ago(repos_data)
+    # Average commits per week across the year so far (weekly cadence).
+    yearly_commits = yearly["totalCommitContributions"] + yearly["restrictedContributionsCount"]
+    _now = datetime.now(timezone.utc)
+    weeks_elapsed = max((_now - datetime(_now.year, 1, 1, tzinfo=timezone.utc)).days / 7, 1)
+    avg_per_week = round(yearly_commits / weeks_elapsed)
     exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
     if exclude_set:
         print(f"Excluding repos from ACTIVE REPOS + LoC chart + languages: {sorted(exclude_set)}")
@@ -1386,7 +1343,8 @@ def main():
         lines_deleted=lines_deleted,
         language_bars=render_language_bars(languages),
         projects_panel=active_panel_svg,
-        stats_panel=render_stats_panel(current_streak, longest_streak, avg_per_day, last_commit_ago),
+        avg_per_week=str(avg_per_week),
+        last_commit_ago=last_commit_ago,
         ascii_hero=ascii_hero_svg,
         emotion_legend=emotion_legend_svg,
         total_contributions=str(total_contributions),
