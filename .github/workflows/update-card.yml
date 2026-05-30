@@ -2,7 +2,10 @@ name: Update profile cards
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    # Every 30 min, off the top-of-hour contention window GitHub warns about.
+    # A local systemd timer (profile-card.timer) is the primary trigger; this
+    # cron is a best-effort fallback since GitHub drops scheduled events.
+    - cron: '7,37 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
