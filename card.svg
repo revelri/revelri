@@ -469,8 +469,8 @@
   <text class="zg-secondary" x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • ebd417c feat(ux): pause toasts on hover/focus, resume on leave (iter 37) · 5d</text>
   <text class="zg-secondary" x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 578fabe feat(ux): add search magnifier, clear button, Esc-to-clear (iter 36) </text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/strivo (306)</text>
-  <text class="zg-secondary" x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 2ab4e6c refactor: replace TUI with web-only frontend · 14h</text>
-  <text class="zg-secondary" x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 3b59f26 docs: drop public-root scratch + capture adversarial review · 14h</text>
+  <text class="zg-secondary" x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 2ab4e6c refactor: replace TUI with web-only frontend · 16h</text>
+  <text class="zg-secondary" x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 3b59f26 docs: drop public-root scratch + capture adversarial review · 16h</text>
   <text class="zg-secondary" x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 4a2c5b3 refactor(spa): close the long tail — every audit finding accounted fo</text>
   <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/strivo-plugins (31)</text>
   <text class="zg-secondary" x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11" font-weight="bold">  • 8a06166 feat(crunchr,archiver): public read APIs for the webui · 1d</text>
@@ -489,7 +489,7 @@
   <text class="zg-secondary" x="815" y="278" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">STATS</text>
     <text x="815" y="296" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">streak: </tspan><tspan class="zg-primary">4d (best 12d)</tspan></text>
   <text x="815" y="316" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">45.0/day</tspan></text>
-  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">02h 01m ago</tspan></text>
+  <text x="815" y="336" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="17.3" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">02h 26m ago</tspan></text>
 
   <!-- Contribution count (centered between PROJECTS and STATS) -->
   <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">1971 contributions in 2026</text>
