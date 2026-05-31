@@ -482,17 +482,17 @@
   <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d8022b6 perf(separation): --detect-loops runs Demucs on one period and tiles … · </tspan><tspan class="zg-primary" font-weight="bold">2d</tspan></text>
   <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a9639d8 perf(cli): --skip-projects-if-single-stem collapses one-stem runs · </tspan><tspan class="zg-primary" font-weight="bold">2d</tspan></text>
   <text x="22" y="536" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ad2fb67 perf(score): gate PNG and MP3 renders behind --score-renders, default… · </tspan><tspan class="zg-primary" font-weight="bold">2d</tspan></text>
-  <text class="zg-primary" x="16" y="556" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/boardscope (19)</text>
-  <text x="22" y="573" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 2f8275a fix(intel): paginate embed_missing so the full catalog drains · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
-  <text x="22" y="587" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 996cf7c feat(intel): local-CUDA oracle-text embeddings (no external API) · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
-  <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 37d43b0 feat(llm): default to Z.AI coding plan (GLM-5.1) · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
+  <text class="zg-primary" x="16" y="556" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/boardscope (22)</text>
+  <text x="22" y="573" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • c56ae28 feat(decisions): bulk-offload sweep to Card Kingdom Sell List CSV (M32) · </tspan><tspan class="zg-primary" font-weight="bold">1m</tspan></text>
+  <text x="22" y="587" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 6c4ecf5 fix(workers): scope daily price snapshot to ingested printings · </tspan><tspan class="zg-primary" font-weight="bold">3m</tspan></text>
+  <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 71f0f43 fix(scan): make scanned singles actionable for the decision engine · </tspan><tspan class="zg-primary" font-weight="bold">3m</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
   <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">1994 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 133,294</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 133,628</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
   <line class="zg-border" x1="72" y1="856.1" x2="808" y2="856.1" stroke-width="0.4" opacity="0.25"/>
@@ -515,14 +515,15 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">05/30</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">05/31</text>
-  <polygon points="72.0,921.1 194.7,859.4 317.3,920.6 440.0,705.1 562.7,792.8 685.3,890.3 808.0,927.0 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,921.1 194.7,859.4 317.3,920.6 440.0,705.1 562.7,792.8 685.3,890.3 808.0,927.0" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="72.0,921.1 194.7,859.4 317.3,920.6 440.0,705.1 562.7,792.8 685.3,890.3 808.0,925.8 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,921.1 194.7,859.4 317.3,920.6 440.0,705.1 562.7,792.8 685.3,890.3 808.0,925.8" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
   <circle cx="72.0" cy="921.1" r="1.8" fill="#6aa8c0"/>
   <circle cx="194.7" cy="859.4" r="1.8" fill="#6aa8c0"/>
   <circle cx="317.3" cy="920.6" r="1.8" fill="#6aa8c0"/>
   <circle cx="440.0" cy="705.1" r="1.8" fill="#6aa8c0"/>
   <circle cx="562.7" cy="792.8" r="1.8" fill="#6aa8c0"/>
   <circle cx="685.3" cy="890.3" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="925.8" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
