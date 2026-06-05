@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>94 commits this week. Top languages: Python 47%, Rust 29%, JavaScript 9%. 2048 contributions in 2026.</desc>
+  <desc>95 commits this week. Top languages: Python 47%, Rust 29%, JavaScript 9%. 2049 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -222,7 +222,7 @@
   <rect x="294" y="28" width="11" height="11" rx="2" fill="#4d7882"/>
   <rect x="294" y="42" width="11" height="11" rx="2" fill="#385453"/>
   <rect x="294" y="56" width="11" height="11" rx="2" fill="#333333"/>
-  <rect x="294" y="70" width="11" height="11" rx="2" fill="#3f6063"/>
+  <rect x="294" y="70" width="11" height="11" rx="2" fill="#466c72"/>
   <rect x="294" y="84" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="308" y="0" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="308" y="14" width="11" height="11" rx="2" fill="#333333"/>
@@ -438,10 +438,10 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">94 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+22,272 / -5,688</text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">95 commits</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+22,329 / -5,702</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">92/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">05m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">14m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -488,11 +488,11 @@
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ad2fb67 perf(score): gate PNG and MP3 renders behind --score-renders, default… · </tspan><tspan class="zg-primary" font-weight="bold">8d</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">2048 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">2049 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 15,919</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 15,990</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
   <line class="zg-border" x1="72" y1="873.8" x2="808" y2="873.8" stroke-width="0.4" opacity="0.25"/>
@@ -519,12 +519,12 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">06/04</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">06/05</text>
-  <polygon points="72.0,706.6 194.7,856.6 317.3,927.0 440.0,913.8 562.7,927.0 685.3,927.0 808.0,892.2 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,706.6 194.7,856.6 317.3,927.0 440.0,913.8 562.7,927.0 685.3,927.0 808.0,892.2" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="72.0,706.6 194.7,856.6 317.3,927.0 440.0,913.8 562.7,927.0 685.3,927.0 808.0,890.7 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,706.6 194.7,856.6 317.3,927.0 440.0,913.8 562.7,927.0 685.3,927.0 808.0,890.7" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
   <circle cx="72.0" cy="706.6" r="1.8" fill="#6aa8c0"/>
   <circle cx="194.7" cy="856.6" r="1.8" fill="#6aa8c0"/>
   <circle cx="440.0" cy="913.8" r="1.8" fill="#6aa8c0"/>
-  <circle cx="808.0" cy="892.2" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="890.7" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
