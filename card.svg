@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>173 commits this week. Top languages: Python 48%, Rust 28%, JavaScript 8%. 2227 contributions in 2026.</desc>
+  <desc>188 commits this week. Top languages: Python 49%, Rust 27%, JavaScript 8%. 2242 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -231,7 +231,7 @@
   <rect x="308" y="56" width="11" height="11" rx="2" fill="#4d7882"/>
   <rect x="308" y="70" width="11" height="11" rx="2" fill="#548491"/>
   <rect x="308" y="84" width="11" height="11" rx="2" fill="#314844"/>
-  <rect x="322" y="0" width="11" height="11" rx="2" fill="#5b90a1"/>
+  <rect x="322" y="0" width="11" height="11" rx="2" fill="#629cb0"/>
   <rect x="322" y="14" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="322" y="28" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="322" y="42" width="11" height="11" rx="2" fill="#333333"/>
@@ -438,19 +438,19 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">173 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+48,282 / -47,721</text>
-  <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">94/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">29m ago</tspan></text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">188 commits</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+52,250 / -47,822</text>
+  <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">95/wk</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">11m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
     <text x="518" y="117.3" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3572A5" font-weight="bold">Python</text>
-  <rect x="528" y="105.2" width="153" height="14" rx="2" fill="#3572A5" opacity="0.85"/>
-  <text x="805" y="117.3" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3572A5" font-weight="bold">48%</text>
+  <rect x="528" y="105.2" width="156" height="14" rx="2" fill="#3572A5" opacity="0.85"/>
+  <text x="805" y="117.3" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3572A5" font-weight="bold">49%</text>
   <text x="518" y="141.6" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#dea584" font-weight="bold">Rust</text>
-  <rect x="528" y="129.5" width="89" height="14" rx="2" fill="#dea584" opacity="0.85"/>
-  <text x="805" y="141.6" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#dea584" font-weight="bold">28%</text>
+  <rect x="528" y="129.5" width="86" height="14" rx="2" fill="#dea584" opacity="0.85"/>
+  <text x="805" y="141.6" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#dea584" font-weight="bold">27%</text>
   <text x="518" y="165.9" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#f1e05a" font-weight="bold">JavaScript</text>
   <rect x="528" y="153.8" width="25" height="14" rx="2" fill="#f1e05a" opacity="0.85"/>
   <text x="805" y="165.9" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#f1e05a" font-weight="bold">8%</text>
@@ -470,14 +470,14 @@
   <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 2ab4e6c refactor: replace TUI with web-only frontend · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 3b59f26 docs: drop public-root scratch + capture adversarial review · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 4a2c5b3 refactor(spa): close the long tail — every audit finding accounted for · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
-  <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/gutenberg (287)</text>
+  <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/gutenberg (283)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • f4203a0 feat(ux): copy citations as paste-friendly inline form (iter 38) · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ebd417c feat(ux): pause toasts on hover/focus, resume on leave (iter 37) · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 578fabe feat(ux): add search magnifier, clear button, Esc-to-clear (iter 36) · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
-  <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/aseprite-mcp (77)</text>
-  <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 2b69dc4 docs: mark Phase V (world &amp; scene) concrete scope complete · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
-  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 62c8b17 feat(export): export_channels — multi-channel export (Phase V) · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
-  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • f093fc5 feat(vision): compose_scene — free-layout scene assembly (Phase V) · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
+  <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/aseprite-mcp (92)</text>
+  <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 1da0261 feat(form): warp_cel — wave/swirl/bulge/pinch/shear domain warps · </tspan><tspan class="zg-primary" font-weight="bold">14m</tspan></text>
+  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d1b05ef feat(form): draw_curve — pixel-perfect bezier/spline/arc · </tspan><tspan class="zg-primary" font-weight="bold">18m</tspan></text>
+  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 36a90c8 feat(form): radial_symmetry — N-fold rosettes and mandalas · </tspan><tspan class="zg-primary" font-weight="bold">23m</tspan></text>
   <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/redock (52)</text>
   <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 5089ed6 docs: tick M4/M5 roadmap state — rename + release are the remaining i… · </tspan><tspan class="zg-primary" font-weight="bold">4d</tspan></text>
   <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 671d73b ci: offscreen QPA for the headless runner · </tspan><tspan class="zg-primary" font-weight="bold">4d</tspan></text>
@@ -488,23 +488,19 @@
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 5eaf9c6 perf(embeddings): GPU auto-detect + download/GPU pipeline · </tspan><tspan class="zg-primary" font-weight="bold">12d</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">2227 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">2242 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 34,550</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 38,619</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
-  <line class="zg-border" x1="72" y1="873.8" x2="808" y2="873.8" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="877.8" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">2,500</text>
-  <line class="zg-border" x1="72" y1="820.6" x2="808" y2="820.6" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="824.6" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">5,000</text>
-  <line class="zg-border" x1="72" y1="767.4" x2="808" y2="767.4" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="771.4" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">7,500</text>
-  <line class="zg-border" x1="72" y1="714.2" x2="808" y2="714.2" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="718.2" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">10,000</text>
-  <line class="zg-border" x1="72" y1="661.0" x2="808" y2="661.0" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="665.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">12,500</text>
+  <line class="zg-border" x1="72" y1="851.0" x2="808" y2="851.0" stroke-width="0.4" opacity="0.25"/>
+  <text class="zg-secondary" x="66" y="855.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">5,000</text>
+  <line class="zg-border" x1="72" y1="775.0" x2="808" y2="775.0" stroke-width="0.4" opacity="0.25"/>
+  <text class="zg-secondary" x="66" y="779.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">10,000</text>
+  <line class="zg-border" x1="72" y1="699.0" x2="808" y2="699.0" stroke-width="0.4" opacity="0.25"/>
+  <text class="zg-secondary" x="66" y="703.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">15,000</text>
   <line class="zg-border" x1="72.0" y1="927" x2="72.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="72.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">06/08</text>
   <line class="zg-border" x1="194.7" y1="927" x2="194.7" y2="931" stroke-width="0.5" opacity="0.4"/>
@@ -519,13 +515,13 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">06/13</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">06/14</text>
-  <polygon points="72.0,915.5 194.7,875.4 317.3,754.9 440.0,927.0 562.7,927.0 685.3,679.7 808.0,674.2 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,915.5 194.7,875.4 317.3,754.9 440.0,927.0 562.7,927.0 685.3,679.7 808.0,674.2" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
-  <circle cx="72.0" cy="915.5" r="1.8" fill="#6aa8c0"/>
-  <circle cx="194.7" cy="875.4" r="1.8" fill="#6aa8c0"/>
-  <circle cx="317.3" cy="754.9" r="1.8" fill="#6aa8c0"/>
-  <circle cx="685.3" cy="679.7" r="1.8" fill="#6aa8c0"/>
-  <circle cx="808.0" cy="674.2" r="1.8" fill="#6aa8c0"/>
+  <polygon points="72.0,918.8 194.7,890.2 317.3,804.1 440.0,927.0 562.7,927.0 685.3,750.4 808.0,684.6 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,918.8 194.7,890.2 317.3,804.1 440.0,927.0 562.7,927.0 685.3,750.4 808.0,684.6" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <circle cx="72.0" cy="918.8" r="1.8" fill="#6aa8c0"/>
+  <circle cx="194.7" cy="890.2" r="1.8" fill="#6aa8c0"/>
+  <circle cx="317.3" cy="804.1" r="1.8" fill="#6aa8c0"/>
+  <circle cx="685.3" cy="750.4" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="684.6" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
