@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>240 commits this week. Top languages: TypeScript 46%, Python 24%, MDX 14%. 2905 contributions in 2026.</desc>
+  <desc>245 commits this week. Top languages: TypeScript 46%, Python 24%, MDX 14%. 2910 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -438,10 +438,10 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">240 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+87,629 / -1,691</text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">245 commits</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+85,227 / -1,687</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">100/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">00m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">03m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -466,10 +466,10 @@
 
   <!-- LATEST COMMITS panel (full width) -->
   <text class="zg-secondary" x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">LATEST COMMITS</text>
-    <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/revoy (210)</text>
-  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • bddc62f refactor(revoycreds): repoint rotation id gen to shared revoyio.prefi… · </tspan><tspan class="zg-primary" font-weight="bold">1m</tspan></text>
-  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 1cef5a8 refactor(codebase-intel): dedup flock index-lock helper into admin.py · </tspan><tspan class="zg-primary" font-weight="bold">2m</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 2520f6a docs: prune shipped spine-verb todo; refresh handoff with wave-4 + re… · </tspan><tspan class="zg-primary" font-weight="bold">4m</tspan></text>
+    <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/revoy (215)</text>
+  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ed5cfb7 docs(adr): ADR-070 ADR-rooted provenance custody + supersede 24 flat … · </tspan><tspan class="zg-primary" font-weight="bold">3m</tspan></text>
+  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eac581c docs(adr): ADR-069 MCL control substrate (extend revoyd/execute-to-mi… · </tspan><tspan class="zg-primary" font-weight="bold">6m</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ad65e7f docs(roadmap): todo [RVS] — NAMESPACE MIGRATION (ADR-072, author befo… · </tspan><tspan class="zg-primary" font-weight="bold">11m</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/aseprite-mcp (91)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 1da0261 feat(form): warp_cel — wave/swirl/bulge/pinch/shear domain warps · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d1b05ef feat(form): draw_curve — pixel-perfect bezier/spline/arc · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
@@ -488,11 +488,11 @@
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 2c40542 feat(classify): recognize GameCube/Wii disc containers; document dolp… · </tspan><tspan class="zg-primary" font-weight="bold">6d</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">2905 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">2910 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 192,202</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 192,962</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
   <line class="zg-border" x1="72" y1="882.7" x2="808" y2="882.7" stroke-width="0.4" opacity="0.25"/>
@@ -521,13 +521,13 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">07/10</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">07/11</text>
-  <polygon points="72.0,926.0 194.7,927.0 317.3,927.0 440.0,666.8 562.7,900.7 685.3,919.5 808.0,881.2 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,926.0 194.7,927.0 317.3,927.0 440.0,666.8 562.7,900.7 685.3,919.5 808.0,881.2" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="72.0,926.0 194.7,927.0 317.3,927.0 440.0,666.8 562.7,900.7 685.3,919.5 808.0,879.9 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,926.0 194.7,927.0 317.3,927.0 440.0,666.8 562.7,900.7 685.3,919.5 808.0,879.9" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
   <circle cx="72.0" cy="926.0" r="1.8" fill="#6aa8c0"/>
   <circle cx="440.0" cy="666.8" r="1.8" fill="#6aa8c0"/>
   <circle cx="562.7" cy="900.7" r="1.8" fill="#6aa8c0"/>
   <circle cx="685.3" cy="919.5" r="1.8" fill="#6aa8c0"/>
-  <circle cx="808.0" cy="881.2" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="879.9" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
