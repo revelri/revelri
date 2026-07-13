@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>643 commits this week. Top languages: TypeScript 43%, Python 27%, MDX 14%. 3338 contributions in 2026.</desc>
+  <desc>643 commits this week. Top languages: TypeScript 43%, Python 27%, MDX 14%. 3339 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -441,7 +441,7 @@
   <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">643 commits</text>
   <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+143,642 / -7,188</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">114/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">04m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">07m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -469,7 +469,7 @@
     <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/revoy (637)</text>
   <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 6f024ef docs(changelog): v0.118.0 · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
   <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • bfdf653 merge: ADR-091..099 runtime build-out — tasks/compaction/runtime/mode… · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • fd43133 docs(adr): land ADR-099 (codex compliance-all) + regen index/badge -&gt; 99 · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • fd43133 docs(adr): land ADR-099 (codex compliance-all) + regen index/badge -&gt; 99 · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/aseprite-mcp (91)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 1da0261 feat(form): warp_cel — wave/swirl/bulge/pinch/shear domain warps · </tspan><tspan class="zg-primary" font-weight="bold">4w</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d1b05ef feat(form): draw_curve — pixel-perfect bezier/spline/arc · </tspan><tspan class="zg-primary" font-weight="bold">4w</tspan></text>
@@ -488,7 +488,7 @@
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 2c40542 feat(classify): recognize GameCube/Wii disc containers; document dolp… · </tspan><tspan class="zg-primary" font-weight="bold">7d</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">3338 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">3339 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
