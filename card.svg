@@ -245,7 +245,7 @@
   <rect x="336" y="56" width="11" height="11" rx="2" fill="#4d7882"/>
   <rect x="336" y="70" width="11" height="11" rx="2" fill="#466c72"/>
   <rect x="336" y="84" width="11" height="11" rx="2" fill="#548491"/>
-  <rect x="350" y="0" width="11" height="11" rx="2" fill="#3f6063"/>
+  <rect x="350" y="0" width="11" height="11" rx="2" fill="#385453"/>
   <rect x="350" y="14" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="350" y="28" width="11" height="11" rx="2" fill="#4d7882"/>
   <rect x="350" y="42" width="11" height="11" rx="2" fill="#4d7882"/>
@@ -441,7 +441,7 @@
   <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">1152 commits</text>
   <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+87,920 / -797</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">132/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">01m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">07m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -466,10 +466,10 @@
 
   <!-- LATEST COMMITS panel (full width) -->
   <text class="zg-secondary" x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">LATEST COMMITS</text>
-    <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/revoy (1218)</text>
-  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d1d2950 docs(readme): ADR count badge 113 -&gt; 114 (audit GAP: badge drift) · </tspan><tspan class="zg-primary" font-weight="bold">1m</tspan></text>
-  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 333058e docs(roadmap): todo [RVS] — [fix] release-time branch-hygiene sweep: … · </tspan><tspan class="zg-primary" font-weight="bold">3m</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a97252d Merge pull request #217 from revelri/rvs/integrate-prune-remote-branches · </tspan><tspan class="zg-primary" font-weight="bold">4m</tspan></text>
+    <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/revoy (1218)</text>
+  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d1d2950 docs(readme): ADR count badge 113 -&gt; 114 (audit GAP: badge drift) · </tspan><tspan class="zg-primary" font-weight="bold">31m</tspan></text>
+  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 333058e docs(roadmap): todo [RVS] — [fix] release-time branch-hygiene sweep: … · </tspan><tspan class="zg-primary" font-weight="bold">33m</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a97252d Merge pull request #217 from revelri/rvs/integrate-prune-remote-branches · </tspan><tspan class="zg-primary" font-weight="bold">33m</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/gutenberg (69)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 34e9649 ci: unblock CI — free gitleaks scan + coverage gate · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 339db12 ci(eval): add weekly ALCE strict gate + regression alerting (Track 2D) · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
