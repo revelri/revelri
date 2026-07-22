@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>442 commits this week. Top languages: TypeScript 40%, Python 30%, MDX 13%. 4488 contributions in 2026.</desc>
+  <desc>456 commits this week. Top languages: TypeScript 40%, Python 30%, MDX 13%. 4502 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -269,7 +269,7 @@
   <rect x="392" y="0" width="11" height="11" rx="2" fill="#3f6063"/>
   <rect x="392" y="14" width="11" height="11" rx="2" fill="#548491"/>
   <rect x="392" y="28" width="11" height="11" rx="2" fill="#4d7882"/>
-  <rect x="392" y="42" width="11" height="11" rx="2" fill="#4d7882"/>
+  <rect x="392" y="42" width="11" height="11" rx="2" fill="#548491"/>
   <rect x="392" y="56" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="392" y="70" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="392" y="84" width="11" height="11" rx="2" fill="#333333"/>
@@ -438,10 +438,10 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">442 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+71,666 / -5,666</text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">456 commits</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+72,080 / -5,671</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">145/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">03m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">05m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -472,27 +472,27 @@
   <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d29e6c4 docs(changelog): v0.132.1 · </tspan><tspan class="zg-primary" font-weight="bold">5d</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/rylus (72)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 61af215 chore(harness): commit pending A2A-bus governance resync + checklist … · </tspan><tspan class="zg-primary" font-weight="bold">13h</tspan></text>
-  <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939143a docs(agents): self-park (4h) — same DIRTY preflight blocker, no new info · </tspan><tspan class="zg-primary" font-weight="bold">14h</tspan></text>
-  <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 015d391 docs(agents): record 2026-07-21 tick stopped at preflight (DIRTY tree) · </tspan><tspan class="zg-primary" font-weight="bold">14h</tspan></text>
+  <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939143a docs(agents): self-park (4h) — same DIRTY preflight blocker, no new info · </tspan><tspan class="zg-primary" font-weight="bold">15h</tspan></text>
+  <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 015d391 docs(agents): record 2026-07-21 tick stopped at preflight (DIRTY tree) · </tspan><tspan class="zg-primary" font-weight="bold">15h</tspan></text>
   <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/gutenberg (69)</text>
   <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 34e9649 ci: unblock CI — free gitleaks scan + coverage gate · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
   <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 339db12 ci(eval): add weekly ALCE strict gate + regression alerting (Track 2D) · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
   <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 80b391d chore(revoy): enroll in revoy ledger; track public ROADMAP · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
-  <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/lutris-source-mcp (51)</text>
-  <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • f1a8d57 docs(state): record M3 audit PASS, promote master, advance to M4 · </tspan><tspan class="zg-primary" font-weight="bold">3h</tspan></text>
-  <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 3b1b16c chore: integrate concern/parsett-spike into integration · </tspan><tspan class="zg-primary" font-weight="bold">3h</tspan></text>
-  <text x="22" y="536" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b69c830 test(ranking): re-evaluate parsett field extraction on a real title s… · </tspan><tspan class="zg-primary" font-weight="bold">3h</tspan></text>
+  <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/lutris-source-mcp (65)</text>
+  <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • edd864f chore: integrate concern/docs into integration · </tspan><tspan class="zg-primary" font-weight="bold">12m</tspan></text>
+  <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 146150c test(config): guard README against undocumented config keys · </tspan><tspan class="zg-primary" font-weight="bold">14m</tspan></text>
+  <text x="22" y="536" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011b174 chore: integrate concern/readme-badge into integration · </tspan><tspan class="zg-primary" font-weight="bold">33m</tspan></text>
   <text class="zg-primary" x="16" y="556" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› Chorosyne/strivo (33)</text>
   <text x="22" y="573" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 744af45 docs(roadmap): drop shipped ffprobe path+mtime cache todo (#29) · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text x="22" y="587" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a6e30cd perf(web): cache ffprobe results by path+mtime to avoid re-probing · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ef4f85c style: rustfmt the rusqlite params in crunchr db · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">4488 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">4502 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 58,700</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 59,119</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
   <line class="zg-border" x1="72" y1="882.7" x2="808" y2="882.7" stroke-width="0.4" opacity="0.25"/>
@@ -521,14 +521,14 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">07/21</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">07/22</text>
-  <polygon points="72.0,673.1 194.7,911.9 317.3,927.0 440.0,898.9 562.7,908.2 685.3,789.5 808.0,860.0 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,673.1 194.7,911.9 317.3,927.0 440.0,898.9 562.7,908.2 685.3,789.5 808.0,860.0" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="72.0,673.1 194.7,911.9 317.3,927.0 440.0,898.9 562.7,908.2 685.3,789.5 808.0,856.3 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,673.1 194.7,911.9 317.3,927.0 440.0,898.9 562.7,908.2 685.3,789.5 808.0,856.3" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
   <circle cx="72.0" cy="673.1" r="1.8" fill="#6aa8c0"/>
   <circle cx="194.7" cy="911.9" r="1.8" fill="#6aa8c0"/>
   <circle cx="440.0" cy="898.9" r="1.8" fill="#6aa8c0"/>
   <circle cx="562.7" cy="908.2" r="1.8" fill="#6aa8c0"/>
   <circle cx="685.3" cy="789.5" r="1.8" fill="#6aa8c0"/>
-  <circle cx="808.0" cy="860.0" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="856.3" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
