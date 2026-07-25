@@ -485,7 +485,7 @@
   <text class="zg-primary" x="16" y="556" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/any-poster (54)</text>
   <text x="22" y="573" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 95ab80c feat(upscaler): spandrel loader + tiling for the Nomos fine-tune (ADR… · </tspan><tspan class="zg-primary" font-weight="bold">12h</tspan></text>
   <text x="22" y="587" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a7d3b62 fix(upscaler): working stock checkpoint default + CDI GPU + port 8010 · </tspan><tspan class="zg-primary" font-weight="bold">13h</tspan></text>
-  <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">13h</tspan></text>
+  <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">14h</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
   <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">4612 contributions in 2026</text>
