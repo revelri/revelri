@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>475 commits this week. Top languages: TypeScript 61%, MDX 20%, Python 11%. 5685 contributions in 2026.</desc>
+  <desc>555 commits this week. Top languages: TypeScript 61%, MDX 20%, Python 11%. 5765 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -283,8 +283,8 @@
   <rect x="420" y="0" width="11" height="11" rx="2" fill="#548491"/>
   <rect x="420" y="14" width="11" height="11" rx="2" fill="#385453"/>
   <rect x="420" y="28" width="11" height="11" rx="2" fill="#629cb0"/>
-  <rect x="420" y="42" width="11" height="11" rx="2" fill="#4d7882"/>
-  <rect x="420" y="56" width="11" height="11" rx="2" fill="#3f6063"/>
+  <rect x="420" y="42" width="11" height="11" rx="2" fill="#548491"/>
+  <rect x="420" y="56" width="11" height="11" rx="2" fill="#4d7882"/>
   <rect x="420" y="70" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="420" y="84" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="434" y="0" width="11" height="11" rx="2" fill="#333333"/>
@@ -438,10 +438,10 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">475 commits</text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">555 commits</text>
   <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+99,298 / -7,682</text>
-  <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">173/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">04m ago</tspan></text>
+  <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">175/wk</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">29m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -471,9 +471,9 @@
   <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a7d3b62 fix(upscaler): working stock checkpoint default + CDI GPU + port 8010 · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
   <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/engels (47)</text>
-  <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
-  <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">4h</tspan></text>
-  <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">4h</tspan></text>
+  <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">3h</tspan></text>
+  <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">5h</tspan></text>
+  <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">5h</tspan></text>
   <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/nicotine-mcp (45)</text>
   <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 196fc9a docs(state): note FakeBridge broken-pipe stderr noise in connection t… · </tspan><tspan class="zg-primary" font-weight="bold">9d</tspan></text>
   <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 87daf2b chore: integrate concern/transfers into integration · </tspan><tspan class="zg-primary" font-weight="bold">9d</tspan></text>
@@ -488,7 +488,7 @@
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 3c944cf chore(ci): add ruff/format/mypy/pytest gate on the new test suite · </tspan><tspan class="zg-primary" font-weight="bold">5d</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">5685 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">5765 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
