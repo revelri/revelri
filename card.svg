@@ -439,7 +439,7 @@
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
   <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">587 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+101,593 / -11,284</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+96,373 / -11,271</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">176/wk</tspan></text>
   <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">29m ago</tspan></text>
 
@@ -467,17 +467,17 @@
   <!-- LATEST COMMITS panel (full width) -->
   <text class="zg-secondary" x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">LATEST COMMITS</text>
     <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/webmap (58)</text>
-  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • deaafd2 chore: raise the coverage ratchet to 64% · </tspan><tspan class="zg-primary" font-weight="bold">32m</tspan></text>
-  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 5f91916 fix(cookies): create the cookie-DB copy atomically at 0600 · </tspan><tspan class="zg-primary" font-weight="bold">32m</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 1835f62 fix(replay,bootstrap): de-hardcode the replay tier from one target · </tspan><tspan class="zg-primary" font-weight="bold">32m</tspan></text>
+  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • deaafd2 chore: raise the coverage ratchet to 64% · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
+  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 5f91916 fix(cookies): create the cookie-DB copy atomically at 0600 · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 1835f62 fix(replay,bootstrap): de-hardcode the replay tier from one target · </tspan><tspan class="zg-primary" font-weight="bold">1h</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/any-poster (54)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 95ab80c feat(upscaler): spandrel loader + tiling for the Nomos fine-tune (ADR… · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a7d3b62 fix(upscaler): working stock checkpoint default + CDI GPU + port 8010 · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
   <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
   <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/engels (47)</text>
-  <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">7h</tspan></text>
-  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">9h</tspan></text>
-  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">9h</tspan></text>
+  <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">8h</tspan></text>
+  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">10h</tspan></text>
+  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">10h</tspan></text>
   <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/nicotine-mcp (45)</text>
   <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 196fc9a docs(state): note FakeBridge broken-pipe stderr noise in connection t… · </tspan><tspan class="zg-primary" font-weight="bold">9d</tspan></text>
   <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 87daf2b chore: integrate concern/transfers into integration · </tspan><tspan class="zg-primary" font-weight="bold">9d</tspan></text>
@@ -492,17 +492,15 @@
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 72,541</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 69,707</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
-  <line class="zg-border" x1="72" y1="860.5" x2="808" y2="860.5" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="864.5" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">10,000</text>
-  <line class="zg-border" x1="72" y1="794.0" x2="808" y2="794.0" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="798.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">20,000</text>
-  <line class="zg-border" x1="72" y1="727.5" x2="808" y2="727.5" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="731.5" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">30,000</text>
-  <line class="zg-border" x1="72" y1="661.0" x2="808" y2="661.0" stroke-width="0.4" opacity="0.25"/>
-  <text class="zg-secondary" x="66" y="665.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">40,000</text>
+  <line class="zg-border" x1="72" y1="851.0" x2="808" y2="851.0" stroke-width="0.4" opacity="0.25"/>
+  <text class="zg-secondary" x="66" y="855.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">10,000</text>
+  <line class="zg-border" x1="72" y1="775.0" x2="808" y2="775.0" stroke-width="0.4" opacity="0.25"/>
+  <text class="zg-secondary" x="66" y="779.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">20,000</text>
+  <line class="zg-border" x1="72" y1="699.0" x2="808" y2="699.0" stroke-width="0.4" opacity="0.25"/>
+  <text class="zg-secondary" x="66" y="703.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">30,000</text>
   <line class="zg-border" x1="72.0" y1="927" x2="72.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="72.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">08/01</text>
   <line class="zg-border" x1="194.7" y1="927" x2="194.7" y2="931" stroke-width="0.5" opacity="0.4"/>
@@ -517,15 +515,15 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">08/06</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">08/07</text>
-  <polygon points="72.0,690.6 194.7,818.1 317.3,926.4 440.0,902.7 562.7,924.9 685.3,906.6 808.0,837.3 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,690.6 194.7,818.1 317.3,926.4 440.0,902.7 562.7,924.9 685.3,906.6 808.0,837.3" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
-  <circle cx="72.0" cy="690.6" r="1.8" fill="#6aa8c0"/>
-  <circle cx="194.7" cy="818.1" r="1.8" fill="#6aa8c0"/>
+  <polygon points="72.0,678.4 194.7,802.5 317.3,926.4 440.0,899.2 562.7,924.6 685.3,903.7 808.0,824.4 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,678.4 194.7,802.5 317.3,926.4 440.0,899.2 562.7,924.6 685.3,903.7 808.0,824.4" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <circle cx="72.0" cy="678.4" r="1.8" fill="#6aa8c0"/>
+  <circle cx="194.7" cy="802.5" r="1.8" fill="#6aa8c0"/>
   <circle cx="317.3" cy="926.4" r="1.8" fill="#6aa8c0"/>
-  <circle cx="440.0" cy="902.7" r="1.8" fill="#6aa8c0"/>
-  <circle cx="562.7" cy="924.9" r="1.8" fill="#6aa8c0"/>
-  <circle cx="685.3" cy="906.6" r="1.8" fill="#6aa8c0"/>
-  <circle cx="808.0" cy="837.3" r="1.8" fill="#6aa8c0"/>
+  <circle cx="440.0" cy="899.2" r="1.8" fill="#6aa8c0"/>
+  <circle cx="562.7" cy="924.6" r="1.8" fill="#6aa8c0"/>
+  <circle cx="685.3" cy="903.7" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="824.4" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
