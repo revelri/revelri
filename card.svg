@@ -441,7 +441,7 @@
   <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">300 commits</text>
   <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+373,477 / -13,328</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">177/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">06m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">29m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -467,9 +467,9 @@
   <!-- LATEST COMMITS panel (full width) -->
   <text class="zg-secondary" x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">LATEST COMMITS</text>
     <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/nicotine-mcp (71)</text>
-  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 25b28e7 fix: reconcile rebase onto master&#x27;s in-core download_folder batching · </tspan><tspan class="zg-primary" font-weight="bold">14h</tspan></text>
-  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 608dc04 chore(agents): add learnings feed and pin worker model to Sonnet 5 · </tspan><tspan class="zg-primary" font-weight="bold">14h</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 8328488 fix(server): drop mcp.tool monkeypatch for tag-based read-only filter · </tspan><tspan class="zg-primary" font-weight="bold">14h</tspan></text>
+  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 25b28e7 fix: reconcile rebase onto master&#x27;s in-core download_folder batching · </tspan><tspan class="zg-primary" font-weight="bold">15h</tspan></text>
+  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 608dc04 chore(agents): add learnings feed and pin worker model to Sonnet 5 · </tspan><tspan class="zg-primary" font-weight="bold">15h</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 8328488 fix(server): drop mcp.tool monkeypatch for tag-based read-only filter · </tspan><tspan class="zg-primary" font-weight="bold">15h</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/webmap (63)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 7787e7f feat(storefront): add typed complete Shopify capture contract · </tspan><tspan class="zg-primary" font-weight="bold">3d</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d67f475 chore: raise the coverage ratchet to 66% · </tspan><tspan class="zg-primary" font-weight="bold">5d</tspan></text>
