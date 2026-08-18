@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>150 commits this week. Top languages: TypeScript 64%, MDX 22%, Python 8%. 6741 contributions in 2026.</desc>
+  <desc>159 commits this week. Top languages: TypeScript 66%, MDX 22%, Python 6%. 6754 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -295,7 +295,7 @@
   <rect x="434" y="70" width="11" height="11" rx="2" fill="#385453"/>
   <rect x="434" y="84" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="448" y="0" width="11" height="11" rx="2" fill="#466c72"/>
-  <rect x="448" y="14" width="11" height="11" rx="2" fill="#314844"/>
+  <rect x="448" y="14" width="11" height="11" rx="2" fill="#3f6063"/>
   <rect x="448" y="28" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="448" y="42" width="11" height="11" rx="2" fill="#333333"/>
   <rect x="448" y="56" width="11" height="11" rx="2" fill="#333333"/>
@@ -438,22 +438,22 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">150 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+185,262 / -6,565</text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">159 commits</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+183,628 / -6,291</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">196/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">36m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">23m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
     <text x="518" y="119.7" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3178c6" font-weight="bold">TypeScript</text>
-  <rect x="528" y="107.6" width="204" height="14" rx="2" fill="#3178c6" opacity="0.85"/>
-  <text x="805" y="119.7" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3178c6" font-weight="bold">64%</text>
+  <rect x="528" y="107.6" width="211" height="14" rx="2" fill="#3178c6" opacity="0.85"/>
+  <text x="805" y="119.7" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3178c6" font-weight="bold">66%</text>
   <text x="518" y="148.9" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#6abf7c" font-weight="bold">MDX</text>
   <rect x="528" y="136.8" width="70" height="14" rx="2" fill="#6abf7c" opacity="0.85"/>
   <text x="805" y="148.9" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#6abf7c" font-weight="bold">22%</text>
   <text x="518" y="178.1" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3572A5" font-weight="bold">Python</text>
-  <rect x="528" y="166.0" width="25" height="14" rx="2" fill="#3572A5" opacity="0.85"/>
-  <text x="805" y="178.1" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3572A5" font-weight="bold">8%</text>
+  <rect x="528" y="166.0" width="19" height="14" rx="2" fill="#3572A5" opacity="0.85"/>
+  <text x="805" y="178.1" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#3572A5" font-weight="bold">6%</text>
   <text x="518" y="207.3" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#563d7c" font-weight="bold">CSS</text>
   <rect x="528" y="195.2" width="9" height="14" rx="2" fill="#563d7c" opacity="0.85"/>
   <text x="805" y="207.3" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15" fill="#563d7c" font-weight="bold">3%</text>
@@ -463,29 +463,29 @@
 
   <!-- LATEST COMMITS panel (full width) -->
   <text class="zg-secondary" x="16" y="278" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="2" filter="url(#glow)">LATEST COMMITS</text>
-    <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/nicotine-mcp (71)</text>
-  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 25b28e7 fix: reconcile rebase onto master&#x27;s in-core download_folder batching · </tspan><tspan class="zg-primary" font-weight="bold">6d</tspan></text>
-  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 608dc04 chore(agents): add learnings feed and pin worker model to Sonnet 5 · </tspan><tspan class="zg-primary" font-weight="bold">6d</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 8328488 fix(server): drop mcp.tool monkeypatch for tag-based read-only filter · </tspan><tspan class="zg-primary" font-weight="bold">6d</tspan></text>
-  <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/webmap (63)</text>
-  <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 7787e7f feat(storefront): add typed complete Shopify capture contract · </tspan><tspan class="zg-primary" font-weight="bold">8d</tspan></text>
-  <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d67f475 chore: raise the coverage ratchet to 66% · </tspan><tspan class="zg-primary" font-weight="bold">10d</tspan></text>
-  <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • e38371b feat(openapi): import an OpenAPI/Swagger doc as a capture-free inventory · </tspan><tspan class="zg-primary" font-weight="bold">10d</tspan></text>
-  <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/any-poster (54)</text>
-  <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 95ab80c feat(upscaler): spandrel loader + tiling for the Nomos fine-tune (ADR… · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
-  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a7d3b62 fix(upscaler): working stock checkpoint default + CDI GPU + port 8010 · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
-  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
-  <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/engels (47)</text>
-  <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">11d</tspan></text>
-  <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">11d</tspan></text>
-  <text x="22" y="536" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">11d</tspan></text>
-  <text class="zg-primary" x="16" y="556" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/lutris-source-mcp (40)</text>
-  <text x="22" y="573" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 478a90b chore(agents): sync harness template + gitignore governance store · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
-  <text x="22" y="587" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ae47d09 docs(state): record M4 audit PASS, promote master, roadmap complete · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
-  <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • edd864f chore: integrate concern/docs into integration · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+    <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/webmap (63)</text>
+  <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 7787e7f feat(storefront): add typed complete Shopify capture contract · </tspan><tspan class="zg-primary" font-weight="bold">9d</tspan></text>
+  <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • d67f475 chore: raise the coverage ratchet to 66% · </tspan><tspan class="zg-primary" font-weight="bold">10d</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • e38371b feat(openapi): import an OpenAPI/Swagger doc as a capture-free inventory · </tspan><tspan class="zg-primary" font-weight="bold">10d</tspan></text>
+  <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/any-poster (54)</text>
+  <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 95ab80c feat(upscaler): spandrel loader + tiling for the Nomos fine-tune (ADR… · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a7d3b62 fix(upscaler): working stock checkpoint default + CDI GPU + port 8010 · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/engels (47)</text>
+  <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">11d</tspan></text>
+  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">11d</tspan></text>
+  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">11d</tspan></text>
+  <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/lutris-source-mcp (40)</text>
+  <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 478a90b chore(agents): sync harness template + gitignore governance store · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ae47d09 docs(state): record M4 audit PASS, promote master, roadmap complete · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text x="22" y="536" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • edd864f chore: integrate concern/docs into integration · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text class="zg-primary" x="16" y="556" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/aswarm (13)</text>
+  <text x="22" y="573" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 13ddff9 fix(relay): guard &#x27;notify&#x27; against flag-like args · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text x="22" y="587" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 6ec4ff7 fix(dashboard): live-first usage gauges so they don&#x27;t lag the budget … · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
+  <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 30c3d3c feat(maintenance): blocker inbox + twice-daily empowered fix-it pass … · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">6741 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">6754 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
