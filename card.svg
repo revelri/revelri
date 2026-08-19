@@ -441,7 +441,7 @@
   <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">194 commits</text>
   <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+202,615 / -8,835</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">198/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">21m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">07m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -466,7 +466,7 @@
     <text class="zg-primary" x="16" y="296" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/webmap (86)</text>
   <text x="22" y="313" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 615985c feat(schema): recover referenced input types without full enumeration · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
   <text x="22" y="327" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ba9d61e fix(gqlschema): ignore types a partial recovery named but never expanded · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
-  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 7668b7c fix(schema): salvage a partial schema on timeout and make the pace se… · </tspan><tspan class="zg-primary" font-weight="bold">2h</tspan></text>
+  <text x="22" y="341" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 7668b7c fix(schema): salvage a partial schema on timeout and make the pace se… · </tspan><tspan class="zg-primary" font-weight="bold">3h</tspan></text>
   <text class="zg-primary" x="16" y="361" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/any-poster (54)</text>
   <text x="22" y="378" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 95ab80c feat(upscaler): spandrel loader + tiling for the Nomos fine-tune (ADR… · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
   <text x="22" y="392" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • a7d3b62 fix(upscaler): working stock checkpoint default + CDI GPU + port 8010 · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
