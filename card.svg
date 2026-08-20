@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="969" viewBox="0 0 840 969" role="img">
   <title>GitHub profile card for sl revoy | revelri</title>
-  <desc>139 commits this week. Top languages: TypeScript 65%, MDX 22%, Python 8%. 6851 contributions in 2026.</desc>
+  <desc>140 commits this week. Top languages: TypeScript 65%, MDX 22%, Python 8%. 6852 contributions in 2026.</desc>
   <defs>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
@@ -438,10 +438,10 @@
   <!-- THIS WEEK panel (left) -->
   <rect class="zg-border" x="16" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
   <text class="zg-secondary" x="211" y="116" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="20" font-weight="bold" letter-spacing="2">THIS WEEK</text>
-  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">139 commits</text>
-  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+990,312 / -3,540</text>
+  <text class="zg-primary" x="211" y="152" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="25" font-weight="bold">140 commits</text>
+  <text class="zg-primary" x="211" y="184" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="22" font-weight="bold">+990,486 / -3,541</text>
   <text x="211" y="216" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">avg: </tspan><tspan class="zg-primary">197/wk</tspan></text>
-  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">19m ago</tspan></text>
+  <text x="211" y="240" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="16" font-weight="bold"><tspan class="zg-secondary">last: </tspan><tspan class="zg-primary">25m ago</tspan></text>
 
   <!-- LANGUAGES panel (right) -->
   <rect class="zg-border" x="425" y="88" width="390" height="170" rx="8" ry="8" fill="none" stroke-width="1" opacity="0.5"/>
@@ -473,8 +473,8 @@
   <text x="22" y="406" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • b67a854 docs: ADR-0010 Cloudflare Tunnel ingress + go-live handover · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
   <text class="zg-primary" x="16" y="426" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/engels (47)</text>
   <text x="22" y="443" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • eeabe47 feat(lifecycle,executor): connects balance as a control-plane signal · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
-  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
-  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">13d</tspan></text>
+  <text x="22" y="457" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 011f6d2 docs: record the calibration results and the connects blocker · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
+  <text x="22" y="471" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 939080d fix(cli,delivery): usable calibration input and an honest missing-roo… · </tspan><tspan class="zg-primary" font-weight="bold">2w</tspan></text>
   <text class="zg-primary" x="16" y="491" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="14" font-weight="bold">› revelri/lutris-source-mcp (40)</text>
   <text x="22" y="508" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 478a90b chore(agents): sync harness template + gitignore governance store · </tspan><tspan class="zg-primary" font-weight="bold">3w</tspan></text>
   <text x="22" y="522" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • ae47d09 docs(state): record M4 audit PASS, promote master, roadmap complete · </tspan><tspan class="zg-primary" font-weight="bold">4w</tspan></text>
@@ -485,11 +485,11 @@
   <text x="22" y="601" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="11"><tspan class="zg-secondary">  • 30c3d3c feat(maintenance): blocker inbox + twice-daily empowered fix-it pass … · </tspan><tspan class="zg-primary" font-weight="bold">4w</tspan></text>
 
   <!-- Contribution count (centered top-right) -->
-  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">6851 contributions in 2026</text>
+  <text class="zg-secondary" x="420" y="278" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="15.8" font-weight="bold" letter-spacing="1">6852 contributions in 2026</text>
 
   <!-- ASCII Hero -->
   <g>
-      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 987,055</text>
+      <text class="zg-secondary" x="420.0" y="651" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="13" font-weight="bold" letter-spacing="1.5">DAILY LoC SHIPPED · 7d total: 987,230</text>
   <line class="zg-border" x1="72" y1="927.0" x2="808" y2="927.0" stroke-width="0.4" opacity="0.25"/>
   <text class="zg-secondary" x="66" y="931.0" text-anchor="end" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">0</text>
   <line class="zg-border" x1="72" y1="873.8" x2="808" y2="873.8" stroke-width="0.4" opacity="0.25"/>
@@ -516,11 +516,11 @@
   <text class="zg-secondary" x="685.3" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">08/19</text>
   <line class="zg-border" x1="808.0" y1="927" x2="808.0" y2="931" stroke-width="0.5" opacity="0.4"/>
   <text class="zg-secondary" x="808.0" y="943" text-anchor="middle" font-family="'TX-02', 'Courier New', Courier, monospace" font-size="9">08/20</text>
-  <polygon points="72.0,927.0 194.7,927.0 317.3,927.0 440.0,927.0 562.7,921.4 685.3,926.6 808.0,670.5 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
-  <polyline points="72.0,927.0 194.7,927.0 317.3,927.0 440.0,927.0 562.7,921.4 685.3,926.6 808.0,670.5" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="72.0,927.0 194.7,927.0 317.3,927.0 440.0,927.0 562.7,921.4 685.3,926.6 808.0,670.4 808.0,927 72.0,927" fill="#6abf7c" opacity="0.18"/>
+  <polyline points="72.0,927.0 194.7,927.0 317.3,927.0 440.0,927.0 562.7,921.4 685.3,926.6 808.0,670.4" fill="none" stroke="#6abf7c" stroke-width="1.6" stroke-linejoin="round"/>
   <circle cx="562.7" cy="921.4" r="1.8" fill="#6aa8c0"/>
   <circle cx="685.3" cy="926.6" r="1.8" fill="#6aa8c0"/>
-  <circle cx="808.0" cy="670.5" r="1.8" fill="#6aa8c0"/>
+  <circle cx="808.0" cy="670.4" r="1.8" fill="#6aa8c0"/>
   </g>
 
   <!-- Emotion legend (zeitgeist) -->
