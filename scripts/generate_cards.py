@@ -106,6 +106,39 @@ def load_config():
     return config
 
 
+def fetch_contributions():
+    """Fetch contribution data via GraphQL."""
+    now = datetime.now(timezone.utc)
+    week_ago = (now - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    year_start = f"{now.year}-01-01T00:00:00Z"
+
+    query = """
+    query($from: DateTime!, $yearStart: DateTime!) {
+      viewer {
+        contributionsCollection(from: $from) {
+          totalCommitContributions
+          totalPullRequestContributions
+          totalIssueContributions
+        }
+        yearCollection: contributionsCollection(from: $yearStart) {
+          totalCommitContributions
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+                weekday
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    return gh_graphql(query, **{"from": week_ago, "yearStart": year_start})
+
+
 REPO_FIELDS = """
   nodes {
     name
@@ -1156,7 +1189,21 @@ def main():
             MOCK_DATA_PATH.write_text(json.dumps(mock, indent=2))
             print(f"Mock data saved to {MOCK_DATA_PATH}")
 
+    # Extract contribution stats
+    viewer = contrib_data["data"]["viewer"]
+    weekly = viewer["contributionsCollection"]
+    yearly = viewer["yearCollection"]
+    calendar = yearly["contributionCalendar"]
+
+    weekly_commits = weekly["totalCommitContributions"]
+    total_contributions = calendar["totalContributions"]
+
     last_commit_ago = calc_last_commit_ago(repos_data)
+    # Average commits per week across the year so far (weekly cadence).
+    yearly_commits = yearly["totalCommitContributions"]
+    _now = datetime.now(timezone.utc)
+    weeks_elapsed = max((_now - datetime(_now.year, 1, 1, tzinfo=timezone.utc)).days / 7, 1)
+    avg_per_week = round(yearly_commits / weeks_elapsed)
     exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
     if exclude_set:
         print(f"Excluding repos from ACTIVE REPOS + LoC chart + languages: {sorted(exclude_set)}")

@@ -5,11 +5,13 @@
 
 ## How it works
 
-`generate_cards.py` queries the GitHub GraphQL API via `gh`, filters repository-derived panels to public repositories before aggregation, and fills an SVG template. Rate-limit retry with exponential backoff. Falls back to cached mock data when offline.
+`generate_cards.py` queries the GitHub GraphQL API via `gh`, filters repository-derived panels to public repositories, aggregates contribution and language data, and fills an SVG template. Rate-limit retry with exponential backoff. Falls back to cached mock data when offline.
+
+The hero section renders ASCII art characters with per-character color computed from weighted blending of five emotion color centers — a soft-body field interpolation that produces smooth color transitions across the art. Colors quantize to ~24 steps to keep the CSS compact, with hash-based stagger delays for an organic animation feel.
 
 **What it shows:**
-- Public-repository commits and lines changed in the last seven days
-- Most recent public-repository activity
+- Contribution heatmap (52 weeks, color-mapped from the [Zeitgeist](https://github.com/revoydotdev/zeitgeist) emotion palette)
+- Current and longest contribution streaks
 - Language distribution across repos pushed in the last 90 days
 - Recent public repositories and commit subjects
 - Seven-day public-repository lines-of-code trend
