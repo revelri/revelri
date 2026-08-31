@@ -10,6 +10,11 @@ through deployment and operation. The through-line is clear contracts, durable
 state, tests around the dangerous edges, and a human decision before an
 irreversible action.
 
+The subject matter varies, but the build pattern is consistent: start with an
+ambiguous problem and a blank repository, find the architecture, ship the first
+complete vertical slice, and keep going through deployment, observability, and
+recovery.
+
 ## Work you can inspect
 
 - [MCL](https://github.com/revoydotdev/mcl) gives LLM applications a deterministic
@@ -23,10 +28,10 @@ irreversible action.
   preview/confirm gates and structured failures I reuse across MCP servers.
 - [Rylus](https://github.com/revoydotdev/rylus) is a security-focused modernization
   of Weylus for low-latency screen and input streaming.
-- [Weave](https://github.com/revoydotdev/weave) explores multi-model video
-  generation across native iOS and web clients.
+- [Weave](https://github.com/revoydotdev/weave) is a greenfield multi-model video
+  workspace spanning native iOS and web clients.
 
-There is more public work at [revoydotdev](https://github.com/revoydotdev), from
+There is more public work at [RevoyDotDev](https://github.com/revoydotdev), from
 audio analysis and live visualization to research tools and small Linux utilities.
 Some of my largest systems remain private because they contain client,
 infrastructure, or third-party operational material; I describe those without
