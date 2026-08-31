@@ -16,25 +16,6 @@ TEMPLATES = ROOT / "templates"
 CONFIG_PATH = ROOT / "config.yml"
 MOCK_DATA_PATH = ROOT / "scripts" / "mock_data.json"
 
-# CRT color palette
-# Heatmap gradient derived from Zeitgeist emotion palette.
-# 11 stops: empty (#333333) + 10 stops interpolated from deep green-grey -> teal.
-def _lerp_hex(a: str, b: str, t: float) -> str:
-    ar, ag, ab = int(a[1:3], 16), int(a[3:5], 16), int(a[5:7], 16)
-    br, bg, bb = int(b[1:3], 16), int(b[3:5], 16), int(b[5:7], 16)
-    r = int(ar + (br - ar) * t)
-    g = int(ag + (bg - ag) * t)
-    b = int(ab + (bb - ab) * t)
-    return f"#{r:02x}{g:02x}{b:02x}"
-
-
-_HEATMAP_RAMP_START = "#2a3d35"
-_HEATMAP_RAMP_END = "#6aa8c0"
-HEATMAP_COLORS = ["#333333"] + [
-    _lerp_hex(_HEATMAP_RAMP_START, _HEATMAP_RAMP_END, i / 9) for i in range(10)
-]
-
-
 def _run_gh(cmd, label="gh"):
     """Run a gh CLI command with retry on rate-limit and transient network errors."""
     for attempt in range(3):
@@ -125,39 +106,6 @@ def load_config():
     return config
 
 
-def fetch_contributions():
-    """Fetch contribution data via GraphQL."""
-    now = datetime.now(timezone.utc)
-    week_ago = (now - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    year_start = f"{now.year}-01-01T00:00:00Z"
-
-    query = """
-    query($from: DateTime!, $yearStart: DateTime!) {
-      viewer {
-        contributionsCollection(from: $from) {
-          totalCommitContributions
-          totalPullRequestContributions
-          totalIssueContributions
-        }
-        yearCollection: contributionsCollection(from: $yearStart) {
-          totalCommitContributions
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                contributionCount
-                date
-                weekday
-              }
-            }
-          }
-        }
-      }
-    }
-    """
-    return gh_graphql(query, **{"from": week_ago, "yearStart": year_start})
-
-
 REPO_FIELDS = """
   nodes {
     name
@@ -216,12 +164,13 @@ def fetch_repos():
 
 
 def fetch_lines_changed(repos_data, username):
-    """Fetch lines changed this week using GraphQL bulk queries."""
+    """Fetch the user's public-repository commits and lines changed this week."""
     nodes = repos_data.get("data", {}).get("viewer", {}).get("repositories", {}).get("nodes", [])
     week_ago = datetime.now(timezone.utc) - timedelta(days=7)
     week_ago_str = week_ago.strftime("%Y-%m-%dT%H:%M:%SZ")
     additions = 0
     deletions = 0
+    commits_authored = 0
 
     for repo in nodes:
         pushed = repo.get("pushedAt")
@@ -264,8 +213,9 @@ def fetch_lines_changed(repos_data, username):
             if author.get("login", "").lower() == username.lower():
                 additions += c.get("additions", 0)
                 deletions += c.get("deletions", 0)
+                commits_authored += 1
 
-    return additions, deletions
+    return additions, deletions, commits_authored
 
 
 def fetch_daily_loc(repos_data, username, window_days=30, exclude=None):
@@ -553,54 +503,6 @@ def render_language_bars(languages):
     return "\n".join(lines)
 
 
-
-
-def render_heatmap(calendar_data):
-    """Generate SVG heatmap cells from contribution calendar.
-
-    Returns (cells_svg, raw_width, raw_height) so the caller can compute
-    a transform that fits the heatmap inside a target box.
-    """
-    weeks = calendar_data.get("weeks", [])
-    cells = []
-    cell_size = 11
-    gap = 3
-
-    # Find max for color scaling
-    max_count = 1
-    for week in weeks:
-        for day in week.get("contributionDays", []):
-            max_count = max(max_count, day["contributionCount"])
-
-    # Take last 52 weeks
-    display_weeks = weeks[-52:] if len(weeks) > 52 else weeks
-    num_weeks = len(display_weeks)
-
-    # Log-scaled bucketing across 10 non-zero stops (indices 1..10)
-    log_max = math.log1p(max_count)
-
-    for wi, week in enumerate(display_weeks):
-        for day in week.get("contributionDays", []):
-            weekday = day["weekday"]
-            count = day["contributionCount"]
-
-            x = wi * (cell_size + gap)
-            y = weekday * (cell_size + gap)
-
-            if count == 0:
-                ci = 0
-            else:
-                ratio = math.log1p(count) / log_max if log_max > 0 else 0
-                ci = 1 + min(9, int(ratio * 9 + 0.5))
-
-            color = HEATMAP_COLORS[ci]
-            cells.append(
-                f'  <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="2" fill="{color}"/>'
-            )
-
-    raw_width = num_weeks * (cell_size + gap) - gap if num_weeks else 0
-    raw_height = 7 * (cell_size + gap) - gap
-    return "\n".join(cells), raw_width, raw_height
 
 
 from sample_emotions import EMOTIONS as JETSTREAM_EMOTIONS, EMOTION_IDS, sample as sample_emotions
@@ -1215,11 +1117,11 @@ def main():
             sys.exit(1)
         print("Using mock data...")
         mock = json.loads(MOCK_DATA_PATH.read_text())
-        contrib_data = mock["contributions"]
         repos_data = mock["repos"]
         username = mock["username"]
         additions = mock.get("additions", 0)
         deletions = mock.get("deletions", 0)
+        weekly_commits = mock.get("public_weekly_commits", 0)
     else:
         # Validate environment
         auth_check = subprocess.run(["gh", "auth", "status"], capture_output=True, text=True)
@@ -1230,12 +1132,6 @@ def main():
         username = get_username()
         print(f"Generating cards for {username}...")
 
-        print("Fetching contributions...")
-        contrib_data = fetch_contributions()
-        if not contrib_data:
-            print("Failed to fetch contributions", file=sys.stderr)
-            sys.exit(1)
-
         print("Fetching repos...")
         repos_data = fetch_repos()
         if not repos_data:
@@ -1244,37 +1140,23 @@ def main():
 
         print("Fetching lines changed...")
         try:
-            additions, deletions = fetch_lines_changed(repos_data, username)
+            additions, deletions, weekly_commits = fetch_lines_changed(repos_data, username)
         except Exception as e:
             print(f"Warning: couldn't fetch lines changed: {e}", file=sys.stderr)
-            additions, deletions = 0, 0
+            additions, deletions, weekly_commits = 0, 0, 0
 
         if args.dump_data:
             mock = {
-                "contributions": contrib_data,
                 "repos": repos_data,
                 "username": username,
                 "additions": additions,
                 "deletions": deletions,
+                "public_weekly_commits": weekly_commits,
             }
             MOCK_DATA_PATH.write_text(json.dumps(mock, indent=2))
             print(f"Mock data saved to {MOCK_DATA_PATH}")
 
-    # Extract contribution stats
-    viewer = contrib_data["data"]["viewer"]
-    weekly = viewer["contributionsCollection"]
-    yearly = viewer["yearCollection"]
-    calendar = yearly["contributionCalendar"]
-
-    weekly_commits = weekly["totalCommitContributions"]
-    total_contributions = calendar["totalContributions"]
-
     last_commit_ago = calc_last_commit_ago(repos_data)
-    # Average commits per week across the year so far (weekly cadence).
-    yearly_commits = yearly["totalCommitContributions"]
-    _now = datetime.now(timezone.utc)
-    weeks_elapsed = max((_now - datetime(_now.year, 1, 1, tzinfo=timezone.utc)).days / 7, 1)
-    avg_per_week = round(yearly_commits / weeks_elapsed)
     exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
     if exclude_set:
         print(f"Excluding repos from ACTIVE REPOS + LoC chart + languages: {sorted(exclude_set)}")
@@ -1295,19 +1177,6 @@ def main():
 
     # Render unified card
     print("Rendering card.svg...")
-
-    # Fit heatmap into LANGUAGES box (x=425..815, y=88..258 -> width 390, height 170).
-    heatmap_cells, hm_raw_w, hm_raw_h = render_heatmap(calendar)
-    HM_BOX_X, HM_BOX_Y, HM_BOX_W, HM_BOX_H = 425, 4, 390, 80
-    if hm_raw_w > 0 and hm_raw_h > 0:
-        hm_scale = min(HM_BOX_W / hm_raw_w, HM_BOX_H / hm_raw_h)
-        hm_drawn_w = hm_raw_w * hm_scale
-        hm_drawn_h = hm_raw_h * hm_scale
-        hm_tx = HM_BOX_X + (HM_BOX_W - hm_drawn_w)  # right-align in box
-        hm_ty = HM_BOX_Y + (HM_BOX_H - hm_drawn_h) / 2
-        heatmap_transform = f"matrix({hm_scale:.4f}, 0, 0, {hm_scale:.4f}, {hm_tx:.2f}, {hm_ty:.2f})"
-    else:
-        heatmap_transform = "translate(425, 4)"
 
     # Auto-fit title font to THIS WEEK box (x=16..406; inset to 30..394 -> ~364px usable).
     title_text = config["name"]
@@ -1338,19 +1207,14 @@ def main():
         "card.svg.template",
         name=title_text,
         name_font_size=f"{name_font_size:.1f}",
-        heatmap_cells=heatmap_cells,
-        heatmap_transform=heatmap_transform,
         weekly_commits=str(weekly_commits),
         lines_added=lines_added,
         lines_deleted=lines_deleted,
         language_bars=render_language_bars(languages),
         projects_panel=active_panel_svg,
-        avg_per_week=str(avg_per_week),
         last_commit_ago=last_commit_ago,
         ascii_hero=ascii_hero_svg,
         emotion_legend=emotion_legend_svg,
-        total_contributions=str(total_contributions),
-        current_year=str(datetime.now(timezone.utc).year),
         language_summary=lang_summary,
         card_height=str(card_height),
         divider_y=f"{chart_top - 12:.1f}",
