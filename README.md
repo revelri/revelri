@@ -1,26 +1,36 @@
 # Spencer Revoy
 
-AI systems architect building governed agents, verified RAG, MCP tools, and reliable automation.
-I make autonomous software observable, testable, recoverable, and accountable at the edges where
-it can affect real systems.
+I build software that has to keep its promises: agent systems with real authority
+boundaries, media tools that survive long-running operation, and automation whose
+state can be inspected when something goes wrong.
 
-My work spans Python and TypeScript platforms, Rust systems software, Linux operations, and the
-control planes around AI agents. The projects below are a focused selection of systems I can
-discuss in the open.
+My usual stack is Rust, Python, TypeScript, and Linux. I design and build
+greenfield systems end to end, from the first architecture and working product
+through deployment and operation. The through-line is clear contracts, durable
+state, tests around the dangerous edges, and a human decision before an
+irreversible action.
 
-## Public proof
+## Work you can inspect
 
-- [Strivo](https://github.com/revoydotdev/strivo) — released cross-platform Rust live-stream PVR,
-  daemon, web UI, media pipeline, plugins, and recovery-oriented operations.
-- [Rylus](https://github.com/revoydotdev/rylus) — attributed Weylus modernization into a modular,
-  security-hardened Rust screen and input streaming system.
-- [mcp-safety-core](https://github.com/revoydotdev/mcp-safety-core) — reusable preview/confirm,
-  structured-error, and read-only tool primitives for MCP servers.
-- [frontier-mcp](https://github.com/revoydotdev/frontier-mcp) — read-only research tools across
-  arXiv, GitHub, and Hugging Face.
-- [Demixer](https://github.com/revoydotdev/demixer) and
-  [Zeitgeist](https://github.com/revoydotdev/zeitgeist) — applied audio intelligence and real-time
-  creative visualization.
+- [MCL](https://github.com/revoydotdev/mcl) gives LLM applications a deterministic
+  runtime: the model narrates, while typed signals and a state engine decide what
+  is allowed to happen.
+- [Astrolabe](https://github.com/revoydotdev/astrolabe) turns authenticated web
+  behavior into versioned API contracts and governed MCP toolpacks.
+- [Strivo](https://github.com/revoydotdev/strivo) is a Rust live-stream PVR with a
+  daemon, local web control, plugins, and recovery designed into the operating path.
+- [mcp-safety-core](https://github.com/revoydotdev/mcp-safety-core) packages the
+  preview/confirm gates and structured failures I reuse across MCP servers.
+- [Rylus](https://github.com/revoydotdev/rylus) is a security-focused modernization
+  of Weylus for low-latency screen and input streaming.
+- [Weave](https://github.com/revoydotdev/weave) explores multi-model video
+  generation across native iOS and web clients.
+
+There is more public work at [revoydotdev](https://github.com/revoydotdev), from
+audio analysis and live visualization to research tools and small Linux utilities.
+Some of my largest systems remain private because they contain client,
+infrastructure, or third-party operational material; I describe those without
+pretending the source is available for review.
 
 ## Current activity
 
