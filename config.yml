@@ -1,15 +1,11 @@
 # GitHub Profile Card Configuration
 # Edit these values to customize your profile cards
 
-name: "sl revoy | revelri"
-tagline: ""
+name: "Spencer Revoy | revelri"
+tagline: "build · govern · verify"
 
 # Repos to hide from the dynamic ACTIVE REPOS panel.
 # Matches case-insensitively; accepts either "name" or "owner/name".
 # Useful when a repo is high-traffic but you don't want it on the public card.
 exclude_repos:
-  - name: labortech
-  - name: last-queen
-  - name: lutris-mcp
   - name: revelri
-  - name: revoy.xyz

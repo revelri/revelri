@@ -22,16 +22,22 @@ jobs:
     runs-on: self-hosted
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.0.0
+
+      - name: Checkout public Zeitgeist assets
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.0.0
+        with:
+          repository: revoydotdev/zeitgeist
+          path: .zeitgeist
 
       - name: Cache playwright browsers
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-chromium-v1
 
       - name: Cache venv
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .venv
           key: ${{ runner.os }}-card-venv-playwright-pillow-websockets-v1
@@ -40,14 +46,14 @@ jobs:
         run: |
           if [ ! -d .venv ]; then
             python3 -m venv .venv
-            .venv/bin/pip install -q playwright Pillow websockets
+            .venv/bin/pip install -q playwright==1.62.0 Pillow==12.3.0 websockets==17.1
           fi
           .venv/bin/python3 -m playwright install chromium
 
       - name: Generate SVG card
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/revelri/zeitgeist' }}
+          ZEITGEIST_DIR: ${{ github.workspace }}/.zeitgeist
         run: .venv/bin/python3 scripts/generate_cards.py
 
       - name: Render APNG from SVG
@@ -82,10 +88,16 @@ jobs:
     runs-on: self-hosted
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.0.0
+
+      - name: Checkout public Zeitgeist assets
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.0.0
+        with:
+          repository: revoydotdev/zeitgeist
+          path: .zeitgeist
 
       - name: Cache venv
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .venv-hero
           key: ${{ runner.os }}-hero-venv-websockets-v1
@@ -94,12 +106,12 @@ jobs:
         run: |
           if [ ! -d .venv-hero ]; then
             python3 -m venv .venv-hero
-            .venv-hero/bin/pip install -q websockets
+            .venv-hero/bin/pip install -q websockets==17.1
           fi
 
       - name: Generate hero SVG
         env:
-          ZEITGEIST_DIR: ${{ vars.ZEITGEIST_DIR || '/home/revelri/Dev/revelri/zeitgeist' }}
+          ZEITGEIST_DIR: ${{ github.workspace }}/.zeitgeist
         run: .venv-hero/bin/python3 scripts/generate_hero.py
 
       - name: Commit SVG if changed

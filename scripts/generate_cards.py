@@ -136,13 +136,11 @@ def fetch_contributions():
       viewer {
         contributionsCollection(from: $from) {
           totalCommitContributions
-          restrictedContributionsCount
           totalPullRequestContributions
           totalIssueContributions
         }
         yearCollection: contributionsCollection(from: $yearStart) {
           totalCommitContributions
-          restrictedContributionsCount
           contributionCalendar {
             totalContributions
             weeks {
@@ -175,7 +173,7 @@ REPO_FIELDS = """
   }
 """
 
-EXTRA_ORGS = ["Chorosyne"]
+EXTRA_ORGS = ["revoydotdev"]
 
 
 def fetch_repos():
@@ -209,6 +207,10 @@ def fetch_repos():
         nodes = (result.get("data", {}).get("organization") or {}).get("repositories", {}).get("nodes", []) or []
         merged.extend(nodes)
 
+    # This repository renders a public profile artifact. Private-repository names, language
+    # fingerprints, and per-repository activity must never depend on a manually maintained
+    # denylist: a newly created private repo would otherwise leak on the next scheduled render.
+    merged = [repo for repo in merged if not repo.get("isPrivate")]
     merged.sort(key=lambda r: r.get("pushedAt") or "", reverse=True)
     return {"data": {"viewer": {"repositories": {"nodes": merged}}}}
 
@@ -1264,12 +1266,12 @@ def main():
     yearly = viewer["yearCollection"]
     calendar = yearly["contributionCalendar"]
 
-    weekly_commits = weekly["totalCommitContributions"] + weekly["restrictedContributionsCount"]
+    weekly_commits = weekly["totalCommitContributions"]
     total_contributions = calendar["totalContributions"]
 
     last_commit_ago = calc_last_commit_ago(repos_data)
     # Average commits per week across the year so far (weekly cadence).
-    yearly_commits = yearly["totalCommitContributions"] + yearly["restrictedContributionsCount"]
+    yearly_commits = yearly["totalCommitContributions"]
     _now = datetime.now(timezone.utc)
     weeks_elapsed = max((_now - datetime(_now.year, 1, 1, tzinfo=timezone.utc)).days / 7, 1)
     avg_per_week = round(yearly_commits / weeks_elapsed)

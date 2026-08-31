@@ -37,18 +37,20 @@ PADDING = 10
 
 def find_ascii_art() -> str:
     """Find and read the ASCII art file from the content directory."""
-    content_dir = ZEITGEIST_DIR / "content"
+    content_dirs = [ZEITGEIST_DIR / "backend" / "content", ZEITGEIST_DIR / "content"]
 
-    # Priority: art.txt > any .txt that isn't colors.txt
-    art_txt = content_dir / "art.txt"
-    if art_txt.exists():
-        return art_txt.read_text()
+    for content_dir in content_dirs:
+        # Priority: art.txt > any .txt that isn't colors.txt
+        art_txt = content_dir / "art.txt"
+        if art_txt.exists():
+            return art_txt.read_text()
 
-    for f in sorted(content_dir.glob("*.txt")):
-        if f.name != "colors.txt":
-            return f.read_text()
+        for f in sorted(content_dir.glob("*.txt")):
+            if f.name != "colors.txt":
+                return f.read_text()
 
-    raise FileNotFoundError(f"No ASCII art file found in {content_dir}")
+    searched = ", ".join(str(path) for path in content_dirs)
+    raise FileNotFoundError(f"No ASCII art file found in: {searched}")
 
 
 def parse_art(raw: str) -> tuple[list[str], int, int, int]:
