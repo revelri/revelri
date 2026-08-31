@@ -12,6 +12,8 @@ discuss in the open.
 
 - [Strivo](https://github.com/revoydotdev/strivo) — released cross-platform Rust live-stream PVR,
   daemon, web UI, media pipeline, plugins, and recovery-oriented operations.
+- [Rylus](https://github.com/revoydotdev/rylus) — attributed Weylus modernization into a modular,
+  security-hardened Rust screen and input streaming system.
 - [mcp-safety-core](https://github.com/revoydotdev/mcp-safety-core) — reusable preview/confirm,
   structured-error, and read-only tool primitives for MCP servers.
 - [frontier-mcp](https://github.com/revoydotdev/frontier-mcp) — read-only research tools across
