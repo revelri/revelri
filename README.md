@@ -17,13 +17,13 @@ recovery.
 
 ## Work you can inspect
 
-- [MCL](https://github.com/revoydotdev/mcl) gives LLM applications a deterministic
-  runtime: the model narrates, while typed signals and a state engine decide what
-  is allowed to happen.
+- [MCL](https://github.com/revoydotdev/mcl) is a Rust runtime and declarative language
+  that keeps application state outside the LLM, validates its signals, and enforces
+  declared knowledge boundaries.
 - [Astrolabe](https://github.com/revoydotdev/astrolabe) turns authenticated web
   behavior into versioned API contracts and governed MCP toolpacks.
-- [Strivo](https://github.com/revoydotdev/strivo) is a Rust live-stream PVR with a
-  daemon, local web control, plugins, and recovery designed into the operating path.
+- [Strivo](https://github.com/revoydotdev/strivo) is a self-hosted live-stream PVR with
+  a daemon, local web UI, recovery tooling, and an optional Creator Edition.
 - [mcp-safety-core](https://github.com/revoydotdev/mcp-safety-core) packages the
   preview/confirm gates and structured failures I reuse across MCP servers.
 - [Rylus](https://github.com/revoydotdev/rylus) is a security-focused modernization
