@@ -59,30 +59,45 @@ jobs:
       - name: Render APNG from SVG
         run: .venv/bin/python3 scripts/render_apng.py
 
-      - name: Commit card if changed
+      - name: Publish card to assets branch + bust README cache
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet card.svg card.png 2>/dev/null || {
-            # Bust GitHub camo image-proxy cache by versioning the README image
-            # URL with a build timestamp. Without this, profile viewers see a
-            # stale render via camo for hours after the card is regenerated.
-            ts=$(date -u +%s)
-            sed -i -E "s|!\\[Profile\\]\\(card\\.png(\\?v=[0-9]+)?\\)|![Profile](card.png?v=${ts})|" README.md
-            git add card.svg card.png README.md
-            git diff --cached --quiet && exit 0
-            git commit -m "Update profile card"
-            # Retry push under contention from concurrent CI runs (binary
-            # card.png rebases otherwise conflict).
-            for attempt in 1 2 3; do
-              if git push; then exit 0; fi
-              echo "push attempt $attempt failed; rebasing..."
-              # Prefer OUR freshly-generated card on binary conflicts.
-              git pull --rebase --autostash -X ours origin main || git rebase --abort || true
-            done
-            echo "push failed after 3 attempts" >&2
-            exit 1
-          }
+          [ -f card.png ] || { echo "card.png not generated"; exit 1; }
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT
+          # Skip if the published card is byte-identical to the new one.
+          if git fetch -q "$remote" assets 2>/dev/null \
+             && git show FETCH_HEAD:card.png > "$tmp/prev.png" 2>/dev/null \
+             && cmp -s "$tmp/prev.png" card.png; then
+            echo "card unchanged; nothing to publish"; exit 0
+          fi
+          ts=$(date -u +%s)
+          # 1) Publish binaries to a single-commit orphan 'assets' branch.
+          #    Force-push keeps it one commit deep, so history never grows.
+          cp card.png card.svg "$tmp/"
+          git -C "$tmp" init -q
+          git -C "$tmp" checkout -q --orphan assets
+          git -C "$tmp" add card.png card.svg
+          git -C "$tmp" -c user.name="github-actions[bot]" \
+                        -c user.email="github-actions[bot]@users.noreply.github.com" \
+                        commit -qm "card assets ${ts}"
+          git -C "$tmp" push -q --force "$remote" assets
+          # 2) Bust the camo image-proxy cache by versioning the README URL
+          #    (text-only commit on main; the binary lives on the assets branch).
+          sed -i -E "s|(raw\\.githubusercontent\\.com/${GITHUB_REPOSITORY}/assets/card\\.png\\?v=)[0-9]+|\\1${ts}|" README.md
+          if git diff --quiet README.md; then exit 0; fi
+          git add README.md
+          git commit -m "chore: refresh profile card"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push attempt $attempt failed; rebasing..."
+            git pull --rebase --autostash origin main || git rebase --abort || true
+          done
+          echo "push failed after 3 attempts" >&2; exit 1
 
   update-hero:
     runs-on: self-hosted
