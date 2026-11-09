@@ -4,7 +4,11 @@ GitHub profile repository. Contains the profile card, hero image, and configurat
 
 ## Current status
 
-Live — profile card deployed.
+The October 31 card failure (undefined contribution variable) is repaired. The
+generator uses public-repository commit counts and excludes unknown/private
+visibility. Two offline regression tests, local SVG generation and APNG rendering
+passed. Replacement assets were published manually on November 9; no CI runner was
+dispatched. Scheduled-workflow execution remains separate from these local checks.
 
 ## Near-term
 

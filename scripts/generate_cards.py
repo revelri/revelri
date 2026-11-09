@@ -106,39 +106,6 @@ def load_config():
     return config
 
 
-def fetch_contributions():
-    """Fetch contribution data via GraphQL."""
-    now = datetime.now(timezone.utc)
-    week_ago = (now - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    year_start = f"{now.year}-01-01T00:00:00Z"
-
-    query = """
-    query($from: DateTime!, $yearStart: DateTime!) {
-      viewer {
-        contributionsCollection(from: $from) {
-          totalCommitContributions
-          totalPullRequestContributions
-          totalIssueContributions
-        }
-        yearCollection: contributionsCollection(from: $yearStart) {
-          totalCommitContributions
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                contributionCount
-                date
-                weekday
-              }
-            }
-          }
-        }
-      }
-    }
-    """
-    return gh_graphql(query, **{"from": week_ago, "yearStart": year_start})
-
-
 REPO_FIELDS = """
   nodes {
     name
@@ -191,7 +158,7 @@ def fetch_repos():
     # This repository renders a public profile artifact. Private-repository names, language
     # fingerprints, and per-repository activity must never depend on a manually maintained
     # denylist: a newly created private repo would otherwise leak on the next scheduled render.
-    merged = [repo for repo in merged if not repo.get("isPrivate")]
+    merged = [repo for repo in merged if repo.get("isPrivate") is False]
     merged.sort(key=lambda r: r.get("pushedAt") or "", reverse=True)
     return {"data": {"viewer": {"repositories": {"nodes": merged}}}}
 
@@ -1189,27 +1156,13 @@ def main():
             MOCK_DATA_PATH.write_text(json.dumps(mock, indent=2))
             print(f"Mock data saved to {MOCK_DATA_PATH}")
 
-    # Extract contribution stats
-    viewer = contrib_data["data"]["viewer"]
-    weekly = viewer["contributionsCollection"]
-    yearly = viewer["yearCollection"]
-    calendar = yearly["contributionCalendar"]
-
-    weekly_commits = weekly["totalCommitContributions"]
-    total_contributions = calendar["totalContributions"]
-
     last_commit_ago = calc_last_commit_ago(repos_data)
-    # Average commits per week across the year so far (weekly cadence).
-    yearly_commits = yearly["totalCommitContributions"]
-    _now = datetime.now(timezone.utc)
-    weeks_elapsed = max((_now - datetime(_now.year, 1, 1, tzinfo=timezone.utc)).days / 7, 1)
-    avg_per_week = round(yearly_commits / weeks_elapsed)
     exclude_set = {r["name"] for r in config.get("exclude_repos", []) if r.get("name")}
     if exclude_set:
         print(f"Excluding repos from ACTIVE REPOS + LoC chart + languages: {sorted(exclude_set)}")
     languages = aggregate_languages(repos_data, exclude=exclude_set)
     print("Computing top active repos (last 30d)...")
-    active_repos = fetch_active_repos(
+    active_repos = [] if args.mock else fetch_active_repos(
         repos_data, username, limit=5, window_days=30, exclude=exclude_set
     )
 
@@ -1220,7 +1173,10 @@ def main():
     lang_summary = ", ".join(f"{name} {pct}%" for name, pct in languages[:3])
 
     print("Fetching daily LoC for 7d...")
-    daily_loc = fetch_daily_loc(repos_data, username, window_days=7, exclude=exclude_set)
+    daily_loc = (
+        [(datetime.now(timezone.utc).date() - timedelta(days=i), 0) for i in reversed(range(7))]
+        if args.mock else fetch_daily_loc(repos_data, username, window_days=7, exclude=exclude_set)
+    )
 
     # Render unified card
     print("Rendering card.svg...")
