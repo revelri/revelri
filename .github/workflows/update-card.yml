@@ -94,7 +94,7 @@ jobs:
           sed -i -E "s|(raw\\.githubusercontent\\.com/${GITHUB_REPOSITORY}/assets/card\\.png\\?v=)[0-9]+|\\1${ts}|" README.md
           if git diff --quiet README.md; then exit 0; fi
           git add README.md
-          git commit -m "chore: refresh profile card"
+          git commit -m "chore: refresh profile card [skip ci]"
           for attempt in 1 2 3; do
             if git push; then exit 0; fi
             echo "push attempt $attempt failed; rebasing..."
@@ -138,7 +138,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet hero.svg || {
             git add hero.svg
-            git commit -m "Update hero SVG"
+            git commit -m "Update hero SVG [skip ci]"
             git pull --rebase origin main
             git push
           }
